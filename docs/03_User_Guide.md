@@ -25,10 +25,16 @@ A functional test tells you the "Place Order" button works. It does not tell you
 This guide is for fellow CS423 students who want to score the EShop checkout against Nielsen's 10 heuristics. We use Maze as the traditional tool and Claude vision as the AI tool. You do not need any prior usability-testing experience. You only need a browser and the ability to take a screenshot.
 
 ### 1.3 What you will be able to do after this guide
-<!-- TODO @GiaBảo: write 3 bullet outcomes that mirror T01 §2 Learning Objectives. Keep verbs concrete (run, score, audit). -->
+After working through every section, you should be able to:
+- Run a 5-tester usability study on the EShop checkout with Maze. We bundle 5 tasks (one per screen) into 1 study to fit the free-tier limit of 1 study/month.
+- Score the same screens against Nielsen's 10 heuristics by hand, then run a Claude-vision review on the same screenshots and reconcile both side by side.
+- Tag each finding with a severity (cosmetic / minor / major / catastrophic) and turn the result into a one-page report the EShop dev team can act on.
 
 ### 1.4 When this approach FAILS
-<!-- TODO @GiaBảo: 2-3 sentences on when NOT to use this pair (e.g., highly dynamic SPAs that Maze cannot record cleanly; screenshots that contain PII that should not be uploaded to a third-party AI). -->
+Skip this pair if any of these is true:
+- The SUT is a heavy single-page app. Maze cannot capture screens that change behind the scenes without a built prototype, and Claude vision only sees the snapshot you upload — neither side sees the dynamic state.
+- The screenshots contain personal data (customer names, addresses, card numbers). Do not paste these into a third-party AI; HCMUS data policy and AI Policy §7 both prohibit it.
+- You need more than 5 testers in one round. Maze's free tier caps at 5 seats per study and the Starter plan ($99/month) has the same 1-study/month limit — paying does not unlock more testers per round.
 
 ---
 
