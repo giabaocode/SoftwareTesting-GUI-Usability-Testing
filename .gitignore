@@ -1,0 +1,29 @@
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (mermaid CLI temp)
+node_modules/
+package-lock.json
+
+# Local screenshots that contain PII or course-secret content
+assets/screenshots/raw/
+*.pem
+*.key
+
+# Office temp files
+~$*.docx
+~$*.pptx
+~$*.xlsx
+
+# Build / export
+*.png.bak
+*.svg.bak
