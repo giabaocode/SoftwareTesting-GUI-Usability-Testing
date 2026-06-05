@@ -26,16 +26,16 @@
 - **Owner**: Gia Bảo
 - **Content**:
   - Title: *Heuristic Showdown — GUI & Usability Testing with Maze + Claude vision*
-  - Course / team / date / instructor name (Dr. Lâm Quang Vũ).
+  - Course / team / date / instructor name (Dr. Trần Duy Hoàng — section instructor).
 - **Speaker note (30 s)**: name the team, name the SUT (EShop checkout), name the tool pair. That's it.
 
 ### S2 — Why this topic matters
 - **Owner**: Gia Bảo
-- **Content**: 1 statistic, 1 anecdote.
+- **Content**: 1 hard statistic to anchor the rest of the pitch.
   - **Stat** (cite Baymard Institute on the slide): *"Baymard Institute reports an average cart-abandonment rate of ~70% across e-commerce, with checkout-flow friction (unexpected costs, forced account creation, long forms) among the most cited causes."*
   - Source URL to print on the slide: https://baymard.com/lists/cart-abandonment-rate
-  - 1-sentence story of a checkout failure Gia Bảo personally experienced. <!-- TODO @GiaBảo: write 1 real anecdote, ≤ 25 words -->
-- **Speaker note (60 s)**: hook the audience. Do not start with definitions. If asked for the exact number, say *"around 70% — Baymard's 2024 study aggregates 49 sources"* — do not over-precision-cite.
+  - **Optional anecdote** — drop in only if a team member has a real checkout-failure story they can tell in ≤ 25 words. Do **not** fabricate one.
+- **Speaker note (60 s)**: open with the stat, then ask "what is the 70%?" — let it land for 1-2 seconds before answering. If asked for the exact number, say *"around 70% — Baymard's 2024 study aggregates 49 sources"* — do not over-precision-cite.
 
 ### S3 — The 3 questions of usability testing
 - **Owner**: Gia Bảo

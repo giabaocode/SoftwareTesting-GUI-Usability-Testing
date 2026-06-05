@@ -2,7 +2,7 @@
 
 > CS423 / CSC15003 — Software Testing · 2026 AI-First Edition
 > FIT @ HCMUS · Department of Software Engineering
-> Lecturer: **Dr. Lâm Quang Vũ** (lqvu@fit.hcmus.edu.vn)
+> Teacher: **Dr. Trần Duy Hoàng**
 
 This repo holds all team deliverables for the **T01 — GUI & Usability Testing** seminar.
 Our SUT is the **EShop checkout journey**: cart, coupon, address, payment.
