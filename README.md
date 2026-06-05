@@ -1,98 +1,98 @@
-# T01 — GUI & Usability Testing Seminar
+# T01 — Seminar về GUI & Usability Testing
 
-> CS423 / CSC15003 — Software Testing · 2026 AI-First Edition
-> FIT @ HCMUS · Department of Software Engineering
-> Teacher: **Dr. Trần Duy Hoàng**
+> CS423 / CSC15003 — Software Testing · Ấn bản AI-First 2026
+> FIT @ HCMUS · Khoa Công nghệ Phần mềm
+> Giảng viên: **TS. Trần Duy Hoàng**
 
-This repo holds all team deliverables for the **T01 — GUI & Usability Testing** seminar.
-Our SUT is the **EShop checkout journey**: cart, coupon, address, payment.
+Repo này chứa toàn bộ deliverable của nhóm cho seminar **T01 — GUI & Usability Testing**.
+SUT (System Under Test) mà nhóm chọn là **luồng checkout của EShop**: giỏ hàng, coupon, địa chỉ, thanh toán.
 
 ---
 
-## 1. Tool Pair Under Study
+## 1. Cặp công cụ nhóm chọn
 
-The Seminar Track requires one traditional tool + one AI tool in every live demo. After comparing the candidates in our [Tool Survey Proposal](docs/01_Tool_Survey_Proposal.md), we picked:
+Quy định của Seminar Track yêu cầu **1 tool truyền thống + 1 tool AI** trong mọi live demo. Sau khi so sánh các ứng viên trong [Tool Survey Proposal](docs/01_Tool_Survey_Proposal.md), nhóm chọn:
 
-| Role | Tool | Why we picked it |
+| Vai trò | Tool | Lý do |
 |---|---|---|
-| **Traditional** | **Maze** | Builds task-based studies (cart, coupon, payment) and shows click-paths + heatmaps. Free tier fits a 5-tester study. |
-| **AI-augmented** | **Claude (vision)** | We upload EShop screenshots and ask for a Nielsen-10 review. Then we audit each finding — that audit is the point, not the AI output. |
-| Backup | Hotjar | Session recordings + heatmaps. Held in reserve in case Maze's monthly study slot is burnt. |
+| **Traditional** | **Maze** | Tạo task-based study (giỏ hàng, coupon, thanh toán), xuất click-path và heatmap. Free tier (1 study/tháng + 5 seats) đủ cho 5 tester. |
+| **AI-augmented** | **Claude (vision)** | Upload screenshot của EShop, yêu cầu review theo Nielsen-10. Nhóm sẽ audit từng finding — chính bước audit này mới là điểm nhấn, không phải bản thân output AI. |
+| Backup | Hotjar | Session recording + heatmap. Giữ làm dự phòng nếu lỡ "đốt" mất slot study của Maze trong tháng. |
 
-> The picks above are draft. Final selection needs Stage S2 approval from the instructor — see [Scope Note](docs/02_Scope_Note.md).
+> Đây vẫn là draft. Phương án cuối cùng cần được duyệt ở Stage S2 — xem [Scope Note](docs/02_Scope_Note.md).
 
 ---
 
-## 2. Repository Map
+## 2. Cấu trúc Repo
 
 ```
 .
-├── README.md                          ← you are here
+├── README.md                          ← bạn đang ở đây
 ├── docs/
-│   ├── 01_Tool_Survey_Proposal.md     ← Stage S1 deliverable (≤ 1 page)
-│   ├── 02_Scope_Note.md               ← input for Stage S2 instructor review
-│   ├── 03_User_Guide.md               ← Stage S4 deliverable skeleton (7 sections)
-│   ├── 04_Activity_Worksheet.md       ← Stage S5 deliverable (Heuristic Showdown)
-│   └── 05_Seminar_Slides_Outline.md   ← Stage S6 deliverable outline (≤ 15 slides)
+│   ├── 01_Tool_Survey_Proposal.md     ← Deliverable Stage S1 (≤ 1 trang)
+│   ├── 02_Scope_Note.md               ← Input cho Stage S2 instructor review
+│   ├── 03_User_Guide.md               ← Skeleton Stage S4 (7 sections)
+│   ├── 04_Activity_Worksheet.md       ← Deliverable Stage S5 (Heuristic Showdown)
+│   └── 05_Seminar_Slides_Outline.md   ← Outline Stage S6 (≤ 15 slides)
 ├── assets/
 │   └── diagrams/
-│       ├── workflow_s1_s8.mmd         ← Mermaid: full seminar workflow
-│       └── checkout_flow.mmd          ← Mermaid: EShop checkout SUT
+│       ├── workflow_s1_s8.mmd         ← Mermaid: toàn bộ workflow seminar
+│       └── checkout_flow.mmd          ← Mermaid: SUT EShop checkout
 ├── ai-disclosure/
-│   └── AI_Usage_Log.md                ← running AI assistance log
+│   └── AI_Usage_Log.md                ← Log liên tục về việc dùng AI
 └── releases/
-    └── v0.1.0-draft.md                ← release notes for the draft review session
+    └── v0.1.0-draft.md                ← Release notes cho buổi draft review
 ```
 
 ---
 
-## 3. Stage Status
+## 3. Trạng thái các Stage
 
-| Stage | Status | Deliverable |
+| Stage | Trạng thái | Deliverable |
 |---|---|---|
 | S1 — Tool survey & proposal | **DRAFT** | [`docs/01_Tool_Survey_Proposal.md`](docs/01_Tool_Survey_Proposal.md) |
-| S2 — Instructor review | PENDING (draft feedback session: 2026-06-06) | [`docs/02_Scope_Note.md`](docs/02_Scope_Note.md) |
-| S3 — Deep study + EShop hands-on | NOT STARTED | — |
+| S2 — Instructor review | PENDING (buổi draft review: 2026-06-06) | [`docs/02_Scope_Note.md`](docs/02_Scope_Note.md) |
+| S3 — Deep study + EShop hands-on | CHƯA BẮT ĐẦU | — |
 | S4 — User guide + screencast | **SKELETON** | [`docs/03_User_Guide.md`](docs/03_User_Guide.md) |
-| S5 — Pre-share | NOT STARTED | [`docs/04_Activity_Worksheet.md`](docs/04_Activity_Worksheet.md) |
-| S6 — Live seminar (45 min) | NOT STARTED | [`docs/05_Seminar_Slides_Outline.md`](docs/05_Seminar_Slides_Outline.md) |
-| S7 — Audience feedback | NOT STARTED | — |
-| S8 — AI Audit + Reflection | NOT STARTED | — |
+| S5 — Pre-share | CHƯA BẮT ĐẦU | [`docs/04_Activity_Worksheet.md`](docs/04_Activity_Worksheet.md) |
+| S6 — Live seminar (45 phút) | CHƯA BẮT ĐẦU | [`docs/05_Seminar_Slides_Outline.md`](docs/05_Seminar_Slides_Outline.md) |
+| S7 — Audience feedback | CHƯA BẮT ĐẦU | — |
+| S8 — AI Audit + Reflection | CHƯA BẮT ĐẦU | — |
 
 ---
 
-## 4. Submission Format (per Lecturer's Technical Requirements)
+## 4. Định dạng nộp bài (theo yêu cầu của giảng viên)
 
-- **Format**: Written in Markdown.
-- **Diagrams**: Created using Mermaid (where applicable) — see [`assets/diagrams/`](assets/diagrams/).
-- **Videos**: Uploaded to YouTube; links recorded inside each deliverable.
-- **Project Management**: Managed and tracked through GitHub commit logs.
-- **Submissions**: Each deadline's work documented and submitted via **GitHub Releases**.
+- **Format**: Viết bằng Markdown.
+- **Diagram**: Vẽ bằng Mermaid (nơi nào áp dụng được) — xem [`assets/diagrams/`](assets/diagrams/).
+- **Video**: Upload lên YouTube; link ghi trong từng deliverable.
+- **Project management**: Theo dõi qua GitHub commit log.
+- **Submission**: Mỗi deadline được nộp qua **GitHub Releases**.
 
 ---
 
-## 5. Team
+## 5. Thành viên nhóm
 
-| Role | Member | GitHub |
+| Vai trò | Thành viên | GitHub |
 |---|---|---|
-| **C** — **Team leader** · Claude-vision demoer (AI tool) · audience activity facilitator | **Nguyễn Bình An** | [@CATO-OTAC](https://github.com/CATO-OTAC) |
-| **A** — Presenter · Tool Survey Proposal owner · AI disclosure custodian | Phạm Ngọc Gia Bảo | [@giabaocode](https://github.com/giabaocode) |
-| **B** — Maze demoer (traditional tool) · Installation & First-Test docs | Lee Kun Da | [@0769776209](https://github.com/0769776209) |
-| **D** — Timekeeper · Failure-Modes researcher · Slides outline owner | Lưu Ngô Quốc Bảo | [@BaoBeiii](https://github.com/BaoBeiii) |
+| **C** — **Nhóm trưởng** · Demoer Claude vision · Facilitator activity | **Nguyễn Bình An** | [@CATO-OTAC](https://github.com/CATO-OTAC) |
+| **A** — Presenter · Owner Tool Survey Proposal · Phụ trách AI disclosure | Phạm Ngọc Gia Bảo | [@giabaocode](https://github.com/giabaocode) |
+| **B** — Demoer Maze · Owner Installation & First-Test docs | Lee Kun Da | [@0769776209](https://github.com/0769776209) |
+| **D** — Timekeeper · Owner Failure-Modes + Slides outline | Lưu Ngô Quốc Bảo | [@BaoBeiii](https://github.com/BaoBeiii) |
 
-> Decisions are made jointly; the team leader has the casting vote when consensus is not reached.
+> Quyết định nhóm theo nguyên tắc đồng thuận; khi không thống nhất, nhóm trưởng có quyền quyết định.
 
 ---
 
 ## 6. AI Disclosure
 
-All AI assistance used to produce this repository is logged in [`ai-disclosure/AI_Usage_Log.md`](ai-disclosure/AI_Usage_Log.md).
-Per AI Policy §7 of the Seminar Guide, every AI-generated artefact has been reviewed and edited by a human before commit.
+Mọi lần dùng AI để tạo nội dung repo này đều được log trong [`ai-disclosure/AI_Usage_Log.md`](ai-disclosure/AI_Usage_Log.md).
+Theo AI Policy §7 của Seminar Guide, mọi output AI đều được người trong nhóm review và edit trước khi commit.
 
 ---
 
-## 7. References
+## 7. Tài liệu tham khảo
 
-- [`materials/Seminar_Guide.docx.pdf`](materials/Seminar_Guide.docx.pdf) — 8-stage workflow + rubric
-- [`materials/Seminar_Workflow_Briefing.pptx.pdf`](materials/Seminar_Workflow_Briefing.pptx.pdf) — slide briefing + prompt templates
-- [`materials/T01_GUI_and_Usability_Testing.docx`](materials/T01_GUI_and_Usability_Testing.docx) — topic brief
+- [`materials/Seminar_Guide.docx.pdf`](materials/Seminar_Guide.docx.pdf) — workflow 8-stage + rubric
+- [`materials/Seminar_Workflow_Briefing.pptx.pdf`](materials/Seminar_Workflow_Briefing.pptx.pdf) — slide briefing + prompt template
+- [`materials/T01_GUI_and_Usability_Testing.docx`](materials/T01_GUI_and_Usability_Testing.docx) — đề tài T01

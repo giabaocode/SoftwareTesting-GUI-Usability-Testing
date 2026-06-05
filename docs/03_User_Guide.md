@@ -1,12 +1,12 @@
-# [S4] User Guide — Maze + Claude Vision on EShop Checkout
+# [S4] User Guide — Maze + Claude Vision trên EShop Checkout
 
 > **Stage**: S4 (User-guide + demo recording)
-> **Required sections**: 7 (per Workflow_Briefing slide 6, including the new **Failure Modes** section)
-> **Length**: aim for 1500–2500 words once filled in
-> **Format constraint**: Markdown only; screenshots stored under `assets/screenshots/`
+> **Section bắt buộc**: 7 (theo Workflow_Briefing slide 6, gồm cả section **Failure Modes** mới)
+> **Độ dài**: target 1500–2500 từ khi đã fill xong
+> **Ràng buộc format**: Chỉ Markdown; screenshot lưu trong `assets/screenshots/`
 >
-> **Ownership** (skeleton phase; each member finalizes their portion before Stage S5):
-> - §1 Introduction → **Phạm Ngọc Gia Bảo** (search `@GiaBảo`)
+> **Ownership** (giai đoạn skeleton; mỗi người hoàn thiện phần của mình trước Stage S5):
+> - §1 Giới thiệu → **Phạm Ngọc Gia Bảo** (search `@GiaBảo`)
 > - §2 Installation → **Lee Kun Da** (search `@KunDa`)
 > - §3 First Test → **Lee Kun Da** (search `@KunDa`)
 > - §4 Advanced Usage → **Nguyễn Bình An** (search `@BìnhAn`)
@@ -16,77 +16,77 @@
 
 ---
 
-## 1. Introduction
+## 1. Giới thiệu
 
-### 1.1 Problem space
-A functional test tells you the "Place Order" button works. It does not tell you if a user can find it, trust it, or recover after a mis-click. GUI & Usability testing fills that gap. The questions are simple: *was that easy? was that obvious? did the system speak the user's language?* Nielsen wrote them down in 1994 and they still work in 2026.
+### 1.1 Bối cảnh vấn đề
+Functional test nói cho bạn biết nút "Place Order" có hoạt động không. Nó không nói cho bạn biết user có *tìm thấy* nút, có *tin tưởng* nó, hay có *hồi phục* được sau khi click nhầm hay không. GUI & Usability testing lấp vào khoảng trống đó. Câu hỏi đơn giản: *cái đó có dễ không? có rõ ràng không? hệ thống có nói cùng ngôn ngữ với user không?* Nielsen viết ra những câu hỏi này từ 1994 và đến 2026 chúng vẫn còn dùng được.
 
-### 1.2 Who this guide is for
-This guide is for fellow CS423 students who want to score the EShop checkout against Nielsen's 10 heuristics. We use Maze as the traditional tool and Claude vision as the AI tool. You do not need any prior usability-testing experience. You only need a browser and the ability to take a screenshot.
+### 1.2 Hướng dẫn này dành cho ai
+Hướng dẫn này dành cho sinh viên CS423 muốn chấm EShop checkout theo Nielsen-10. Nhóm dùng Maze làm tool truyền thống và Claude vision làm tool AI. Bạn không cần kinh nghiệm usability testing trước đó. Bạn chỉ cần 1 trình duyệt và biết cách chụp screenshot.
 
-### 1.3 What you will be able to do after this guide
-After working through every section, you should be able to:
-- Run a 5-tester usability study on the EShop checkout with Maze. We bundle 5 tasks (one per screen) into 1 study to fit the free-tier limit of 1 study/month.
-- Score the same screens against Nielsen's 10 heuristics by hand, then run a Claude-vision review on the same screenshots and reconcile both side by side.
-- Tag each finding with a severity (cosmetic / minor / major / catastrophic) and turn the result into a one-page report the EShop dev team can act on.
+### 1.3 Sau khi đọc hướng dẫn này, bạn có thể
+Sau khi đọc hết các section, bạn có thể:
+- Chạy 1 usability study 5-tester trên EShop checkout với Maze. Nhóm gói 5 task (mỗi màn hình 1 task) vào 1 study duy nhất để vừa giới hạn free tier 1 study/tháng.
+- Chấm cùng những màn hình đó theo Nielsen-10 bằng tay, sau đó chạy Claude vision review trên cùng screenshot và đối chiếu cả hai bên cạnh nhau.
+- Gắn nhãn severity cho từng finding (cosmetic / minor / major / catastrophic) và biến kết quả thành báo cáo 1 trang để team dev EShop có thể hành động.
 
-### 1.4 When this approach FAILS
-Skip this pair if any of these is true:
-- The SUT is a heavy single-page app. Maze cannot capture screens that change behind the scenes without a built prototype, and Claude vision only sees the snapshot you upload — neither side sees the dynamic state.
-- The screenshots contain personal data (customer names, addresses, card numbers). Do not paste these into a third-party AI; HCMUS data policy and AI Policy §7 both prohibit it.
-- You need more than 5 testers in one round. Maze's free tier caps at 5 seats per study and the Starter plan ($99/month) has the same 1-study/month limit — paying does not unlock more testers per round.
+### 1.4 Khi nào KHÔNG nên dùng cách này
+Bỏ qua cặp tool này nếu rơi vào một trong các trường hợp:
+- SUT là single-page app nặng. Maze không capture được màn hình thay đổi behind the scenes mà không có prototype đã build sẵn, và Claude vision chỉ thấy snapshot bạn upload — cả 2 đều không nhìn thấy state động.
+- Screenshot có dữ liệu cá nhân (tên khách hàng, địa chỉ, số thẻ). Không paste những thứ này vào AI bên thứ ba; cả data policy của HCMUS lẫn AI Policy §7 đều cấm.
+- Bạn cần hơn 5 tester trong 1 round. Free tier Maze giới hạn 5 seat/study và Starter plan ($99/tháng) cũng vẫn giữ giới hạn 1 study/tháng — trả tiền không mở khoá thêm tester.
 
 ---
 
 ## 2. Installation
 
-### 2.1 Prerequisites
-| Requirement | Min version | Why |
+### 2.1 Yêu cầu trước
+| Yêu cầu | Phiên bản tối thiểu | Lý do |
 |---|---|---|
-| Modern browser | Chrome 120+ / Edge 120+ | Maze study editor requires it |
-| Maze account | Free tier | Signup at maze.co |
-| Claude account | Free tier (anthropic.com) OR `claude.ai` | For vision uploads |
-| Screenshot tool | OS built-in (Snipping Tool / ⌘+Shift+4) | Capture EShop screens |
-| EShop staging URL | Provided by course | See [`02_Scope_Note.md`](02_Scope_Note.md) §Q5 |
+| Browser hiện đại | Chrome 120+ / Edge 120+ | Maze study editor cần |
+| Tài khoản Maze | Free tier | Đăng ký tại maze.co |
+| Tài khoản Claude | Free tier (anthropic.com) hoặc `claude.ai` | Cho vision upload |
+| Tool screenshot | OS built-in (Snipping Tool / ⌘+Shift+4) | Capture màn hình EShop |
+| URL EShop staging | Course cung cấp | Xem [`02_Scope_Note.md`](02_Scope_Note.md) §Q5 |
 
-### 2.2 Step-by-step install — Maze
-1. Open https://maze.co and click **Sign up free**.
-2. Choose **Continue with email** (do NOT use the Google SSO option — see §5.2 Troubleshooting).
-3. Verify email; you will land on the Maze dashboard.
+### 2.2 Cài đặt từng bước — Maze
+1. Mở https://maze.co và click **Sign up free**.
+2. Chọn **Continue with email** (KHÔNG dùng option Google SSO — xem §5.2 Troubleshooting).
+3. Xác thực email; sẽ vào được dashboard Maze.
 4. Click **Create new maze** → **Start from scratch**.
 
-<!-- TODO @KunDa: insert screenshot at this point — assets/screenshots/maze_dashboard.png. Annotate the "Create new maze" button with a red box. -->
+<!-- TODO @KunDa: chèn screenshot tại bước này — assets/screenshots/maze_dashboard.png. Khoanh đỏ nút "Create new maze". -->
 
-5. <!-- TODO @KunDa: continue with 3-5 more steps until "first empty study is ready". Include exact command/click descriptions, not "navigate to the settings". -->
+5. <!-- TODO @KunDa: tiếp tục 3-5 step nữa cho tới khi "first empty study sẵn sàng". Mô tả command/click chính xác, đừng viết "navigate to settings". -->
 
-### 2.3 Step-by-step install — Claude vision
-1. <!-- TODO @KunDa: 5-7 steps from "open claude.ai" to "first image-prompt sent". Note rate-limit considerations on free tier. -->
+### 2.3 Cài đặt từng bước — Claude vision
+1. <!-- TODO @KunDa: 5-7 step từ "mở claude.ai" tới "image-prompt đầu tiên đã gửi". Lưu ý rate-limit ở free tier. -->
 
-### 2.4 OS-specific notes
-<!-- TODO @KunDa: 1 paragraph for each of Windows / macOS / Linux. Note: HCMUS lab machines run Windows 11. -->
+### 2.4 Note theo OS
+<!-- TODO @KunDa: 1 đoạn cho mỗi Windows / macOS / Linux. Lưu ý: máy lab HCMUS chạy Windows 11. -->
 
 ---
 
-## 3. First Test — End-to-end on EShop in ≤ 15 steps
+## 3. First Test — End-to-end trên EShop trong ≤ 15 step
 
-> Per Workflow_Briefing slide 6: "End-to-end on EShop in ≤ 15 steps".
+> Theo Workflow_Briefing slide 6: "End-to-end on EShop in ≤ 15 steps".
 
 ### 3.1 Scenario
-A first-time EShop visitor wants to: **Search for "wireless headphones" → add the cheapest one to cart → apply coupon code `SAVE10` → check out as guest using cash-on-delivery.**
+1 user lần đầu vào EShop muốn: **Search "wireless headphones" → thêm cái rẻ nhất vào giỏ → áp coupon `SAVE10` → checkout dưới dạng guest, thanh toán COD.**
 
-### 3.2 Maze study build (steps 1–8)
-1. <!-- TODO @KunDa: step-by-step for "Add task" → "Add screen" → ... → "Get share link". Number each step. -->
+### 3.2 Build Maze study (step 1–8)
+1. <!-- TODO @KunDa: từng step cho "Add task" → "Add screen" → ... → "Get share link". Đánh số từng step. -->
 2. ...
 
-### 3.3 Claude vision review (steps 9–12)
-9. <!-- TODO @KunDa: step-by-step for "screenshot the page" → "open Claude" → "paste prompt template" → "save report". -->
+### 3.3 Claude vision review (step 9–12)
+9. <!-- TODO @KunDa: từng step cho "screenshot the page" → "open Claude" → "paste prompt template" → "save report". -->
 10. ...
 
-### 3.4 Comparing the two outputs (steps 13–15)
-13. <!-- TODO @KunDa: how to align Maze's quantitative findings (e.g., 60% task success) with Claude's qualitative findings (e.g., "Match between system and real world: ✗"). -->
+### 3.4 So sánh 2 output (step 13–15)
+13. <!-- TODO @KunDa: cách align finding quantitative của Maze (vd 60% task success) với finding qualitative của Claude (vd "Match between system and real world: ✗"). -->
 
-### 3.5 Expected output artefacts
-After completing §3 you should have all four files saved under `assets/first-test-run/`:
+### 3.5 Artefact output dự kiến
+Sau khi xong §3, bạn sẽ có 4 file lưu trong `assets/first-test-run/`:
 
 - `maze_study_report.pdf`
 - `maze_heatmap_screen-S03.png`
@@ -97,107 +97,107 @@ After completing §3 you should have all four files saved under `assets/first-te
 
 ## 4. Advanced Usage
 
-### 4.1 Maze — branching studys
-<!-- TODO @BìnhAn: explain conditional branching: how to send testers who FAIL S-02 down a different path than those who succeed. 1 short example. -->
+### 4.1 Maze — branching study
+<!-- TODO @BìnhAn: giải thích conditional branching: cách gửi tester FAIL S-02 đi route khác với tester success. 1 ví dụ ngắn. -->
 
-### 4.2 Maze — parallel test sessions
-<!-- TODO @BìnhAn: how to send the same study to 5 testers in parallel and aggregate the results. -->
+### 4.2 Maze — chạy session parallel
+<!-- TODO @BìnhAn: cách gửi cùng 1 study tới 5 tester parallel và aggregate kết quả. -->
 
 ### 4.3 Claude vision — multi-image batch prompting
-<!-- TODO @BìnhAn: explain how to upload up to 5 screenshots in one prompt and request a single consolidated heuristic report. Include the exact prompt we will use — anchor on Workflow_Briefing slide 9 TEMPLATE 1. -->
+<!-- TODO @BìnhAn: giải thích cách upload tối đa 5 screenshot trong 1 prompt và yêu cầu 1 heuristic report tổng hợp. Bao gồm prompt chính xác sẽ dùng — anchor vào Workflow_Briefing slide 9 TEMPLATE 1. -->
 
-### 4.4 Claude vision — auditing AI's own output with TEMPLATE 4
-<!-- TODO @BìnhAn: demonstrate using AI Prompt TEMPLATE 4 from Workflow_Briefing slide 9 to critique Claude's first-pass review. This is a key differentiator for the depth-of-study rubric criterion. -->
+### 4.4 Claude vision — audit output của chính AI bằng TEMPLATE 4
+<!-- TODO @BìnhAn: demo cách dùng AI Prompt TEMPLATE 4 từ Workflow_Briefing slide 9 để critique review đầu tiên của Claude. Đây là điểm khác biệt quan trọng cho rubric depth-of-study. -->
 
-### 4.5 Custom severity rubric
-Apply the T01 §2 four-point scale: cosmetic / minor / major / catastrophic.
+### 4.5 Rubric severity tự chế
+Áp dụng thang 4 bậc T01 §2: cosmetic / minor / major / catastrophic.
 
-<!-- TODO @BìnhAn: provide a 1-paragraph anchor description per level, with 1 EShop-specific example each. -->
+<!-- TODO @BìnhAn: viết 1 đoạn mô tả anchor cho từng level, kèm 1 ví dụ EShop-specific cho mỗi cái. -->
 
 ---
 
-## 5. Troubleshooting (≥ 3 real errors + the fix)
+## 5. Troubleshooting (≥ 3 lỗi thật + cách fix)
 
-> Per Workflow_Briefing slide 6: at least 3 real errors we have actually encountered, with the fix. Do not invent errors.
+> Theo Workflow_Briefing slide 6: ít nhất 3 lỗi thật nhóm đã gặp, kèm fix. Không bịa lỗi.
 
-### 5.1 Error: Maze study link returns 404 after publish
-**Symptom**: <!-- TODO @BìnhAn: real symptom string -->
-**Cause**: <!-- TODO @BìnhAn -->
+### 5.1 Lỗi: Maze study link trả 404 sau khi publish
+**Triệu chứng**: <!-- TODO @BìnhAn: triệu chứng thật -->
+**Nguyên nhân**: <!-- TODO @BìnhAn -->
 **Fix**: <!-- TODO @BìnhAn -->
 
-### 5.2 Error: Maze Google-SSO loop
-**Symptom**: <!-- TODO @BìnhAn: write what you actually observed -->
-**Cause**: <!-- TODO @BìnhAn -->
+### 5.2 Lỗi: Maze Google-SSO loop
+**Triệu chứng**: <!-- TODO @BìnhAn: viết đúng những gì đã quan sát -->
+**Nguyên nhân**: <!-- TODO @BìnhAn -->
 **Fix**: <!-- TODO @BìnhAn -->
 
-### 5.3 Error: Claude vision rejects screenshot with "image too large"
-**Symptom**: claude.ai responds *"This image is too large to process"* and the screenshot is not analysed.
-**Cause** (verified against [docs.anthropic.com/.../vision](https://docs.anthropic.com/en/docs/build-with-claude/vision) on 2026-06-05):
-- **claude.ai and direct Claude API**: max **10 MB** per image (base64-encoded).
-- **Amazon Bedrock / Vertex AI**: stricter — max **5 MB** per image.
-- All endpoints: max **8000×8000 px**. If you send more than 20 images per API request, the dimension cap drops to **2000×2000 px**.
-- Regardless of upload size, Claude internally resizes images to a "native resolution" before processing (1568 px on the long edge for most models; 2576 px for Opus 4.7 / 4.8). Uploading larger than that gains no fidelity — only adds latency and token cost.
+### 5.3 Lỗi: Claude vision từ chối screenshot với "image too large"
+**Triệu chứng**: claude.ai trả về *"This image is too large to process"* và screenshot không được phân tích.
+**Nguyên nhân** (verified trên [docs.anthropic.com/.../vision](https://docs.anthropic.com/en/docs/build-with-claude/vision) ngày 2026-06-05):
+- **claude.ai và direct Claude API**: tối đa **10 MB** mỗi ảnh (base64-encoded).
+- **Amazon Bedrock / Vertex AI**: chặt hơn — tối đa **5 MB** mỗi ảnh.
+- Tất cả endpoint: tối đa **8000×8000 px**. Nếu gửi hơn 20 ảnh/request, giới hạn dimension giảm xuống **2000×2000 px**.
+- Bất kể size upload là bao nhiêu, Claude resize ảnh về "native resolution" trước khi xử lý (1568 px cạnh dài cho hầu hết model; 2576 px cho Opus 4.7+). Upload lớn hơn không thêm fidelity — chỉ tăng latency và token cost.
 
 **Fix**:
-1. Compress the screenshot: `pngquant input.png --output out.png` (Linux/macOS) or paint.NET's *"Save As JPEG quality 85"* (Windows).
-2. Or pre-resize to ~1600 px on the long edge — matches Claude's native resolution and minimises latency.
-3. Verify final file size < 10 MB before upload.
+1. Nén screenshot: `pngquant input.png --output out.png` (Linux/macOS) hoặc paint.NET *"Save As JPEG quality 85"* (Windows).
+2. Hoặc pre-resize về ~1600 px cạnh dài — khớp với native resolution của Claude và giảm latency.
+3. Verify size cuối < 10 MB trước khi upload.
 
-### 5.4 (Optional bonus error) <!-- TODO @BìnhAn: add a 4th if encountered during S3 -->
+### 5.4 (Lỗi bonus thứ 4) <!-- TODO @BìnhAn: thêm lỗi thứ 4 nếu gặp trong S3 -->
 
 ---
 
-## 6. Failure Modes (≥ 3 ways the tool can mislead you)
+## 6. Failure Modes (≥ 3 cách tool có thể đánh lừa bạn)
 
-> **DO NOT SKIP** — this is one of the top-6 auto-penalty pitfalls (Workflow_Briefing slide 10).
-> Use AI Prompt TEMPLATE 2 (Workflow_Briefing slide 9) to brainstorm, then **verify each entry against official docs / GitHub issues / published papers**. Do not invent.
+> **KHÔNG ĐƯỢC SKIP** — đây là 1 trong top-6 auto-penalty pitfall (Workflow_Briefing slide 10).
+> Dùng AI Prompt TEMPLATE 2 (Workflow_Briefing slide 9) để brainstorm, sau đó **verify từng entry với official docs / GitHub issue / paper**. Không bịa.
 
 ### 6.1 Failure mode: Maze success-rate over-confidence
-- **Trigger**: 5 testers all complete a task in < 30s.
-- **Symptom**: dashboard shows "100% success" → team concludes the screen is usable.
-- **Why misleading**: <!-- TODO @QuốcBảo: explain selection bias — Maze testers are often UX-literate; real EShop customers are not. Cite the NN/g 2024 article. -->
+- **Trigger**: 5 tester đều hoàn thành task trong < 30s.
+- **Triệu chứng**: dashboard hiện "100% success" → team kết luận màn hình đã usable.
+- **Vì sao đánh lừa**: <!-- TODO @QuốcBảo: giải thích selection bias — tester Maze thường là UX-literate; khách EShop thật thì không. Cite bài NN/g 2024. -->
 - **Detection**: <!-- TODO @QuốcBảo -->
 - **Mitigation**: <!-- TODO @QuốcBảo -->
 
-### 6.2 Failure mode: Claude vision hallucinated UI elements
-- **Trigger**: ask Claude to evaluate a screenshot where the *coupon field* is **absent**.
-- **Symptom**: Claude returns a heuristic violation about "coupon field placement" that does not exist on the screen.
-- **Why misleading**: <!-- TODO @QuốcBảo: explain that LLMs can pattern-match expected e-commerce layouts onto an actual screenshot. Cite a primary source (Anthropic blog or model card). -->
+### 6.2 Failure mode: Claude vision bịa UI element
+- **Trigger**: yêu cầu Claude evaluate 1 screenshot mà *coupon field* **không có** trên đó.
+- **Triệu chứng**: Claude trả về heuristic violation về "coupon field placement" mà thực ra không có trên màn hình.
+- **Vì sao đánh lừa**: <!-- TODO @QuốcBảo: giải thích LLM có thể pattern-match layout e-commerce kỳ vọng lên screenshot thật. Cite primary source (Anthropic blog hoặc model card). -->
 - **Detection**: <!-- TODO @QuốcBảo -->
 - **Mitigation**: <!-- TODO @QuốcBảo -->
 
-### 6.3 Failure mode: Severity miscalibration by AI
-- **Trigger**: Claude rates "low text contrast" as **major** but rates "no error message on invalid coupon" as **minor**.
-- **Symptom**: severity ordering does not match human expert ordering.
-- **Why misleading**: T01 §7 explicitly warns *"Severity rating must be human-final; AI severity is often miscalibrated."*
-- **Detection**: cross-reference each AI severity against the team's manual scoring; flag deltas > 1 level.
-- **Mitigation**: <!-- TODO @QuốcBảo: write the team protocol — e.g., "AI severities are advisory only; the team lead casts the final vote in the weekly review." -->
+### 6.3 Failure mode: AI miscalibrate severity
+- **Trigger**: Claude rate "low text contrast" là **major** nhưng rate "không có error message khi coupon invalid" là **minor**.
+- **Triệu chứng**: thứ tự severity không khớp với thứ tự của human expert.
+- **Vì sao đánh lừa**: T01 §7 cảnh báo rõ *"Severity rating must be human-final; AI severity is often miscalibrated."*
+- **Detection**: đối chiếu từng severity của AI với scoring thủ công của team; flag những chênh lệch > 1 level.
+- **Mitigation**: <!-- TODO @QuốcBảo: viết protocol nhóm — vd "Severity AI chỉ là tham khảo; nhóm trưởng quyết định cuối tại weekly review." -->
 
-### 6.4 (Bonus 4th mode) <!-- TODO @QuốcBảo: add a 4th if encountered. Maze recording stops at iframe boundary is a common one. -->
+### 6.4 (Mode thứ 4 bonus) <!-- TODO @QuốcBảo: thêm mode thứ 4 nếu gặp. Maze recording dừng ở biên iframe là 1 lỗi phổ biến. -->
 
 ---
 
 ## 7. References
 
-### 7.1 Primary sources
+### 7.1 Nguồn primary
 - Nielsen, J. (1994; rev. 2020). **10 Usability Heuristics for User Interface Design**. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
-- Krug, S. (2010). **Rocket Surgery Made Easy**. New Riders. (Chs. 1–3 on lightweight remote tests.)
+- Krug, S. (2010). **Rocket Surgery Made Easy**. New Riders. (Ch. 1–3 về remote test lightweight.)
 - BS EN ISO 9241-11:2018 — *Ergonomics of human-system interaction — Part 11: Usability: Definitions and concepts.*
-- NN/g (2024). *Can AI replace usability testers?* — cited per T01 brief §5.
+- NN/g (2024). *Can AI replace usability testers?* — cite theo T01 brief §5.
 
-### 7.2 Vendor documentation
+### 7.2 Documentation của vendor
 - Maze docs: https://help.maze.co
 - Claude API & vision: https://docs.anthropic.com
-- <!-- TODO @QuốcBảo: add Hotjar docs (backup) + any community plugins you reference -->
+- <!-- TODO @QuốcBảo: thêm Hotjar docs (backup) + plugin community nào reference -->
 
-### 7.3 Course materials
+### 7.3 Tài liệu course
 - [`materials/Seminar_Guide.docx.pdf`](../materials/Seminar_Guide.docx.pdf)
 - [`materials/Seminar_Workflow_Briefing.pptx.pdf`](../materials/Seminar_Workflow_Briefing.pptx.pdf)
 - [`materials/T01_GUI_and_Usability_Testing.docx`](../materials/T01_GUI_and_Usability_Testing.docx)
 
 ### 7.4 AI Disclosure
-The skeleton of this guide was drafted with Claude Opus 4.7 on 2026-06-05. All factual claims in §6 (Failure Modes) **must be re-verified against the cited primary sources** before substudy — see [`ai-disclosure/AI_Usage_Log.md`](../ai-disclosure/AI_Usage_Log.md).
+Skeleton của guide này được draft bằng Claude Opus 4.7 ngày 2026-06-05. Mọi claim factual trong §6 (Failure Modes) **phải re-verify với nguồn primary đã cite** trước khi submit — xem [`ai-disclosure/AI_Usage_Log.md`](../ai-disclosure/AI_Usage_Log.md).
 
 ---
 
-*Last updated: 2026-06-05 · Skeleton v0.1.0 · Distributed across members A/B/C/D — see ownership block above.*
+*Cập nhật lần cuối: 2026-06-05 · Skeleton v0.1.0 · Phân chia cho 4 thành viên — xem ownership block ở đầu file.*
