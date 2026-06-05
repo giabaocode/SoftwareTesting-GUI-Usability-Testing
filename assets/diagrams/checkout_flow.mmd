@@ -1,0 +1,34 @@
+%% EShop checkout flow — System Under Test (SUT) for T01 seminar
+%% 5 screens in scope, per Scope Note §1.1
+%% Owner: Member D — Lưu Ngô Quốc Bảo
+%% Last updated: 2026-06-05
+
+flowchart TD
+    Start([User lands on EShop])
+    S01[/"S-01 Product listing<br/>· search bar<br/>· Add to Cart CTA"/]:::screen
+    S02[/"S-02 Cart review<br/>· qty stepper<br/>· remove · subtotal"/]:::screen
+    S03[/"S-03 Coupon application<br/>· input field<br/>· apply · error/success"/]:::screenFocus
+    S04[/"S-04 Address & shipping<br/>· form validation<br/>· autocomplete"/]:::screen
+    S05[/"S-05 Payment<br/>· method radio<br/>· Place Order CTA"/]:::screen
+    Done([Order confirmation])
+
+    Start --> S01 --> S02 --> S03 --> S04 --> S05 --> Done
+
+    %% Annotations: which tool exercises which screen
+    Maze[["Maze study:<br/>1 task per screen<br/>(5 tasks bundled into 1 free-tier study)<br/>→ heatmap + click-path"]]:::tool
+    Claude[["Claude vision:<br/>screenshot review<br/>→ Nielsen-10 report"]]:::tool
+    Activity[["Audience activity:<br/>'Heuristic Showdown'<br/>focuses on S-03"]]:::activity
+
+    S01 -.- Maze
+    S02 -.- Maze
+    S03 -.- Maze
+    S04 -.- Maze
+    S05 -.- Maze
+
+    S03 -.- Claude
+    S03 -.- Activity
+
+    classDef screen fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20;
+    classDef screenFocus fill:#FFF3E0,stroke:#E65100,color:#BF360C,stroke-width:2px;
+    classDef tool fill:#E3F2FD,stroke:#1565C0,color:#0D47A1;
+    classDef activity fill:#F3E5F5,stroke:#6A1B9A,color:#4A148C;

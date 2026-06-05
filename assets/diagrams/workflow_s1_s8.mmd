@@ -1,0 +1,31 @@
+%% Seminar Track — 8-Stage Workflow (S1 → S8)
+%% Source: Seminar_Guide.docx.pdf §2 + Workflow_Briefing slide 3
+%% Owner: Member D — Lưu Ngô Quốc Bảo
+%% Last updated: 2026-06-05
+
+flowchart LR
+    S1["S1<br/>Tool Survey<br/>& Proposal<br/><i>team</i>"]:::stagePending
+    S2{"S2<br/>Instructor<br/>Approval<br/><i>≤ 2 days</i>"}:::decision
+    S3["S3<br/>Deep Study<br/>+ EShop<br/><i>1–2 wk</i>"]:::stagePending
+    S4["S4<br/>User Guide<br/>+ Screencast<br/><i>≥ 6 sections</i>"]:::stagePending
+    S5["S5<br/>Pre-share<br/><i>≥ 3 days early</i>"]:::stagePending
+    S6["S6<br/>Live Seminar<br/><i>45 min</i>"]:::stageLive
+    S7["S7<br/>Audience<br/>Feedback"]:::stagePending
+    S8["S8<br/>AI Audit<br/>+ Reflection<br/><i>≤ 5 days after</i>"]:::stagePending
+    RECLAIM[["RECLAIM:<br/>pick a new angle"]]:::reclaim
+
+    S1 --> S2
+    S2 -- APPROVED --> S3
+    S2 -- MINOR-CHANGE --> S3
+    S2 -- RECLAIM --> RECLAIM
+    RECLAIM -.->|max 2 iterations| S1
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+    S6 --> S7
+    S7 --> S8
+
+    classDef stagePending fill:#E8F0FE,stroke:#1A4480,color:#1A4480,stroke-width:1px;
+    classDef stageLive fill:#FCE8E6,stroke:#C5221F,color:#C5221F,stroke-width:2px;
+    classDef decision fill:#FFF6D9,stroke:#B26A00,color:#B26A00,stroke-width:1px;
+    classDef reclaim fill:#FFCDD2,stroke:#B71C1C,color:#B71C1C,stroke-width:1px;
