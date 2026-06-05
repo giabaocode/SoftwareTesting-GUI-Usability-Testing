@@ -1,7 +1,7 @@
 # [S5] Activity Worksheet — "Heuristic Showdown: Human vs AI"
 
 > **Stage**: S5 (Pre-share) — material due ≥ 3 working days before live seminar.
-> **Owner**: Member C — **Nguyễn Bình An** (team leader, audience facilitator).
+> **Owner**: **Nguyễn Bình An** (team leader, audience facilitator) — search `@BìnhAn`.
 > **Activity time-box**: 25 minutes hard stop (per Seminar Guide §6 *In-class hands-on activity*).
 > **Audience**: 4 teams × 3-4 students each.
 > **Required output**: this worksheet + answer key (Section 6) + facilitator script (Section 7).
@@ -14,7 +14,7 @@
 |---|---|
 | Title | **Heuristic Showdown — Human vs AI** |
 | Topic | T01 — GUI & Usability Testing |
-| SUT | EShop checkout · screen **S-03 *Coupon application*** <!-- TODO @member-C: confirm screen after S3 pilot --> |
+| SUT | EShop checkout · screen **S-03 *Coupon application*** <!-- TODO @BìnhAn: confirm screen after S3 pilot --> |
 | Tools needed by audience | Printed screenshot (PDF handout) + pen — no laptop required |
 | Tools facilitator brings | Laptop with pre-generated Claude vision report (printed on slide) |
 | Duration | 25 minutes |
@@ -103,18 +103,18 @@ Each audience team should arrive having skimmed:
 ## 6. Answer Key (facilitator copy — **do NOT print for audience**)
 
 > This is what we expect a competent team to surface. The Claude vision review will be in the same shape.
-> Source: pilot run completed on <!-- TODO @member-C: fill date after S3 pilot --> by members C + B.
+> Source: pilot run completed on <!-- TODO @BìnhAn: fill date after S3 pilot --> by members C + B.
 
 ### 6.1 Plausible human findings on S-03 (Coupon application)
 
-<!-- TODO @member-C: after S3 pilot, list 5-8 real findings observed by the team. Each must include heuristic # + severity + 1 sentence rationale. Below are PLACEHOLDER examples to be replaced with real ones. -->
+<!-- TODO @BìnhAn: after S3 pilot, list 5-8 real findings observed by the team. Each must include heuristic # + severity + 1 sentence rationale. Below are PLACEHOLDER examples to be replaced with real ones. -->
 
 1. **H1 Visibility of system status** — *no spinner while coupon validates* — **minor** — users click apply twice and submit two coupons.
 2. **H2 Match between system and real world** — *label "Promo code" but error message says "voucher invalid"* — **minor**.
 3. **H5 Error prevention** — *apply button is enabled with empty input* — **major** — fires an unnecessary network call.
 4. **H9 Help users recognise, diagnose, and recover from errors** — *error message "Invalid"* gives no recovery hint — **major**.
 5. **H7 Flexibility and efficiency** — *coupon field is below the fold on a 13" laptop* — **minor**.
-6. <!-- TODO @member-C -->
+6. <!-- TODO @BìnhAn -->
 
 ### 6.2 What the AI tends to over-report
 - Contrast ratio of muted text (often a true positive but flagged with inflated severity).
@@ -128,7 +128,7 @@ Each audience team should arrive having skimmed:
 
 ## 7. Facilitator Script
 
-> **Owner**: Member C — Nguyễn Bình An. Member D keeps the time.
+> **Owner**: Nguyễn Bình An. Lưu Ngô Quốc Bảo keeps the time.
 
 ### 7.1 t = -5:00 (5 min before start)
 - Print 4 copies of §4 worksheet + 4 copies of §8 cheat-sheet.
@@ -178,8 +178,8 @@ A peer team must be able to **run this entire activity** in ≤ 25 minutes using
 
 If they cannot, this worksheet fails the rubric (Workflow_Briefing slide 10, pitfall #5).
 
-<!-- TODO @member-C: pilot the worksheet with one classmate from a different topic team before final submission. Note findings here. -->
+<!-- TODO @BìnhAn: pilot the worksheet with one classmate from a different topic team before final submission. Note findings here. -->
 
 ---
 
-*Last updated: 2026-06-05 · Skeleton v0.1.0 · Owner: Member C (Nguyễn Bình An, team leader)*
+*Last updated: 2026-06-05 · Skeleton v0.1.0 · Owner: Nguyễn Bình An (team leader)*

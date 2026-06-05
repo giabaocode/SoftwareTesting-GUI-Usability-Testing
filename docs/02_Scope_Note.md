@@ -1,7 +1,7 @@
 # [S2] Scope Note — for Instructor Review
 
 > **Stage**: S2 (Instructor / TA review & approval)
-> **Owner**: Member B — Lee Kun Da
+> **Owner**: Lee Kun Da — search `@KunDa`
 > **Purpose**: This is the companion to [`01_Tool_Survey_Proposal.md`](01_Tool_Survey_Proposal.md). It pins down exactly what we will and will not do, so the instructor can give a verdict (APPROVED / MINOR-CHANGE / RECLAIM) in under 2 working days.
 
 ---
@@ -27,7 +27,7 @@ Only the EShop **checkout flow**, defined as the following 5 screens:
 
 ### 1.3 Audience activity scope
 - **"Heuristic Showdown — Human vs AI"** on a single screen (S-03 *Coupon application* recommended — highest signal-to-noise for usability defects).
-- Time-box: 25 minutes hard stop. <!-- TODO @member-C: confirm screen choice after running pilot — could be S-02 if coupon screen too noisy -->
+- Time-box: 25 minutes hard stop. <!-- TODO @BìnhAn: confirm screen choice after running pilot — could be S-02 if coupon screen too noisy -->
 
 ---
 
@@ -58,7 +58,7 @@ This is the bar against which we should be evaluated:
 
 ## 4. Open Questions for Instructor (Stage S2 input)
 
-> **Member B — please collect instructor verdict per row at the draft-review session.**
+> **Kun Da — please collect instructor verdict per row at the draft-review session.**
 
 | # | Question | Why we're asking | Instructor verdict |
 |---|---|---|---|
@@ -68,7 +68,7 @@ This is the bar against which we should be evaluated:
 | Q4 | The Maze **Free** tier limits us to **1 study/month + 5 seats** (verified on maze.co/pricing 2026-06-05). We plan to bundle all 5 EShop screen tasks into a single study to fit within this limit. Is that acceptable, or do you want us to pay for Starter (US$99/mo)? Note: Starter has the same 1-study/month limit — it only unlocks the unmoderated toolkit and screen recording. | Cost / licence awareness criterion in §6 *Tool survey*. | _TBD_ |
 | Q5 | Will the **EShop staging URL** be the same one used by other teams (T2 Playwright, T6 Postman), or do we get a dedicated instance? | Affects environment stability during demo. | _TBD_ |
 
-<!-- TODO @member-B: after S2 review, replace _TBD_ with the verdict and update [01_Tool_Survey_Proposal.md] if needed -->
+<!-- TODO @KunDa: after S2 review, replace _TBD_ with the verdict and update [01_Tool_Survey_Proposal.md] if needed -->
 
 ---
 
@@ -82,4 +82,4 @@ Per Seminar Guide §2.1 *"Teams may iterate at most twice"* on S1/S2:
 
 ---
 
-*Last updated: 2026-06-05 · Draft v0.1.0 · Owner: Member B (Lee Kun Da)*
+*Last updated: 2026-06-05 · Draft v0.1.0 · Owner: Lee Kun Da*

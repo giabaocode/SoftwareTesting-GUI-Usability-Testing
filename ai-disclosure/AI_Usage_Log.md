@@ -1,6 +1,6 @@
 # AI Usage Log — T01 GUI & Usability Testing Seminar
 
-> **Custodian**: Member A — Phạm Ngọc Gia Bảo
+> **Custodian**: Phạm Ngọc Gia Bảo
 > **Append-only**: every team member must add an entry **before** committing any AI-assisted artefact.
 > **Why this file exists**: Seminar Guide §7 *AI Policy* + Workflow_Briefing slide 10 pitfall #1 — *"Copy-pasting AI output unedited"* triggers an auto-penalty. This log proves the human-review step happened.
 
