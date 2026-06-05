@@ -75,12 +75,11 @@ The Seminar Track requires one traditional tool + one AI tool in every live demo
 
 | Role | Member | GitHub |
 |---|---|---|
-| **C** — **Team leader** · Claude-vision demoer (AI tool) · audience activity facilitator | **Nguyễn Bình An** | _add username_ |
-| **A** — Presenter · Tool Survey Proposal owner · AI disclosure custodian | Phạm Ngọc Gia Bảo | _add username_ |
-| **B** — Maze demoer (traditional tool) · Installation & First-Test docs | Lee Kun Da | _add username_ |
-| **D** — Timekeeper · Failure-Modes researcher · Slides outline owner | Lưu Ngô Quốc Bảo | _add username_ |
+| **C** — **Team leader** · Claude-vision demoer (AI tool) · audience activity facilitator | **Nguyễn Bình An** | [@CATO-OTAC](https://github.com/CATO-OTAC) |
+| **A** — Presenter · Tool Survey Proposal owner · AI disclosure custodian | Phạm Ngọc Gia Bảo | [@giabaocode](https://github.com/giabaocode) |
+| **B** — Maze demoer (traditional tool) · Installation & First-Test docs | Lee Kun Da | [@0769776209](https://github.com/0769776209) |
+| **D** — Timekeeper · Failure-Modes researcher · Slides outline owner | Lưu Ngô Quốc Bảo | [@BaoBeiii](https://github.com/BaoBeiii) |
 
-> GitHub usernames to be added once the repo is initialized and all members are added as collaborators.
 > Decisions are made jointly; the team leader has the casting vote when consensus is not reached.
 
 ---
