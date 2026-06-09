@@ -54,18 +54,6 @@ Thang điểm: ★☆☆☆☆ (kém) → ★★★★★ (xuất sắc).
 
 ---
 
-## 5. Rủi ro & Giảm thiểu
-
-| Rủi ro | Khả năng | Phương án giảm thiểu |
-|---|---|---|
-| **Maze free tier giới hạn 1 study/tháng** — không launch được study thứ 2 nếu cái đầu hỏng giữa tháng | Trung bình | Coi toàn bộ EShop checkout là **1 Maze study với 5 task** (mỗi task = 1 màn hình S-01 → S-05) chứ không phải 5 study riêng. Build + QA study trước trong private rồi mới gửi link. |
-| Claude vision bị rate-limit giữa demo | Trung bình | Pre-generate AI heuristic report trước, replay trên slide; chỉ show 1 lần *live* fresh-screenshot review để có authenticity. |
-| EShop staging không hoạt động vào ngày demo | Thấp | Có sẵn local mock build + screencast backup (theo Workflow_Briefing slide 7 *"have a backup recording ready"*). |
-| Audience không kịp hoàn thành activity trong 25 phút | Trung bình | Worksheet in sẵn timebox; facilitator hard-stop ở mốc 0:18. Xem [Activity Worksheet](04_Activity_Worksheet.md). |
-| Hotjar backup không dùng được (cần live deploy không có) | Trung bình | Nếu slot Maze study bị "đốt", phương án dự phòng là đăng ký tài khoản Maze mới để có thêm 1 slot Free study khác. |
-
----
-
 ## 6. AI Disclosure (yêu cầu Stage S1)
 
 | Tool AI đã dùng | Mục đích | Đã cross-check những gì |
