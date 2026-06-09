@@ -54,7 +54,7 @@ Thang điểm: ★☆☆☆☆ (kém) → ★★★★★ (xuất sắc).
 
 ---
 
-## 6. AI Disclosure (yêu cầu Stage S1)
+## 5. AI Disclosure (yêu cầu Stage S1)
 
 | Tool AI đã dùng | Mục đích | Đã cross-check những gì |
 |---|---|---|
