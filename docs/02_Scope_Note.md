@@ -63,7 +63,7 @@ Chỉ làm **luồng checkout** của EShop, gồm 5 màn hình sau:
 | # | Câu hỏi | Lý do hỏi | Verdict |
 |---|---|---|---|
 | Q1 | Subset *checkout* EShop (5 màn hình) đã đủ scope SUT chưa, hay thầy muốn nhóm thêm account/order-history? | Cần lock SUT trước khi build Maze study. | _TBD_ |
-| Q2 | Thầy chấp nhận **Claude vision** làm AI-augmented tool, hay nhóm nên thêm 1 AI tool nữa (vd UXTweak AI) để củng cố AI angle? | Rule of pairing yêu cầu ≥ 1 AI tool — nhưng nhiều hơn có thể được điểm cao hơn ở §6 *Depth of study*. | _TBD_ |
+| Q2 | Thầy chấp nhận **Claude vision** làm AI-augmented tool, hay nhóm nên thêm 1 AI tool khác để củng cố AI angle? | Rule of pairing yêu cầu ≥ 1 AI tool — nhưng nhiều hơn có thể được điểm cao hơn ở §6 *Depth of study*. | _TBD_ |
 | Q3 | Màn hình **S-03 *Coupon application*** có phải target đúng cho activity không, hay thầy gợi ý màn hình EShop khác? | Ảnh hưởng tới thiết kế worksheet ở Stage S5. | _TBD_ |
 | Q4 | Maze tier **Free** giới hạn nhóm chỉ **1 study/tháng + 5 seats** (verified trên maze.co/pricing 2026-06-05). Nhóm dự định gói tất cả 5 task EShop vào 1 study duy nhất để vừa giới hạn. Phương án này có ổn không, hay thầy muốn nhóm trả Starter (US$99/tháng)? Lưu ý: Starter vẫn chỉ cho 1 study/tháng — chỉ mở khoá unmoderated toolkit và screen recording. | Tiêu chí cost / licence awareness ở §6 *Tool survey*. | _TBD_ |
 | Q5 | URL EShop staging có chung với các team khác (T2 Playwright, T6 Postman) không, hay nhóm được instance riêng? | Ảnh hưởng tới độ ổn định environment lúc demo. | _TBD_ |
@@ -78,7 +78,7 @@ Theo Seminar Guide §2.1 *"Teams may iterate at most twice"* trên S1/S2:
 
 - **Iteration 1**: draft này (submit 2026-06-05 cho review 2026-06-06).
 - **Iteration 2** (nếu MINOR-CHANGE): nhóm revise trong 24 giờ và chuyển sang S3 không cần họp lại.
-- **Worst case (RECLAIM)**: fallback sang cặp **Hotjar + UXTweak AI** đã có comparison matrix sẵn trong Proposal §3.
+- **Worst case (RECLAIM)**: Chuẩn bị một đề xuất dự phòng với cặp công cụ khác theo yêu cầu của giảng viên.
 
 ---
 

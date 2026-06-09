@@ -18,13 +18,11 @@
 
 ## 2. Các Tool ứng viên (yêu cầu ≥ 3 tool)
 
-| # | Tool | Loại | Licence / Chi phí (verified 2026-06-05) |
-|---|---|---|---|
-| C1 | **Maze** | Traditional — remote unmoderated usability testing | **Free**: 1 study/tháng, 5 seats, essential prototype testing + surveys. **Starter**: US$99/tháng (vẫn giới hạn 1 study/tháng nhưng mở khoá unmoderated toolkit, screen recording). **Enterprise**: custom. |
-| C2 | **Claude (vision)** | AI-augmented — multimodal heuristic reviewer | **Free**: chat trên web/desktop với vision, search, MCP. **Pro**: US$17/tháng nếu trả năm (US$20 nếu trả tháng). **Max**: từ US$100/tháng (usage 5×–20× Pro). |
-| C3 | **Hotjar** | Backup — session recording, heatmap, survey | **Free forever**: 200 000 sessions/tháng, 1 project, replay + heatmap + funnel + basic survey. **Growth**: từ US$39/tháng. |
-| C4 (alt) | BrowserStack Live | Alt traditional — cross-browser exploratory | **Không có free tier vĩnh viễn.** Live Team: US$30/user/tháng × tối thiểu 5 user = **US$150/tháng (trả năm)**. Team Ultimate (có AI agent): US$375/tháng. |
-| C5 (alt) | UXTweak AI | Alt AI-augmented — heatmap interpretation, draft report | **Free**: 1 user, 15 responses/tháng, 1 concurrent study, **truy cập kết quả 14 ngày**. **Business**: €92/tháng (trả năm). |
+| # | Tool | Loại / Vai trò |
+|---|---|---|
+| C1 | **Maze** | Traditional (Truyền thống) — Cho người dùng thật test thử các nhiệm vụ trên thiết kế. |
+| C2 | **Claude (vision)** | AI-augmented (Ứng dụng AI) — Dùng trí tuệ nhân tạo để xem và đánh giá nhanh giao diện qua ảnh chụp. |
+| C3 | **Hotjar** | Backup (Dự phòng) — Ghi hình thao tác và vẽ bản đồ nhiệt (heatmap) khi web chạy thật. |
 
 ---
 
@@ -32,16 +30,16 @@
 
 Thang điểm: ★☆☆☆☆ (kém) → ★★★★★ (xuất sắc).
 
-| Tiêu chí | Maze | Claude (vision) | Hotjar | BrowserStack | UXTweak AI |
-|---|---|---|---|---|---|
-| **Licence cost** | ★★★☆☆ free 1 study/tháng + 5 seats — vừa đủ nếu gói 5 task vào 1 study | ★★★★☆ free tier đủ cho ~10 lần review vision; Pro $17/tháng nếu cần backup | ★★★★★ free forever, 200k sessions/tháng — nhưng chỉ có giá trị nếu SUT đang deploy public | ★☆☆☆☆ không có free vĩnh viễn; tối thiểu $150/tháng = phá ngân sách sinh viên | ★★☆☆☆ free 15 responses/tháng nhưng chỉ giữ kết quả 14 ngày |
-| **Learning curve** | ★★★★☆ drag-and-drop builder cho study | ★★★★★ chat interface, không cần install | ★★★☆☆ phải cài JS tag lên SUT | ★★★☆☆ live VM session — cần plan scenario | ★★★☆☆ ít documentation ngoài vendor docs |
-| **EShop fit** | ★★★★★ task-based study khớp với luồng Cart→Coupon→Pay | ★★★★★ checkout screen tĩnh — lý tưởng cho screenshot review | ★★★☆☆ cần deploy live để capture session thật (SUT của course không có) | ★★★☆☆ tốt cho cross-device nhưng không phải cho heuristic usability | ★★★☆☆ overlap với Maze, không có lợi thế riêng |
-| **AI capability** | ★★☆☆☆ AI summary cơ bản, full AI feature khoá ở Enterprise | ★★★★★ vision multimodal đầy đủ, reasoning theo Nielsen-10 | ★★★☆☆ AI clustering theme từ feedback | ★★★☆☆ AI agent (test-case gen, proofreader) nhưng chỉ ở Team Ultimate | ★★★★☆ AI heatmap interpretation có ở free tier |
-| **Community** | ★★★★☆ Discord active, ~700 GH stars cho unofficial plugin | ★★★★★ ecosystem developer rộng, MCP integration | ★★★★★ analytics chuẩn công nghiệp | ★★★★☆ community thiên về enterprise | ★★☆☆☆ community nhỏ ở Đông Âu |
+| Tiêu chí | Maze | Claude (vision) | Hotjar |
+|---|---|---|---|
+| **Chi phí bản quyền**<br/>*(Licence cost)* | ★★★☆☆ Bản Free đủ dùng nếu gom nhiều bước vào 1 bài test (1 study). | ★★★★☆ Free: chat trên web/desktop với vision. Pro: US$20 / tháng | ★★★★★ Free forever: 200 000 sessions/tháng, 1 project, replay + heatmap + funnel + basic survey. Growth: từ US$39/tháng. |
+| **Độ dễ sử dụng**<br/>*(Learning curve)* | ★★★★☆ Giao diện kéo thả dễ làm quen, mất tầm 15-30 phút tự học. | ★★★★★ Cực kỳ dễ, chỉ cần chat bằng ngôn ngữ tự nhiên và gửi ảnh lên. | ★★★☆☆ Khá phức tạp, cần biết cách nhúng đoạn mã JavaScript vào trang web. |
+| **Mức độ phù hợp**<br/>*(EShop fit)* | ★★★★★ Hoạt động được ngay trên bản vẽ mô phỏng (prototype) hoặc trang web chạy nội bộ (local). | ★★★★★ Rất dễ dàng, chỉ cần chụp ảnh màn hình giao diện cần test để phân tích. | ★★★☆☆ Rất khó triển khai vì bắt buộc phải sửa mã nguồn trang web để nhúng code theo dõi. |
+| **Khả năng ứng dụng AI**<br/>*(AI capability)* | ★★☆☆☆ Khá hạn chế ở bản Free, tính năng tóm tắt bằng AI bị khóa ở bản trả phí. | ★★★★★ Rất mạnh, nhận diện được chữ/ảnh và đánh giá chuẩn theo 10 nguyên lý Nielsen. | ★★★☆☆ AI hỗ trợ phân tích và nhóm các phản hồi của người dùng. |
+| **Cộng đồng hỗ trợ**<br/>*(Community)* | ★★★★☆ Kênh Discord hoạt động sôi nổi, nhiều tài liệu hướng dẫn trên mạng. | ★★★★★ Cộng đồng lập trình viên và người dùng AI khổng lồ trên toàn thế giới. | ★★★★★ Công cụ chuẩn công nghiệp cực kỳ phổ biến trong phân tích web. |
 
 > Nguồn cross-check: screenshot trang pricing chụp ngày 2026-06-05 (lưu tại `ai-disclosure/screenshots/pricing/`):
-> [maze.co/pricing](https://maze.co/pricing) · [claude.ai/pricing](https://claude.ai/pricing) · [hotjar.com/pricing](https://www.hotjar.com/pricing) · [browserstack.com/pricing](https://www.browserstack.com/pricing) · [uxtweak.com/pricing](https://www.uxtweak.com/pricing). Nội dung về heuristic cross-check với bài NN/g 2024 "Can AI replace usability testers?" (cited trong T01 brief §5).
+> [maze.co/pricing](https://maze.co/pricing) · [claude.ai/pricing](https://claude.ai/pricing) · [hotjar.com/pricing](https://www.hotjar.com/pricing). Nội dung về heuristic cross-check với bài NN/g 2024 "Can AI replace usability testers?" (cited trong T01 brief §5).
 
 ---
 
@@ -50,9 +48,9 @@ Thang điểm: ★☆☆☆☆ (kém) → ★★★★★ (xuất sắc).
 > **Pick**: **Maze (traditional) + Claude vision (AI-augmented)**.
 > Backup giữ lại: **Hotjar**.
 
-1. **Khớp với những gì T01 brief đã yêu cầu.** Milestone M1 ở T01 §6 ghi rõ *"Install Maze trial; build 3 EShop task flows"* và §4 liệt kê *"ChatGPT / Claude vision"* làm ví dụ AI tool. In-class activity ở §7, *Heuristic Showdown — Human vs AI*, cũng được thiết kế cho đúng cặp này. Chọn cặp này giảm rủi ro nhận verdict RECLAIM ở S2.
-2. **Hợp với SUT EShop và time-box.** Maze chạy được task flow mà không cần production site, Claude review screenshot tĩnh trong vài giây. Cả hai đều có free tier đủ dùng trong 4 tuần. Mỗi tool tạo ra artefact đưa lên slide được: heatmap PNG từ Maze, heuristic report Markdown từ Claude.
-3. **Câu chuyện Rule of Pairing rõ ràng.** Maze cho số liệu (task success, time-on-task). Claude cho heuristic finding bằng chữ. Hai output không overlap, nên demo 10 phút show được cả hai. Hai output cũng gặp nhau ở phần so sánh severity human-vs-AI mà T01 §7 yêu cầu.
+1. **Khớp với yêu cầu môn học & Tính khả thi**: Cặp đôi Maze + Claude đáp ứng đúng tiêu chuẩn ghép cặp (Traditional + AI). Maze chạy trực tiếp trên thiết kế mô phỏng (prototype) mà không cần can thiệp mã nguồn, còn Claude giúp đánh giá nhanh qua ảnh chụp màn hình.
+2. **Maze có giao diện kéo thả trực quan**: Giúp nhóm dễ dàng xây dựng các nhiệm vụ kiểm thử (tasks) và bài khảo sát cho người dùng mà không yêu cầu kỹ năng kỹ thuật phức tạp.
+3. **Tận dụng tài nguyên sẵn có**: Các thành viên trong nhóm đều đã có sẵn tài khoản Claude, giúp triển khai ngay lập tức, tiết kiệm thời gian thiết lập và tối ưu hóa lượt dùng.
 
 ---
 
@@ -64,7 +62,7 @@ Thang điểm: ★☆☆☆☆ (kém) → ★★★★★ (xuất sắc).
 | Claude vision bị rate-limit giữa demo | Trung bình | Pre-generate AI heuristic report trước, replay trên slide; chỉ show 1 lần *live* fresh-screenshot review để có authenticity. |
 | EShop staging không hoạt động vào ngày demo | Thấp | Có sẵn local mock build + screencast backup (theo Workflow_Briefing slide 7 *"have a backup recording ready"*). |
 | Audience không kịp hoàn thành activity trong 25 phút | Trung bình | Worksheet in sẵn timebox; facilitator hard-stop ở mốc 0:18. Xem [Activity Worksheet](04_Activity_Worksheet.md). |
-| Hotjar backup không dùng được (cần live deploy không có) | Trung bình | Nếu slot Maze study bị "đốt", fallback sang **UXTweak AI free** cho 15 responses — chấp nhận giới hạn 14 ngày giữ kết quả. Không khuyến nghị BrowserStack/Hotjar làm fallback cho usability heuristic (không hợp scope). |
+| Hotjar backup không dùng được (cần live deploy không có) | Trung bình | Nếu slot Maze study bị "đốt", phương án dự phòng là đăng ký tài khoản Maze mới để có thêm 1 slot Free study khác. |
 
 ---
 
