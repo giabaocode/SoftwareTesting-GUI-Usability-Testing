@@ -65,7 +65,7 @@ Thang điểm: ★☆☆☆☆ (kém) → ★★★★★ (xuất sắc).
 
 ---
 
-## 7. Bước tiếp theo (sau khi được instructor duyệt)
+## 6. Bước tiếp theo (sau khi được instructor duyệt)
 
 1. Lock scope theo [Scope Note](02_Scope_Note.md).
 2. Chuyển sang Stage S3 — install Maze, chạy hello-world study, render Claude vision review đầu tiên.
