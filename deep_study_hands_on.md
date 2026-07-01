@@ -8,80 +8,64 @@
 ---
 
 ## I. Tóm tắt (Executive Summary)
-*Tóm tắt ngắn gọn toàn bộ báo cáo: Đã nghiên cứu gì, đã thực hành làm được gì và kết quả cuối cùng ra sao.*
+*Tóm tắt ngắn gọn toàn bộ báo cáo: Đã nghiên cứu gì, đã thực hành làm được gì cho cả UI và Usability testing, và kết quả chung ra sao.*
 
 ---
 
-## II. Cơ sở lý thuyết / Nghiên cứu sâu (Deep Study / Theoretical Background)
+## II. PHẦN 1: UI TESTING (Kiểm thử Giao diện Người dùng)
 
-### 1. Kiến trúc cốt lõi (Core Architecture/Concepts)
-*Đi sâu vào các khái niệm nền tảng của công nghệ đã chọn.*
+### 1. Cơ sở lý thuyết / Nghiên cứu sâu (Deep Study)
+* Khái niệm cốt lõi, best practices về UI Testing.
+* Nguyên lý hoạt động của framework UI testing đã chọn.
 
-### 2. Nguyên lý hoạt động (How it works)
-*Trình bày luồng dữ liệu, cách các thành phần tương tác với nhau.*
+### 2. Quá trình thực hành thực tế (Hands-on Practice)
+* **Chuẩn bị môi trường:** Setup framework, trình duyệt, test data.
+* **Các bước thực hiện:**
+    * Bước 1: Viết test script cho luồng A.
+    * Bước 2: Chạy test và thu thập log.
+* **Tích hợp:** Tích hợp vào pipeline CI/CD (nếu có).
 
-### 3. Các kỹ thuật nâng cao (Advanced Techniques)
-*Nghiên cứu sâu về bảo mật, tối ưu hóa hiệu năng, pattern... (nếu có).*
+### 3. Kết quả đạt được & Đánh giá (Results & Evaluation)
+* Ảnh chụp màn hình test report (pass/fail).
+* Đánh giá xem UI có hoạt động chính xác theo thiết kế và yêu cầu chức năng không.
 
-*(Nên chèn thêm các sơ đồ như Flowchart, Sequence Diagram, Architecture Diagram vào đây).*
-
----
-
-## III. Quá trình thực hành thực tế (Hands-on Practice / Implementation)
-
-### 1. Chuẩn bị môi trường (Environment Setup)
-*Các công cụ, thư viện, version, cấu hình phần cứng/mạng đã sử dụng.*
-
-### 2. Các bước triển khai chi tiết (Implementation Steps)
-
-#### Bước 1: [Tên bước 1 - Ví dụ: Khởi tạo project]
-*Mô tả chi tiết, đi kèm hình ảnh chụp màn hình terminal hoặc code snippets quan trọng.*
-```bash
-# Code ví dụ
-npm install
-```
-
-#### Bước 2: [Tên bước 2 - Ví dụ: Xây dựng core logic]
-*Giải thích một đoạn code phức tạp tự viết.*
-
-### 3. Tích hợp & Kiểm thử (Integration & Testing)
-*Đã test sản phẩm như thế nào? (Unit test, Integration test, Manual test...).*
+### 4. Khó khăn và Hướng giải quyết (Troubleshooting)
+* Vấn đề kỹ thuật gặp phải khi chạy UI test (ví dụ: selector thay đổi, timeout...) và cách khắc phục.
 
 ---
 
-## IV. Kết quả đạt được (Results & Outcomes)
+## III. PHẦN 2: USABILITY TESTING (Kiểm thử Tính Khả dụng)
 
-### 1. Sản phẩm cuối cùng
-*Hình ảnh giao diện người dùng (UI), kết quả in ra màn hình console, biểu đồ, hoặc demo link.*
+### 1. Cơ sở lý thuyết / Nghiên cứu sâu (Deep Study)
+* Các nguyên tắc heuristic trong Usability, tâm lý người dùng.
+* Cách thiết kế kịch bản Usability Test chuẩn.
 
-### 2. Đánh giá kết quả
-*Sản phẩm có đáp ứng được mục tiêu đề ra ở phần Topic Claim không? Đạt được bao nhiêu %?*
+### 2. Quá trình thực hành thực tế (Hands-on Practice)
+* **Chuẩn bị:** Lên kịch bản test (Task scenarios), chọn và mời nhóm người dùng mục tiêu (Participants).
+* **Tiến hành test:** 
+    * Thu thập dữ liệu định lượng (thời gian hoàn thành task, tỷ lệ lỗi, success rate).
+    * Thu thập dữ liệu định tính (phỏng vấn, quan sát cảm xúc, feedback).
 
----
+### 3. Kết quả đạt được & Đánh giá (Results & Evaluation)
+* Tổng hợp các điểm nghẽn (pain points) mà người dùng gặp phải trong luồng thao tác.
+* Biểu đồ phân tích (ví dụ: heatmap), kết quả bảng khảo sát (như SUS score) nếu có.
 
-## V. Khó khăn và Hướng giải quyết (Challenges & Troubleshooting)
-
-### 1. Vấn đề 1: [Tên lỗi/Khó khăn]
-- **Mô tả:** ...
-- **Cách giải quyết:** *(Trình bày cách tư duy, tìm kiếm tài liệu và sửa lỗi)*
-
-### 2. Vấn đề 2: [Tên lỗi/Khó khăn]
-- **Mô tả:** ...
-- **Cách giải quyết:** ...
-
----
-
-## VI. Kết luận và Hướng phát triển (Conclusion & Future Work)
-
-### 1. Kết luận
-*Bài học kinh nghiệm rút ra được sau quá trình Deep study & Hands-on.*
-
-### 2. Hướng phát triển
-*Nếu có thêm thời gian, nhóm sẽ nâng cấp thêm tính năng gì hoặc tối ưu cái gì.*
+### 4. Khó khăn và Hướng giải quyết (Troubleshooting)
+* Khó khăn trong việc tìm kiếm người test phù hợp, môi trường test, hoặc cách phân tích dữ liệu nhiễu.
 
 ---
 
-## VII. Tài liệu tham khảo (References)
-- [1] Link Github project
-- [2] Docs của thư viện - Link
-- [3] Tutorial đã học - Link
+## IV. Kết luận và Hướng phát triển (Conclusion & Future Work)
+
+### 1. Kết luận chung
+*Bài học kinh nghiệm rút ra từ việc kết hợp cả hai phương pháp UI Test (chức năng bề mặt) và Usability Test (trải nghiệm).*
+
+### 2. Đề xuất cải tiến (Actionable Recommendations)
+*Dựa trên kết quả test của cả 2 phần, đề xuất các sửa đổi cụ thể cho UI/UX của sản phẩm/ứng dụng.*
+
+---
+
+## V. Tài liệu tham khảo (References)
+- [1] Link Github project / Test scripts
+- [2] Docs của công cụ - Link
+- [3] Các tài liệu nghiên cứu về Usability - Link
