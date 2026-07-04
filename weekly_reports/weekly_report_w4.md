@@ -15,7 +15,12 @@
 - **Evidence:** 
 ![alt text](image.png)
 
-### [Mã số SV 2] – [Họ và Tên 2]
+### 23127327 - Lưu Ngô Quốc Bảo
+- **Task 1:** Viết phần UI Testing (Section II) cho `deep_study_hands_on.md` — lý thuyết Manual UI Testing + Claude Vision, hands-on, kết quả, troubleshooting
+- **Task 2:** Điền AI Usage Declaration và tạo AI Usage Log
+- **Evidence:** Commit history trên branch `docs`; [`ai-disclosure/AI_Usage_Log.md`](../ai-disclosure/AI_Usage_Log.md)
+
+### [Mã số SV 3] – [Họ và Tên 3]
 - **Task 1:** [Mô tả công việc 1]
 - **Task 2:** [Mô tả công việc 2]
 - **Evidence:** [Link tới Jira task, tài liệu output, hoặc minh chứng liên quan]
@@ -27,12 +32,10 @@
 ## 3. AI Usage Declaration
 *Mô tả cách nhóm bạn sử dụng các công cụ AI trong tuần này (nếu có).*
 
-### Deep study hands-on
+### Deep study hands-on - Lưu Ngô Quốc Bảo
 - **Công cụ đã dùng:** Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
 - **Mục đích sử dụng:** Hỗ trợ gợi ý nội dung, cấu trúc bài viết cho phần UI Testing trong `DeepStudyHandsOn.md` (Manual UI Testing + Claude Vision UI Review)
 
-### Topic claim tool survey
-- **Công cụ đã dùng:** Gemini, ChatGPT
 ### Tool_Survey_Proposal - Lee Kun Da
 - **Công cụ đã dùng:** Claude, ChatGPT
 - **Mục đích sử dụng:** hỗ trợ tìm hiểu các tool, so sánh các tool

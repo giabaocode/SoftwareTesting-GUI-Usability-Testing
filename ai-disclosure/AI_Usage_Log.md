@@ -46,4 +46,16 @@
 - **Tóm tắt prompt**: Yêu cầu thêm kế hoạch điền AI usage, thêm mô tả prompt/response/timestamp, copy log sang AI_Usage_Log.md, xoá log trùng lặp trong weekly report
 - **Tóm tắt response**: AI cập nhật plan, điền AI Usage Declaration với bảng log chi tiết, tạo file AI_Usage_Log.md tổng hợp, dọn dẹp weekly report
 
+### 2026-7-4 · Lưu Ngô Quốc Bảo
+- **Tool AI**: Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
+- **Mục đích**: Xoá log trùng lặp trong weekly report, chuyển log sang format mới trong AI_Usage_Log.md
+- **Tóm tắt prompt**: Xoá bảng log chi tiết trong weekly report (đã có trong AI Usage Log), chuyển log vào chỗ Lưu Ngô Quốc Bảo theo format entry mới sau khi pull
+- **Tóm tắt response**: AI xoá bảng log khỏi weekly report thay bằng link tham chiếu, điền 2 entries vào placeholder Lưu Ngô Quốc Bảo theo đúng format
+
+### 2026-7-4 · Lưu Ngô Quốc Bảo
+- **Tool AI**: Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
+- **Mục đích**: Điền phần Tasks Completed This Week trong weekly report và cập nhật AI Usage Log
+- **Tóm tắt prompt**: Điền task completed cho 23127327 - Lưu Ngô Quốc Bảo, sau đó cập nhật AI usage log
+- **Tóm tắt response**: AI điền thông tin (Task 1: viết UI Testing, Task 2: điền AI Usage) và cập nhật log với các entries mới
+
 ---
