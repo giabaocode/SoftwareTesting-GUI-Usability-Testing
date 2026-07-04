@@ -47,9 +47,7 @@
 
 ## PHẦN 2: USABILITY TESTING (Kiểm thử Tính Khả dụng)
 
-### 1. Khảo sát các phương pháp / công cụ (Method/Tool Survey)
-*Liệt kê và phân tích các công cụ hỗ trợ Usability Testing cho luồng checkout của EShop.*
-
+### 1. Khảo sát các công cụ
 #### 1.1 Maze
 - **Giới thiệu tổng quan:** Maze là nền tảng nghiên cứu sản phẩm (product research) cho phép thực hiện usability test dạng unmoderated trên prototype hoặc website thực. Maze hỗ trợ nhiều phương pháp: prototype testing (Figma, Adobe XD, Sketch), live website testing, card sorting, tree testing, survey và moderated interview. Maze có tích hợp AI (Maze AI) để tự động tạo báo cáo và phân tích phản hồi mở.
 - **Ưu điểm (Pros):**
@@ -80,7 +78,7 @@
   - Prototype phức tạp, nặng có thể gặp vấn đề performance khi test
 - **Use-case phù hợp:** Phù hợp khi cần kết hợp nhiều phương pháp usability testing (heatmap + session replay + five-second test) để đánh giá toàn diện trải nghiệm checkout, đặc biệt khi ngân sách hạn chế.
 
-### 2. So sánh và Lựa chọn (Comparison & Selection)
+### 2. So sánh và Lựa chọn
 
 | Tiêu chí | Maze | Useberry |
 | :--- | :--- | :--- |
@@ -88,16 +86,10 @@
 | Learning Curve | Thấp — giao diện trực quan, dễ dùng ngay cả với non-researcher | Trung bình — có learning curve nhẹ ban đầu để master hết các tính năng (heatmap, session replay, five-second test) |
 | EShop Fit | Khá — task-based testing đo được completion rate và misclick trên checkout flow, nhưng thiếu heatmap và session replay | Tốt — heatmap + click map + session replay phù hợp để phân tích toàn diện luồng checkout EShop |
 | AI Capability | Có — Maze AI tự động tạo báo cáo, phân tích phản hồi mở, phát hiện pattern | Chưa có — chưa tích hợp AI, phân tích thủ công |
-| Community | Lớn — cộng đồng đông đảo, nhiều tài liệu hướng dẫn, forum hoạt động, panel 6M+ participants | Nhỏ hơn — cộng đồng đang phát triển, tài liệu ít hơn, participant pool nhỏ hơn |
+| Community | Lớn — cộng đồng đông đảo, nhiều tài liệu hướng dẫn, forum hoạt động | Nhỏ hơn — cộng đồng đang phát triển, tài liệu ít hơn, participant pool nhỏ hơn |
 
 **Quyết định lựa chọn (Final Decision):** Nhóm chọn **Maze** làm công cụ chính cho Usability Testing vì:
 1. **Không giới hạn số lượng response:** Free tier của Maze cho phép unlimited participants trong 1 study — phù hợp để test với cả lớp (~40 người), trong khi Useberry chỉ cho 10 responses/tháng.
 2. **Learning curve thấp:** Giao diện trực quan, dễ thiết lập study nhanh, không cần thời gian đào tạo cho người tham gia test.
 3. **AI tích hợp sẵn:** Maze AI tự động tạo báo cáo và phân tích phản hồi mở — bổ trợ tốt cho Claude vision (công cụ AI-augmented của nhóm).
 4. **Cộng đồng lớn:** Tài liệu hướng dẫn phong phú, panel 6M+ participants, dễ tìm support khi gặp vấn đề.
-
----
-
-## V. Tài liệu tham khảo (References)
-- [1] Tên bài báo/website/tài liệu 1 - Link
-- [2] Tên bài báo/website/tài liệu 2 - Link
