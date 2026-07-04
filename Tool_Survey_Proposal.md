@@ -4,10 +4,10 @@
 
 | Họ tên | MSSV | Phần phụ trách |
 | :--- | :--- | :--- |
-| Nguyễn Bình An |  |  |
-| Phạm Ngọc Gia Bảo |  | Tìm hiểu và hỗ trợ chọn tool Maze |
-| Lee Kun Da |  | Tìm hiểu sơ lược các tools usability test và viết report |
-| Lưu Ngô Quốc Bảo |  |  |
+| Nguyễn Bình An | 23127149 |  |
+| Phạm Ngọc Gia Bảo | 23127027 | Tìm hiểu và hỗ trợ chọn tool Maze |
+| Lee Kun Da | 23127035 | Tìm hiểu sơ lược các tools usability test và viết report |
+| Lưu Ngô Quốc Bảo | 23127327 |  |
 
 **Ngày tháng:** 3/7/2026  
 
@@ -16,32 +16,37 @@
 
 ## PHẦN 1: UI TESTING (Kiểm thử Giao diện Người dùng)
 
-### 1. Khảo sát các công cụ / công nghệ (Tool/Technology Survey)
+### 1. Khảo sát các công cụ
 *Liệt kê và phân tích các công cụ/công nghệ có thể sử dụng cho UI Testing.*
 
-#### 1.1 Công cụ/Công nghệ A
+#### 1.1 Manual UI Testing
 - **Giới thiệu tổng quan:** ...
 - **Ưu điểm (Pros):** ...
 - **Nhược điểm (Cons):** ...
 - **Use-case phù hợp:** ...
 
-#### 1.2 Công cụ/Công nghệ B
+#### 1.2 Browserstack
 - **Giới thiệu tổng quan:** ...
 - **Ưu điểm (Pros):** ...
 - **Nhược điểm (Cons):** ...
 - **Use-case phù hợp:** ...
 
-### 2. So sánh và Lựa chọn (Comparison & Selection)
+#### 1.3 Claude Vision
+- **Giới thiệu tổng quan:** ...
+- **Ưu điểm (Pros):** ...
+- **Nhược điểm (Cons):** ...
+- **Use-case phù hợp:** ...
 
-| Tiêu chí | Công cụ A | Công cụ B |
-| :--- | :--- | :--- |
-| Licence Cost | ... | ... |
-| Learning Curve | ... | ... |
-| EShop Fit | ... | ... |
-| AI Capability | ... | ... |
-| Community | ... | ... |
+### 2. Quyết định lựa chọn
 
-**Quyết định lựa chọn:** *Giải thích lý do chọn công cụ UI Testing nào.*
+| Tiêu chí | Manual UI Testing | Browserstack | Claude Vision |
+| :--- | :--- | :--- | :--- |
+| Licence Cost | ... | ... | ... |
+| Learning Curve | ... | ... | ... | 
+| EShop Fit | ... | ... | ... |
+| AI Capability | ... | ... | ... |
+| Community | ... | ... | ... |
+| Lý do | ... | ... | ... |
 
 ---
 

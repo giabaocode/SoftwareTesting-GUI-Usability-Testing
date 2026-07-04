@@ -1,4 +1,4 @@
-# Weekly Report - Week [YY]
+# Weekly Report - Week 4
 
 ## 1. General Information
 - **Group:** 3
@@ -40,7 +40,7 @@
 ### Tool_Survey_Proposal - Lee Kun Da
 - **Công cụ đã dùng:** Claude, ChatGPT
 - **Mục đích sử dụng:** hỗ trợ tìm hiểu các tool, so sánh các tool
-- **Link**:
+- **Minh chứng**:
 ![Alt text](/ai-disclosure/screenshots/Lee%20Kun%20Da/tool_survey_proposal_session_summary.png)
 ![Alt text](/ai-disclosure/screenshots/Lee%20Kun%20Da/tool_survey_proposal_session_summary1.png)
 ![Alt text](/ai-disclosure/screenshots/Lee%20Kun%20Da/tool_survey_proposal_session_summary2.png)
