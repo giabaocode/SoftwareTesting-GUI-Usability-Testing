@@ -30,27 +30,16 @@
 
 ---
 
-### 2026-MM-DD · Nguyễn Bình An 
-
+### 2026-7-4 · Nguyễn Bình An
+- **Tool AI**: Gemini
+- **Mục đích**: Tìm hiểu, so sánh các tool Phần 1 - UI Testing trong `Tool_Survey_Proposal.md` (Manual UI Testing, Browserstack, Claude Vision).
+- **Minh chứng**:
+![Alt text](/ai-disclosure/screenshots/Nguyen%20Binh%20An/tool_survey_proposal_UI_Testing1.png)
+![Alt text](/ai-disclosure/screenshots/Nguyen%20Binh%20An/tool_survey_proposal_UI_Testing2.png)
+![Alt text](/ai-disclosure/screenshots/Nguyen%20Binh%20An/tool_survey_proposal_UI_Testing3.png)
 ---
 
-### 2026-7-3 · Lưu Ngô Quốc Bảo
-- **Tool AI**: Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
-- **Mục đích**: Gợi ý nội dung, cấu trúc bài viết cho phần UI Testing trong `deep_study_hands_on.md` (Manual UI Testing + Claude Vision UI Review)
-- **Tóm tắt prompt**: Yêu cầu gợi ý viết về Manual UI Testing vào 2 file, sau đó điều chỉnh thêm Claude Vision, lập kế hoạch viết, và thực hiện viết nội dung
-- **Tóm tắt response**: AI đưa ra gợi ý cấu trúc + nội dung chi tiết, tạo implementation plan, viết Section II (UI Testing) gồm lý thuyết Manual UI Testing (7 loại kiểm tra) + Claude Vision (prompt engineering, human audit), hands-on 2 phase, bảng kết quả, troubleshooting
-
-### 2026-7-4 · Lưu Ngô Quốc Bảo
-- **Tool AI**: Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
-- **Mục đích**: Điền AI Usage Declaration vào `weekly_report_w4.md` và tạo `AI_Usage_Log.md`
-- **Tóm tắt prompt**: Yêu cầu thêm kế hoạch điền AI usage, thêm mô tả prompt/response/timestamp, copy log sang AI_Usage_Log.md, xoá log trùng lặp trong weekly report
-- **Tóm tắt response**: AI cập nhật plan, điền AI Usage Declaration với bảng log chi tiết, tạo file AI_Usage_Log.md tổng hợp, dọn dẹp weekly report
-
-### 2026-7-4 · Lưu Ngô Quốc Bảo
-- **Tool AI**: Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
-- **Mục đích**: Xoá log trùng lặp trong weekly report, chuyển log sang format mới trong AI_Usage_Log.md
-- **Tóm tắt prompt**: Xoá bảng log chi tiết trong weekly report (đã có trong AI Usage Log), chuyển log vào chỗ Lưu Ngô Quốc Bảo theo format entry mới sau khi pull
-- **Tóm tắt response**: AI xoá bảng log khỏi weekly report thay bằng link tham chiếu, điền 2 entries vào placeholder Lưu Ngô Quốc Bảo theo đúng format
+---
 
 ### 2026-7-4 · Lưu Ngô Quốc Bảo
 - **Tool AI**: Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
@@ -80,4 +69,13 @@
   ![Codex Maze session summary 1](/ai-disclosure/screenshots/PNGBAO/codex_maze_session_summary_1.png)
   ![Codex Maze session summary 2](/ai-disclosure/screenshots/PNGBAO/codex_maze_session_summary_2.png)
 
+---
+- **Tool AI**: Gemini
+- **Mục đích**: Tóm tắt lại toàn bộ nội dung và tiến trình làm việc của session hiện tại.
+- **Tóm tắt prompt**: tóm tắt lại toàn bộ session làm việc.
+- **Tóm tắt response**: AI hệ thống hóa lại toàn bộ tiến trình dưới dạng các đề mục rõ ràng, bao gồm việc chốt cặp công cụ, các nội dung đã chỉnh sửa trong deep_study_hands_on.md và weekly_report_w4.md, cũng như việc tối ưu hóa, gom gọn cấu trúc nhật ký sử dụng AI trong file AI_Usage_Log.md.
+- **Minh chứng**: 
+![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_1.png)
+![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_2.png)
+![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_3.png)
 ---
