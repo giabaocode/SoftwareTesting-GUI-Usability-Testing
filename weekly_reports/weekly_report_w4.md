@@ -18,7 +18,8 @@
 ### 23127327 - Lưu Ngô Quốc Bảo
 - **Task 1:** Viết phần UI Testing (Section II) cho `deep_study_hands_on.md` — lý thuyết Manual UI Testing + Claude Vision, hands-on, kết quả, troubleshooting
 - **Task 2:** Điền AI Usage Declaration và tạo AI Usage Log
-- **Evidence:** Commit history trên branch `docs`; [`ai-disclosure/AI_Usage_Log.md`](../ai-disclosure/AI_Usage_Log.md)
+- **Evidence:** 
+![alt text](image2.png)
 
 ### [Mã số SV 3] – [Họ và Tên 3]
 - **Task 1:** [Mô tả công việc 1]
