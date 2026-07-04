@@ -38,6 +38,9 @@
 - **Tool AI**: Gemini
 - **Mục đích**: Tóm tắt lại toàn bộ nội dung và tiến trình làm việc của session hiện tại.
 - **Tóm tắt prompt**: tóm tắt lại toàn bộ session làm việc.
-- **Tóm tắt response**: AI hệ thống hóa lại toàn bộ diễn biến theo 4 giai đoạn chính: xác định mục tiêu ban đầu, thay đổi kế hoạch phân vai, cập nhật cấu trúc file theo hướng sử dụng BrowserStack, và quy trình xử lý/tối ưu hóa dữ liệu trong file Weekly Report cùng AI Usage Log.
+- **Tóm tắt response**: AI hệ thống hóa lại toàn bộ tiến trình dưới dạng các đề mục rõ ràng, bao gồm việc chốt cặp công cụ, các nội dung đã chỉnh sửa trong deep_study_hands_on.md và weekly_report_w4.md, cũng như việc tối ưu hóa, gom gọn cấu trúc nhật ký sử dụng AI trong file AI_Usage_Log.md.
 - **Minh chứng**: 
+![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_1.png)
+![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_2.png)
+![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_3.png)
 ---

@@ -34,8 +34,12 @@
 *Mô tả cách nhóm bạn sử dụng các công cụ AI trong tuần này (nếu có).*
 
 ### Deep study hands-on - Lưu Ngô Quốc Bảo
-- **Công cụ đã dùng:** Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
-- **Mục đích sử dụng:** Hỗ trợ gợi ý nội dung, cấu trúc bài viết cho phần UI Testing trong `DeepStudyHandsOn.md` (Manual UI Testing + Claude Vision UI Review)
+- **Công cụ đã dùng:** Claude, Gemini
+- **Mục đích sử dụng:** Claude hỗ trợ gợi ý nội dung, cấu trúc bài viết cho phần UI Testing trong `DeepStudyHandsOn.md` (Manual UI Testing + Claude Vision UI Review); Gemini hỗ trợ tóm tắt toàn bộ nội dung và tiến trình làm việc của session hiện tại.
+- **Minh chứng**: 
+![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_1.png)
+![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_2.png)
+![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_3.png)
 
 ### Tool_Survey_Proposal - Lee Kun Da
 - **Công cụ đã dùng:** Claude, ChatGPT
