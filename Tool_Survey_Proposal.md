@@ -4,10 +4,10 @@
 
 | Họ tên | MSSV | Phần phụ trách |
 | :--- | :--- | :--- |
-| Nguyễn Bình An |  | Nhóm trưởng · Demoer Claude vision · Facilitator activity |
-| Phạm Ngọc Gia Bảo |  | Presenter · Owner Tool Survey Proposal · Phụ trách AI disclosure |
-| Lee Kun Da |  | Demoer Maze · Owner Installation & First-Test docs |
-| Lưu Ngô Quốc Bảo |  | Timekeeper · Owner Failure-Modes + Slides outline |
+| Nguyễn Bình An |  |  |
+| Phạm Ngọc Gia Bảo |  | Tìm hiểu và hỗ trợ chọn tool Maze |
+| Lee Kun Da |  | Tìm hiểu sơ lược các tools usability test và viết report |
+| Lưu Ngô Quốc Bảo |  |  |
 
 **Ngày tháng:** 3/7/2026  
 
