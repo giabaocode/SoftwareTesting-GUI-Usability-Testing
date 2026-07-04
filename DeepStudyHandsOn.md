@@ -3,12 +3,13 @@
 **Tên trường/tổ chức:** [Tên trường/tổ chức]  
 **Tên đề tài:** [Tên đề tài]  
 **Tên thành viên nhóm:** [Tên các thành viên]  
-**Ngày tháng:** [Ngày/Tháng/Năm]  
+**Ngày tháng:** [Ngày/Tháng/Năm]
 
 ---
 
 ## I. Tóm tắt (Executive Summary)
-*Tóm tắt ngắn gọn toàn bộ báo cáo: Đã nghiên cứu gì, đã thực hành làm được gì cho cả UI và Usability testing, và kết quả chung ra sao.*
+
+_Tóm tắt ngắn gọn toàn bộ báo cáo: Đã nghiên cứu gì, đã thực hành làm được gì cho cả UI và Usability testing, và kết quả chung ra sao._
 
 ---
 
@@ -51,13 +52,15 @@ BrowserStack là nền tảng cloud cho phép tester **truy cập từ xa vào h
 **Cách viết prompt hiệu quả:**
 
 - **Prompt cơ bản (review UI issues):**
-  > *"Review this screenshot of an e-commerce checkout page. Identify UI issues related to alignment, color contrast, typography consistency, and spacing. For each issue, describe: location on screen, what's wrong, and suggested fix."*
+
+  > _"Review this screenshot of an e-commerce checkout page. Identify UI issues related to alignment, color contrast, typography consistency, and spacing. For each issue, describe: location on screen, what's wrong, and suggested fix."_
 
 - **Prompt nâng cao (theo Nielsen Heuristics):**
-  > *"Evaluate this UI screenshot against Nielsen's 10 Usability Heuristics. For each violation found, specify: heuristic number and name, severity rating (0–4), exact location on screen, description of the problem, and recommended fix."*
+
+  > _"Evaluate this UI screenshot against Nielsen's 10 Usability Heuristics. For each violation found, specify: heuristic number and name, severity rating (0–4), exact location on screen, description of the problem, and recommended fix."_
 
 - **Prompt so sánh consistency:**
-  > *"Compare these two screenshots of the same checkout flow on desktop vs. mobile. Identify any inconsistencies in layout, typography, color, or interactive elements between the two versions."*
+  > _"Compare these two screenshots of the same checkout flow on desktop vs. mobile. Identify any inconsistencies in layout, typography, color, or interactive elements between the two versions."_
 
 **Quy trình Human Audit (bắt buộc):**
 
@@ -111,7 +114,7 @@ Mọi finding của Claude **bắt buộc phải được tester kiểm chứng*
     * **Bước 3 — Đánh giá theo Nielsen Heuristics:** Upload screenshot + dùng prompt nâng cao → yêu cầu Claude đánh giá từng heuristic.
     * **Bước 4 — Human Audit:** Với mỗi finding Claude trả về, tester mở lại BrowserStack Live trên cùng trình duyệt/thiết bị để kiểm chứng → đánh dấu True Positive / False Positive trong bảng kết quả.
 
-* **Log AI Usage:** Ghi lại prompt đã dùng, output của Claude, và kết quả audit vào `ai-disclosure/AI_Usage_Log.md` (theo AI Policy §7).
+- **Log AI Usage:** Ghi lại prompt đã dùng, output của Claude, và kết quả audit vào `ai-disclosure/AI_Usage_Log.md` (theo AI Policy §7).
 
 ### 3. Kết quả đạt được & Đánh giá (Results & Evaluation)
 
@@ -124,7 +127,7 @@ Mọi finding của Claude **bắt buộc phải được tester kiểm chứng*
 | False Positive (báo sai) | 0 | — | — |
 | Unique findings (chỉ 1 phương pháp tìm ra) | — | — | — |
 
-*(Bảng sẽ được điền sau khi hoàn thành thực hành trên EShop.)*
+_(Bảng sẽ được điền sau khi hoàn thành thực hành trên EShop.)_
 
 **Phân loại defects theo Severity × UI Category:**
 
@@ -135,7 +138,7 @@ Mọi finding của Claude **bắt buộc phải được tester kiểm chứng*
 | Minor | — | — | — | — | — | — | — |
 | Cosmetic | — | — | — | — | — | — | — |
 
-*(Bảng sẽ được điền sau khi hoàn thành thực hành trên EShop.)*
+_(Bảng sẽ được điền sau khi hoàn thành thực hành trên EShop.)_
 
 **Đánh giá mức độ bổ trợ giữa 2 phương pháp:**
 
@@ -156,8 +159,8 @@ Mọi finding của Claude **bắt buộc phải được tester kiểm chứng*
 
 **Claude Vision:**
 
-| Khó khăn | Cách giải quyết |
-|---|---|
+| Khó khăn                                                     | Cách giải quyết                                                                                |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
 | False positive — Claude báo lỗi nhưng thực tế không phải lỗi | Bắt buộc human audit mọi finding; dùng công cụ Contrast Checker để kiểm chứng các lỗi về color |
 | Screenshot chất lượng thấp → Claude phân tích sai | Chụp full-page, resolution cao (≥1920px width), không nén ảnh — dùng BrowserStack screenshot feature |
 | Findings trùng lặp giữa các screenshot | Deduplicate: gom các finding trùng thành 1 defect duy nhất trước khi tổng hợp |
@@ -168,35 +171,178 @@ Mọi finding của Claude **bắt buộc phải được tester kiểm chứng*
 ## III. PHẦN 2: USABILITY TESTING (Kiểm thử Tính Khả dụng)
 
 ### 1. Cơ sở lý thuyết / Nghiên cứu sâu (Deep Study)
-* Các nguyên tắc heuristic trong Usability, tâm lý người dùng.
-* Cách thiết kế kịch bản Usability Test chuẩn.
+
+#### A. Mục tiêu của Usability Testing trong đề tài
+
+Usability Testing tập trung đánh giá mức độ dễ sử dụng của luồng checkout EShop, bao gồm các bước: xem giỏ hàng, áp dụng coupon, nhập địa chỉ giao hàng, chọn phương thức thanh toán và hoàn tất đơn hàng. Usability Testing quan tâm nhiều hơn đến hành vi và cảm nhận của người dùng khi họ thực hiện một nhiệm vụ cụ thể.
+
+**Mục tiêu đánh giá chính:**
+
+- Người dùng có hoàn thành được các task checkout quan trọng hay không.
+- Người dùng mất bao lâu để hoàn thành từng task.
+- Người dùng nhầm lẫn, click sai, quay lại bước trước hoặc bỏ cuộc ở điểm nào.
+- Các yếu tố nào làm giảm sự tự tin, sự rõ ràng và mức độ hài lòng khi checkout.
+- Công cụ Maze hỗ trợ nhóm thu thập và tổng hợp dữ liệu usability như thế nào.
+
+#### B. Các khái niệm và chỉ số sử dụng
+
+| Khái niệm / Chỉ số   | Ý nghĩa                                                              |
+| -------------------- | -------------------------------------------------------------------- |
+| Task success rate    | Tỷ lệ người dùng hoàn thành đúng task                                |
+| Time on task         | Thời gian người dùng cần để hoàn thành task                          |
+| Misclick rate        | Tỷ lệ click vào vùng không mong muốn hoặc không giúp task tiến triển |
+| Drop-off point       | Bước mà người dùng dừng lại hoặc không thể đi tiếp                   |
+| User path            | Chuỗi hành động người dùng thực hiện trong luồng checkout            |
+| Qualitative feedback | Nhận xét mở của người tham gia                                       |
+| Severity             | Mức độ ảnh hưởng của pain point                                      |
+
+#### C. Công cụ chính: Maze
+
+Theo `Tool_Survey_Proposal.md`, nhóm chọn **Maze** làm công cụ chính cho Usability Testing vì Maze phù hợp với task-based testing trên prototype hoặc website thật, có thể đo completion rate, misclick rate và thời gian hoàn thành task.
+
+**Lý do Maze phù hợp với EShop Checkout:**
+
+- Luồng checkout có nhiều task tuyến tính, dễ chuyển thành kịch bản test trong Maze.
+- Các chỉ số như completion rate, misclick rate và time on task giúp phát hiện điểm nghẽn ở từng bước.
+- Heatmap/click path hỗ trợ nhìn nhanh các vùng gây nhầm lẫn.
+- Giao diện Maze dễ dùng, phù hợp để nhóm thiết lập study nhanh và cho người tham gia test không cần cài đặt phức tạp.
+
+**Giới hạn khi dùng Maze:**
+
+- Free tier có giới hạn về số study/seat, vì vậy study cần được chuẩn bị kỹ trước khi publish chính thức.
+- Dữ liệu định lượng chỉ phản ánh hành vi trong phạm vi task được thiết kế; task viết sai có thể làm kết quả bị lệch.
+- Trường hợp test trên prototype có thể cho kết quả khác website thật vì prototype không có đầy đủ logic động.
 
 ### 2. Quá trình thực hành thực tế (Hands-on Practice)
-* **Chuẩn bị:** Lên kịch bản test (Task scenarios), chọn và mời nhóm người dùng mục tiêu (Participants).
-* **Tiến hành test:** 
-    * Thu thập dữ liệu định lượng (thời gian hoàn thành task, tỷ lệ lỗi, success rate).
-    * Thu thập dữ liệu định tính (phỏng vấn, quan sát cảm xúc, feedback).
+
+#### A. Thiết kế study trên Maze
+
+Study được thiết kế dưới dạng unmoderated task-based test. Người tham gia nhận một chuỗi nhiệm vụ ngắn trong luồng checkout và Maze ghi nhận hành vi thao tác trong quá trình họ hoàn thành từng nhiệm vụ.
+
+| Trường               | Nội dung                                   |
+| -------------------- | ------------------------------------------ |
+| Tên study            | [Điền tên study trên Maze]                 |
+| Link study           | [Điền link Maze nếu được phép chia sẻ]     |
+| Đối tượng tham gia   | [Ví dụ: sinh viên đã từng mua hàng online] |
+| Thời gian chạy study | [Ngày bắt đầu - ngày kết thúc]             |
+| Số response hợp lệ   | [Điền sau khi chạy study]                  |
+
+**Câu hỏi nghiên cứu:**
+
+1. Người dùng có hiểu rõ bước áp dụng coupon và thấy discount được cập nhật không?
+2. Người dùng có gặp khó khăn khi nhập địa chỉ giao hàng không?
+3. Người dùng có nhận biết rõ trạng thái lỗi/thành công trong quá trình thanh toán không?
+4. Bước nào trong checkout tạo ra nhiều misclick hoặc drop-off nhất?
+
+**Task scenarios:**
+
+| Task ID | Màn hình / Flow  | Kịch bản cho người tham gia                                              | Expected behavior                                                   | Metric cần thu                              |
+| ------- | ---------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------- | ------------------------------------------- |
+| UT-01   | Cart             | Bạn muốn kiểm tra lại sản phẩm trong giỏ hàng và tiếp tục thanh toán.    | Người dùng xác nhận item, quantity, total và đi tới bước tiếp theo. | Success rate, time on task, misclick        |
+| UT-02   | Coupon           | Bạn có mã giảm giá `[Điền mã]`. Hãy áp dụng mã này trước khi thanh toán. | Người dùng nhập coupon, bấm apply, nhận biết discount.              | Success rate, misclick, feedback            |
+| UT-03   | Address          | Hãy nhập thông tin giao hàng để đơn hàng có thể được vận chuyển.         | Người dùng điền đủ required fields và xử lý lỗi nếu thiếu.          | Error rate, time on task, drop-off          |
+| UT-04   | Payment          | Hãy chọn phương thức thanh toán và hoàn tất đơn hàng thử nghiệm.         | Người dùng chọn payment method, xác nhận order.                     | Success rate, time on task                  |
+| UT-05   | Overall checkout | Hãy hoàn thành toàn bộ luồng mua hàng từ giỏ hàng tới xác nhận đơn.      | Người dùng đi hết checkout flow không cần trợ giúp.                 | Completion rate, path, qualitative feedback |
+
+**Câu hỏi sau task / sau study:**
+
+| Loại câu hỏi  | Nội dung câu hỏi                                                       | Dữ liệu mong muốn            |
+| ------------- | ---------------------------------------------------------------------- | ---------------------------- |
+| Rating        | Bạn đánh giá mức độ dễ hoàn thành task này từ 1-5 như thế nào?         | Điểm hài lòng theo task      |
+| Open feedback | Có bước nào làm bạn bối rối hoặc không chắc chắn không?                | Pain point định tính         |
+| Confidence    | Bạn có tự tin rằng đơn hàng đã được tạo thành công không? Vì sao?      | Nhận thức về feedback/status |
+| Improvement   | Nếu được thay đổi một điểm trong luồng checkout, bạn muốn thay đổi gì? | Đề xuất cải thiện            |
+
+#### B. Pilot test
+
+Nhóm chạy pilot với 1-2 người tham gia để kiểm tra link study, task wording, luồng prototype/website và cách Maze ghi nhận dữ liệu trước khi gửi study chính thức.
+
+| Hạng mục kiểm tra                             | Kết quả pilot   |
+| --------------------------------------------- | --------------- |
+| Link Maze mở được trên thiết bị mục tiêu      | [Kết quả pilot] |
+| Prototype/website EShop load đúng             | [Kết quả pilot] |
+| Task wording rõ ràng, không dẫn dắt quá mức   | [Kết quả pilot] |
+| Maze ghi nhận click/path/time đúng            | [Kết quả pilot] |
+| Câu hỏi sau task hiển thị đúng                | [Kết quả pilot] |
+| Không lộ dữ liệu nhạy cảm / thông tin cá nhân | [Kết quả pilot] |
+
+**Điều chỉnh sau pilot:**  
+[Ghi lại các thay đổi về wording/task/link/settings sau pilot.]
+
+#### C. Chạy study chính thức
+
+| Nội dung ghi nhận                     | Ghi chú thực nghiệm                                |
+| ------------------------------------- | -------------------------------------------------- |
+| Kênh mời người tham gia               | [Lớp học, nhóm chat, bạn bè, participant panel...] |
+| Số response thu được                  | [Điền số]                                          |
+| Số response hợp lệ                    | [Điền số]                                          |
+| Thời gian trung bình hoàn thành study | [Điền từ Maze]                                     |
+| Vấn đề kỹ thuật khi chạy study        | [Điền nếu có]                                      |
+
+Sau khi kết thúc study, nhóm tổng hợp dữ liệu theo từng task. Các chỉ số định lượng trong Maze được đối chiếu với feedback mở để xác định các pain point chính trong luồng checkout.
 
 ### 3. Kết quả đạt được & Đánh giá (Results & Evaluation)
-* Tổng hợp các điểm nghẽn (pain points) mà người dùng gặp phải trong luồng thao tác.
-* Biểu đồ phân tích (ví dụ: heatmap), kết quả bảng khảo sát (như SUS score) nếu có.
+
+#### A. Tổng quan kết quả study
+
+| Metric                          | Kết quả          | Nhận xét           |
+| ------------------------------- | ---------------- | ------------------ |
+| Tổng số response                | [Điền số]        | [Ghi chú]          |
+| Response hợp lệ                 | [Điền số]        | [Ghi tiêu chí lọc] |
+| Completion rate toàn study      | [Điền %]         | [Nhận xét]         |
+| Thời gian hoàn thành trung bình | [Điền thời gian] | [Nhận xét]         |
+| Task có nhiều lỗi nhất          | [Điền Task ID]   | [Lý do]            |
+| Task có nhiều misclick nhất     | [Điền Task ID]   | [Lý do]            |
+| Điểm hài lòng trung bình        | [Điền nếu có]    | [Nhận xét]         |
+
+#### B. Kết quả theo từng task
+
+| Task ID | Success rate | Avg/Median time | Misclick / error nổi bật | Drop-off | Nhận xét chính |
+| ------- | ------------ | --------------- | ------------------------ | -------- | -------------- |
+| UT-01   | [Điền]       | [Điền]          | [Điền]                   | [Điền]   | [Điền]         |
+| UT-02   | [Điền]       | [Điền]          | [Điền]                   | [Điền]   | [Điền]         |
+| UT-03   | [Điền]       | [Điền]          | [Điền]                   | [Điền]   | [Điền]         |
+| UT-04   | [Điền]       | [Điền]          | [Điền]                   | [Điền]   | [Điền]         |
+| UT-05   | [Điền]       | [Điền]          | [Điền]                   | [Điền]   | [Điền]         |
+
+#### C. Tổng hợp pain points
+
+| ID    | Pain point    | Bằng chứng                         | Severity                        | Ảnh hưởng tới user | Đề xuất cải thiện |
+| ----- | ------------- | ---------------------------------- | ------------------------------- | ------------------ | ----------------- |
+| UP-01 | [Điền vấn đề] | [Heatmap/path/feedback/screenshot] | [Critical/Major/Minor/Cosmetic] | [Điền]             | [Điền]            |
+| UP-02 | [Điền vấn đề] | [Heatmap/path/feedback/screenshot] | [Critical/Major/Minor/Cosmetic] | [Điền]             | [Điền]            |
+| UP-03 | [Điền vấn đề] | [Heatmap/path/feedback/screenshot] | [Critical/Major/Minor/Cosmetic] | [Điền]             | [Điền]            |
+
+#### D. Nhận xét từ kết quả usability
+
+[Viết 1-2 đoạn sau khi có dữ liệu thật: task nào dễ nhất, task nào gây khó khăn nhất, pain point nào có tác động lớn nhất, và Maze giúp nhóm phát hiện điều gì trong luồng checkout.]
 
 ### 4. Khó khăn và Hướng giải quyết (Troubleshooting)
-* Khó khăn trong việc tìm kiếm người test phù hợp, môi trường test, hoặc cách phân tích dữ liệu nhiễu.
+
+| Khó khăn                              | Rủi ro ảnh hưởng tới báo cáo                       | Cách xử lý / ghi nhận                                                   |
+| ------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------- |
+| Không đủ người tham gia               | Dữ liệu không đại diện, khó kết luận mạnh          | Ghi rõ sample size, xem kết quả là exploratory, không khái quát quá mức |
+| Người tham gia không đúng target user | Feedback có thể lệch so với người mua hàng thật    | Ghi tiêu chí participant và giới hạn nghiên cứu                         |
+| Task wording gây hiểu nhầm            | Người dùng fail vì đề bài, không phải vì UI        | Pilot test trước, chỉnh wording, ghi lại thay đổi                       |
+| Prototype/website lỗi kỹ thuật        | Metric bị nhiễu bởi lỗi ngoài usability            | Loại response bị lỗi kỹ thuật, ghi rõ trong limitations                 |
+| Maze free tier giới hạn               | Không thể tạo nhiều study hoặc sửa sau khi publish | Chuẩn bị kỹ task, chạy pilot trước khi publish chính thức               |
 
 ---
 
 ## IV. Kết luận và Hướng phát triển (Conclusion & Future Work)
 
 ### 1. Kết luận chung
-*Bài học kinh nghiệm rút ra từ việc kết hợp cả hai phương pháp UI Test (chức năng bề mặt) và Usability Test (trải nghiệm).*
+
+_Bài học kinh nghiệm rút ra từ việc kết hợp cả hai phương pháp UI Test (chức năng bề mặt) và Usability Test (trải nghiệm)._
 
 ### 2. Đề xuất cải tiến (Actionable Recommendations)
-*Dựa trên kết quả test của cả 2 phần, đề xuất các sửa đổi cụ thể cho UI/UX của sản phẩm/ứng dụng.*
+
+_Dựa trên kết quả test của cả 2 phần, đề xuất các sửa đổi cụ thể cho UI/UX của sản phẩm/ứng dụng._
 
 ---
 
 ## V. Tài liệu tham khảo (References)
+
 - [1] Link Github project / Test scripts
 - [2] Docs của công cụ - Link
 - [3] Các tài liệu nghiên cứu về Usability - Link
