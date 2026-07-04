@@ -21,10 +21,16 @@
 - **Evidence:** 
 ![alt text](image2.png)
 
+### 23127149 - Nguyễn Bình An
+- **Task 1:** Tìm hiểu và phân tích các công cụ UI Testing (Manual UI Testing, Browserstack, Claude Vision) cho `Tool_Survey_Proposal`
+- **Task 2:** Viết Phần 1 - UI Testing trong `Tool_Survey_Proposal.md` (khảo sát công cụ, bảng so sánh tiêu chí, quyết định lựa chọn kết hợp 3 công cụ)
+- **Evidence:** 
+![alt text](image3.png)
+
 ### [Mã số SV 3] – [Họ và Tên 3]
 - **Task 1:** [Mô tả công việc 1]
 - **Task 2:** [Mô tả công việc 2]
-- **Evidence:** [Link tới Jira task, tài liệu output, hoặc minh chứng liên quan]
+- **Evidence:** 
 
 *(Lưu ý: Mỗi task chỉ nên được thực hiện bởi 1 đến 2 thành viên, không nhiều hơn).*
 
@@ -52,6 +58,15 @@
 
 - **Chi tiết log:** Xem [`ai-disclosure/AI_Usage_Log.md`](../ai-disclosure/AI_Usage_Log.md)
 
+
+
+### Tool_Survey_Proposal (Phần UI Testing) - Nguyễn Bình An
+- **Công cụ đã dùng:** Gemini
+- **Mục đích sử dụng:** hỗ trợ tìm hiểu các công cụ, so sánh các công cụ
+- **Minh chứng**:
+![Alt text](/ai-disclosure/screenshots/Nguyen%20Binh%20An/tool_survey_proposal_UI_Testing1.png)
+![Alt text](/ai-disclosure/screenshots/Nguyen%20Binh%20An/tool_survey_proposal_UI_Testing2.png)
+![Alt text](/ai-disclosure/screenshots/Nguyen%20Binh%20An/tool_survey_proposal_UI_Testing3.png)
 ---
 
 ## 4. Tasks Planned for Next Week
@@ -67,3 +82,9 @@
 ### Tool_Survey_Proposal - Lee Kun Da
 - **Issue 1:** Nhiều tools trên thị trường cần trả phí và gói free còn nhiều giới hạn. Cần phải chọn ra tool đảm bảo thực hiện seminar tốt
   - **Cách giải quyết:** nhờ sự hỗ trợ của Gemini và Claude thực hiện tìm hiểu và so sánh nhiều tool khác nhau để đưa ra lựa chọn. Sẽ thực hành trên tool để kiểm chứng độ phù hợp ở tuần sau
+
+### Tool_Survey_Proposal (Phần UI Testing) - Nguyễn Bình An
+- **Issue 1:** Khó xác định tiêu chí so sánh khách quan giữa 3 phương pháp có bản chất khác nhau (con người, hạ tầng cloud, AI), dẫn đến việc lập bảng so sánh ban đầu bị thiên lệch, ưu tiên quá nhiều vào tiêu chí chi phí mà bỏ sót các yếu tố như khả năng phát hiện lỗi UX hay mức độ tự động hóa.
+  - **Cách giải quyết:** Nhờ Gemini hỗ trợ rà soát lại và đề xuất thêm các tiêu chí đánh giá cân bằng hơn (Learning Curve, EShop Fit, AI Capability, Community), sau đó nhóm cùng thảo luận để chốt bộ tiêu chí chung áp dụng cho cả Phần 1 và Phần 2 của report.
+- **Issue 2:** Chưa có dữ liệu thực tế (chưa test trực tiếp) trên Browserstack do giới hạn tài khoản free trial, nên phần đánh giá "Ưu điểm/Nhược điểm" chủ yếu dựa trên tài liệu và tổng hợp từ AI, có thể chưa phản ánh đúng trải nghiệm thực tế khi dùng cho dự án EShop.
+  - **Cách giải quyết:** Ghi chú rõ đây là đánh giá sơ bộ dựa trên khảo sát tài liệu; dự kiến sẽ đăng ký thử nghiệm thực tế (hands-on) ở tuần sau để kiểm chứng và bổ sung minh chứng cụ thể.
