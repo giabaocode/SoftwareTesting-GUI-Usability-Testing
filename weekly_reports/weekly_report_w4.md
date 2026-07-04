@@ -24,12 +24,12 @@
 ---
 
 ## 3. AI Usage Declaration
-*Mô tả cách nhóm bạn sử dụng các công cụ AI trong tuần này.*
-
-- **Công cụ đã dùng:** Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
-- **Mục đích sử dụng:** Hỗ trợ gợi ý nội dung, cấu trúc bài viết cho phần UI Testing trong `deep_study_hands_on.md` (Manual UI Testing + Claude Vision UI Review)
-- **Lưu ý:** Mọi output AI đều được thành viên nhóm review và chỉnh sửa trước khi commit (theo AI Policy §7)
 *Mô tả cách nhóm bạn sử dụng các công cụ AI trong tuần này (nếu có).*
+
+### Deep study hands-on
+- **Công cụ đã dùng:** Claude Opus 4 (Antigravity IDE — tích hợp trong VS Code)
+- **Mục đích sử dụng:** Hỗ trợ gợi ý nội dung, cấu trúc bài viết cho phần UI Testing trong `DeepStudyHandsOn.md` (Manual UI Testing + Claude Vision UI Review)
+
 ### Topic claim tool survey
 - **Công cụ đã dùng:** Gemini, ChatGPT
 - **Mục đích sử dụng:** hỗ trợ tìm hiểu các tool, so sánh các tool
