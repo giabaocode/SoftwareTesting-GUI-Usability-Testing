@@ -4,10 +4,10 @@
 
 | Họ tên | MSSV | Phần phụ trách |
 | :--- | :--- | :--- |
-| Nguyễn Bình An | 23127149 |  |
+| Nguyễn Bình An | 23127149 | Tìm hiểu và phân tích các công cụ UI Testing   |
 | Phạm Ngọc Gia Bảo | 23127027 | Tìm hiểu và hỗ trợ chọn tool Maze |
 | Lee Kun Da | 23127035 | Tìm hiểu sơ lược các tools usability test và viết report |
-| Lưu Ngô Quốc Bảo | 23127327 |  |
+| Lưu Ngô Quốc Bảo | 23127327 | Tìm hiểu và hỗ trợ chọn tool Useberry  |
 
 **Ngày tháng:** 3/7/2026  
 
@@ -20,36 +20,52 @@
 *Liệt kê và phân tích các công cụ/công nghệ có thể sử dụng cho UI Testing.*
 
 #### 1.1 Manual UI Testing
-- **Giới thiệu tổng quan:** ...
-- **Ưu điểm (Pros):** ...
-- **Nhược điểm (Cons):** ...
-- **Use-case phù hợp:** ...
+- **Giới thiệu tổng quan:** Bản chất là kỹ sư QA dùng mắt, tay và tư duy logic để trực tiếp thao tác trên ứng dụng, cảm nhận trải nghiệm người dùng (UX) và tìm lỗi. Đây là phương pháp tiếp cận dựa trên trực giác con người (Intuition), khác biệt hoàn toàn so với hai phương pháp còn lại.
+- **Ưu điểm (Pros):**
+  - Đánh giá được trải nghiệm (UX) — chỉ con người mới cảm nhận được font chữ có khó đọc không, bố cục có rối mắt không, luồng thao tác có mượt mà hay không
+  - Phát hiện lỗi logic và edge-case xuất sắc thông qua Exploratory Testing — tìm ra lỗi "kỳ quặc" phát sinh ngẫu nhiên mà không script hay AI nào nghĩ ra được
+  - Chi phí ban đầu bằng 0 — không cần mua tool, không cần setup hạ tầng, mở app lên là test được ngay
+- **Nhược điểm (Cons):**
+  - Tốc độ chậm, tốn nguồn lực — thử nghiệm lặp lại một tính năng qua nhiều phiên bản rất nhàm chán và tốn thời gian
+  - Bị giới hạn bởi thiết bị vật lý — tester chỉ test được trên vài máy có sẵn tại văn phòng
+  - Yếu tố chủ quan — kết quả có thể bị bỏ sót do tester mệt mỏi hoặc mất tập trung
+- **Use-case phù hợp:** Giai đoạn đầu dự án khi giao diện và tính năng còn thay đổi liên tục hàng tuần; khi cần kiểm thử tính năng mới tinh (new features) hoặc đánh giá độ mượt của UX.
 
 #### 1.2 Browserstack
-- **Giới thiệu tổng quan:** ...
-- **Ưu điểm (Pros):** ...
-- **Nhược điểm (Cons):** ...
-- **Use-case phù hợp:** ...
+- **Giới thiệu tổng quan:** Browserstack không thay thế con người hay AI, mà là một kho thiết bị ảo/thật trên Cloud. Nhóm có thể "mượn" thiết bị thật (như iPhone 16, máy tính cài Safari) để làm Manual Test (qua BrowserStack Live) hoặc chạy code Automation.
+- **Ưu điểm (Pros):**
+  - Độ chính xác tuyệt đối nhờ test trên thiết bị thật 100%, bắt được lỗi hiển thị đặc thù của từng dòng máy (VD: lỗi tràn viền Dynamic Island trên iPhone)
+  - Giải quyết bài toán tương thích cross-browser/cross-device với hơn 3.000 cấu hình có sẵn, không cần mua thiết bị thật
+  - Hỗ trợ cả Manual (giao diện click chuột test tay) lẫn Automation (chạy test tự động hàng loạt - Parallel Testing)
+- **Nhược điểm (Cons):**
+  - Chi phí rất đắt đỏ — phí bản quyền tính theo nghìn USD/năm, vượt ngân sách dự án nhỏ/startup
+  - Phụ thuộc mạng — điều khiển máy ảo/thật từ xa qua Internet nên mạng yếu sẽ gây giật, lag khi làm Manual QA
+- **Use-case phù hợp:** Khi sản phẩm đã ổn định, chuẩn bị release và cần đảm bảo giao diện hiển thị chuẩn trên nhiều loại màn hình (responsive & cross-browser); phù hợp với dự án B2C lớn (E-commerce, Fintech) nơi khách hàng dùng đa dạng thiết bị.
+
 
 #### 1.3 Claude Vision
-- **Giới thiệu tổng quan:** ...
-- **Ưu điểm (Pros):** ...
-- **Nhược điểm (Cons):** ...
-- **Use-case phù hợp:** ...
+- **Giới thiệu tổng quan:** Là việc tận dụng khả năng phân tích hình ảnh và tư duy lập luận của mô hình ngôn ngữ lớn (LLM). Nhóm chụp ảnh màn hình UI (hoặc UI mockup từ Figma) rồi gửi cho Claude để AI phân tích, so sánh hoặc tự động hóa hành vi kiểm thử.
+- **Ưu điểm (Pros):**
+  - Tư duy như một chuyên gia UI/UX — đọc hiểu bố cục, phân tích độ tương phản màu sắc (WCAG accessibility), kiểm tra chính tả/text, phát hiện sai lệch giữa design và actual
+  - Viết kịch bản bằng ngôn ngữ tự nhiên — chỉ cần ra lệnh mô tả yêu cầu kiểm tra thay vì viết code/HTML selector
+  - Tốc độ phân tích cực nhanh — quét một ảnh UI phức tạp và đưa ra báo cáo chi tiết chỉ trong vài giây
+- **Nhược điểm (Cons):**
+  - Tính ngẫu nhiên (non-deterministic) — cùng một ảnh nhưng các lần hỏi khác nhau có thể cho nhận xét hơi khác nhau, không nhất quán 100% như automation truyền thống
+  - Không có nhận thức về "cảm xúc" — chỉ phân tích dựa trên luật lệ/dữ liệu, không thay thế hoàn toàn cảm giác trải nghiệm thực của con người
+  - Chi phí token và bảo mật — test liên tục bằng ảnh tốn nhiều chi phí API, và việc đẩy ảnh chứa dữ liệu nhạy cảm lên Cloud có thể vi phạm chính sách bảo mật doanh nghiệp
+- **Use-case phù hợp:** So sánh nhanh thiết kế Figma với sản phẩm thật (Visual Regression/Diff); kiểm tra nhanh chuẩn thiết kế, độ tương phản màu, lỗi chính tả, audit accessibility; hỗ trợ Manual QA viết mô tả Bug Report chuyên nghiệp.
 
 ### 2. Quyết định lựa chọn
 
 | Tiêu chí | Manual UI Testing | Browserstack | Claude Vision |
 | :--- | :--- | :--- | :--- |
-| Licence Cost | ... | ... | ... |
-| Learning Curve | ... | ... | ... | 
-| EShop Fit | ... | ... | ... |
-| AI Capability | ... | ... | ... |
-| Community | ... | ... | ... |
-| Lý do | ... | ... | ... |
-
----
-
+| Licence Cost | Miễn phí | Rất cao — tính phí theo nghìn USD/năm | Chi phí theo token API, phát sinh khi dùng nhiều |
+| Learning Curve | Thấp — chỉ cần mở app và thao tác trực tiếp | Trung bình — cần làm quen giao diện điều khiển thiết bị cloud và cấu hình automation | Thấp — ra lệnh bằng ngôn ngữ tự nhiên, không cần biết code/selector |
+| EShop Fit | Tốt cho việc cảm nhận UX luồng mua hàng, phát hiện lỗi logic khi thao tác thật | Rất tốt — đảm bảo giao diện EShop hiển thị chuẩn trên nhiều thiết bị/trình duyệt khách hàng thực tế dùng | Tốt cho audit nhanh giao diện, phát hiện lệch design, nhưng không thay được cảm nhận UX thực tế |
+| AI Capability | Không có | Không có (chỉ là hạ tầng thiết bị, không có khả năng AI) | Rất cao — phân tích hình ảnh, lập luận, viết report bằng AI |
+| Community | Không áp dụng (phương pháp thủ công, không phải công cụ/nền tảng) | Lớn — công cụ phổ biến trong ngành QA, tài liệu và hỗ trợ dồi dào | Đang phát triển — cộng đồng ứng dụng AI vào QA còn mới, tài liệu tham khảo chưa nhiều |
+| Lý do | Cần thiết ở giai đoạn đầu để đánh giá UX và tìm lỗi edge-case mà công cụ khác không làm được | Cần thiết trước khi release để đảm bảo tương thích đa thiết bị, dù chi phí cao | Bổ trợ nhanh, tiết kiệm thời gian audit thiết kế và viết bug report, giảm tải cho Manual QA |
+ ---
 ## PHẦN 2: USABILITY TESTING (Kiểm thử Tính Khả dụng)
 
 ### 1. Khảo sát các công cụ
