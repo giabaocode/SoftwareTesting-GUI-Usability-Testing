@@ -30,7 +30,14 @@
 
 ---
 
-### 2026-MM-DD · Nguyễn Bình An 
+### 2026-7-4 · Nguyễn Bình An
+- **Tool AI**: Gemini
+- **Mục đích**: Tìm hiểu, so sánh các tool Phần 1 - UI Testing trong `Tool_Survey_Proposal.md` (Manual UI Testing, Browserstack, Claude Vision).
+- **Minh chứng**:
+![Alt text](/ai-disclosure/screenshots/Nguyen%20Binh%20An/tool_survey_proposal_UI_Testing1.png)
+![Alt text](/ai-disclosure/screenshots/Nguyen%20Binh%20An/tool_survey_proposal_UI_Testing2.png)
+![Alt text](/ai-disclosure/screenshots/Nguyen%20Binh%20An/tool_survey_proposal_UI_Testing3.png)
+---
 
 ---
 
