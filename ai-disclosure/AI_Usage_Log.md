@@ -51,3 +51,20 @@
 ![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_2.png)
 ![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/deep_study_hands_on_summary_3.png)
 ---
+
+### 2026-7-11 · Lưu Ngô Quốc Bảo
+- **Tool AI**: Gemini (Antigravity IDE)
+- **Mục đích**:
+  - Biên soạn tài liệu `UserGuide_UI_Testing.md` (hướng dẫn manual UI testing với BrowserStack và Claude Vision) dựa trên tài liệu nghiên cứu sâu `DeepStudyHandsOn.md` và template cấu trúc định sẵn.
+  - Phân tích mã nguồn và tài liệu cài đặt của thư mục `eshop-sut` để đồng bộ hóa và cập nhật chính xác các thông tin thực tế của ứng dụng (lệnh seed database, cấu hình cổng Web Admin, tài khoản kiểm thử mặc định, và danh sách mã coupon thật của SUT).
+- **Tóm tắt prompt**:
+  - Yêu cầu đọc `DeepStudyHandsOn.md` phần UI testing và viết `UserGuide_UI_Testing.md` theo template mẫu.
+  - Yêu cầu đọc thư mục đồ án `eshop-sut` để tìm kiếm và cập nhật các thông tin còn thiếu hoặc cần hiệu chỉnh trong user guide.
+- **Tóm tắt response**:
+  - Viết tài liệu `UserGuide_UI_Testing.md` hoàn chỉnh theo định dạng Markdown với đầy đủ 7 phần.
+  - Chỉnh sửa, bổ sung các phần cài đặt hệ thống (bao gồm lệnh `node database.js` khởi tạo DB mẫu, command chạy `frontend-admin`), bảng môi trường kiểm thử (thêm tài khoản test/admin mặc định), và bổ sung bảng thông tin mã coupon thực tế của SUT (`SAVE10`, `BIGBUY`, `VIP100`, `EXPIRED`).
+- **Minh chứng**:
+  - ![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/Screenshot%202026-07-11%20200947.png)
+  - ![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/Screenshot%202026-07-11%20201015.png)
+  ![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/Screenshot%202026-07-11%20201028.png)
+---
