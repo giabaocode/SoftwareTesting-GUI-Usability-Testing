@@ -27,3 +27,6 @@ assets/screenshots/raw/
 # Build / export
 *.png.bak
 *.svg.bak
+
+
+eshop-sut/
