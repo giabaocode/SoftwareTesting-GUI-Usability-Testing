@@ -102,7 +102,7 @@ Before creating the official Maze study, prepare the target flow:
 | Test user account | `test@eshop.com` / `Test1234!` |
 | Test coupon code for pilot | `SAVE10` or `VIP100`, depending on database state |
 | Sample product for checkout task | `iPhone 15 Pro Max`, `Samsung Galaxy S24 Ultra`, or another seeded product |
-| Public/staging URL for official Maze study | `[Still needed before sharing with participants]` |
+| Public/staging URL for official Maze study |  https://nonegregiously-nongospel-lorri.ngrok-free.dev |
 | Known limitations of the test environment | Localhost works for local pilot only; official participants need public/staging access |
 
 Do not include private passwords, real payment data, student IDs, or course-secret content in the Maze study or in AI tools.
@@ -115,11 +115,10 @@ Record the participant criteria before the study starts:
 
 | Field | Description |
 |---|---|
-| Target participant group | `[Fill in]` |
-| Expected number of participants | `[Fill in]` |
-| Required device/browser | `[Fill in]` |
-| Estimated completion time | `[Fill in]` |
-| Screening question, if any | `[Fill in]` |
+| Target participant group | University students enrolled in the Software Testing course |
+| Expected number of participants | ~40 (entire class) |
+| Required device/browser | Phone (iOS/Android) or computer (Chrome, Firefox, Safari, Edge) |
+| Estimated completion time | ~5 minutes |
 
 ### 2.5 Prepare evidence storage
 
@@ -167,47 +166,34 @@ Current draft evidence:
 
 ![Maze checkout task outline draft](weekly_reports/usability_evidence/maze_checkout_task_outline_draft.png)
 
-The screenshot shows the draft Maze study named `EShop Checkout Usability Test - Group 3`. The study currently contains open-question blocks for UT-01 to UT-05 and a final feedback block. This is draft evidence only because the EShop checkout does not yet have a public or staging URL in the captured setup.
+The screenshot shows an earlier draft of the Maze study named `EShop Checkout Usability Test - Group 3`. It is setup evidence only. The live Free-plan study uses the single Free Explore scenario and follow-up questions described below.
 
 ### 3.2 Add task scenarios
 
-Use short and neutral task wording. Avoid telling participants exactly where to click.
+Use one end-to-end **Free Explore** website task so participants stay in one checkout session.
 
-| Task ID | Checkout area | Participant task | Expected behavior | Metrics to collect |
+| Task ID | Maze block | Start URL | Participant task | What to observe |
 |---|---|---|---|---|
-| UT-01 | Product and cart | From the product list, add one product to the cart, open the cart, and check the product name, quantity, line price, and total. | User finds `Thêm vào giỏ`, opens `Giỏ hàng`, and understands the cart summary. | Success rate, time on task, misclicks |
-| UT-02 | Login and checkout entry | Log in with the provided test account and continue from cart to checkout. | User can identify the login form, sign in, return to cart if needed, and reach `/checkout`. | Success rate, time on task, drop-off |
-| UT-03 | Coupon | Apply the provided coupon code, such as `SAVE10` or `VIP100`, and explain whether the discount was applied. | User enters the code, presses `Áp dụng`, and notices success or error feedback. | Success rate, misclicks, feedback |
-| UT-04 | Order review | Review the order list and final amount before confirmation. Also note whether the UI provides a shipping-address confirmation step. | User understands the order summary and can report if expected checkout information is missing. | Open feedback, confusion points, time on task |
-| UT-05 | Full checkout | Confirm payment/order completion and identify the final success state. | User reaches `Thanh toán thành công!` and understands that checkout is complete. | Completion rate, user path, feedback |
+| UT-01 | Website Test - Free Explore | Public EShop home URL | Add one product to the cart, continue to checkout, log in with the test account if prompted, apply the provided coupon, review the final amount, and confirm payment. Notice whether an address-confirmation step exists, then click `End task`. | Click heatmaps on the key screens; whether users notice the missing address step; whether the final state is understood. |
 
-Important current-SUT note: the checked `frontend-web/src/pages/Checkout.jsx` page does not contain a shipping-address form. If the study keeps a task named `UT-03 - Nhập địa chỉ giao hàng`, participants may fail because the UI does not provide that step. Either revise UT-03 to match the current UI, or use it intentionally to collect feedback about the missing address-confirmation step.
+Use the public ngrok/staging URL and a pilot-verified coupon. The current SUT has no shipping-address form, so ask users to observe its absence rather than to enter an address. Free Explore results are interpreted through heatmaps and question responses, not automatic success or misclick rates.
 
 ### 3.3 Add post-task questions
 
-After each important task, add one short question. Do not overload participants with too many questions.
+Add the following six question blocks after UT-01. Together with the single Free Explore Website Test, this creates a seven-block study. Keep them required, except that the final open question may be optional if the pilot shows that participants abandon it.
 
-| Question type | Question | Purpose |
-|---|---|---|
-| Rating | How easy was this task from 1 to 5? | Measures perceived ease |
-| Open feedback | Was anything confusing in this step? | Captures qualitative pain points |
-| Confidence | Are you confident that this step was completed successfully? Why? | Checks whether feedback/status is clear |
-| Improvement | What would you change about this step? | Collects user suggestions |
+| Order | Maze question block | Question | Response options / purpose |
+|---|---|---|---|
+| Q1 | Opinion Scale | How clear was the feedback after you applied the coupon? | Required, 1 = Not clear at all and 5 = Very clear. |
+| Q2 | Multiple Choice | Where did you see shipping-address information in the checkout flow? | Required: `A. A clear address-entry or confirmation step`; `B. Address information was present but unclear`; `C. I did not see an address-entry or confirmation step`; `D. I am not sure`. |
+| Q3 | Yes/No | After confirming payment, were you confident that the order had been created successfully? | Required. |
+| Q4 | Opinion Scale | How easy was the overall EShop checkout flow to use? | Required, 1 = Very difficult and 5 = Very easy. |
+| Q5 | Multiple Choice | Which part of the checkout flow required the most effort? | Required: `A. Finding and adding a product`; `B. Reviewing the cart and reaching checkout`; `C. Logging in`; `D. Applying the coupon or reviewing the total`; `E. Confirming payment`; `F. None of these`. |
+| Q6 | Open Question | Which step was most confusing, and what one change would improve the checkout flow most? | Optional if needed. |
 
 ### 3.4 Run a pilot test
 
-Run the study with 1-2 pilot participants before publishing it to the full audience.
-
-| Pilot check | Result |
-|---|---|
-| Maze link opens correctly | `[Fill in after pilot]` |
-| EShop/prototype loads correctly | `[Fill in after pilot]` |
-| Task wording is understandable | `[Fill in after pilot]` |
-| Maze records click/path/time correctly | `[Fill in after pilot]` |
-| Questions appear in the right order | `[Fill in after pilot]` |
-| No sensitive data is exposed | `[Fill in after pilot]` |
-
-If the pilot finds problems, revise the study before sharing it with the class.
+Run the study with 1-2 pilot participants. Before publishing, confirm: the public link works on another device, the full checkout and coupon work, a pilot response produces a heatmap, and Q1-Q6 appear in order without requesting real personal/payment data. Record any change made after the pilot.
 
 ### 3.5 Local self-check evidence
 
@@ -254,40 +240,32 @@ Study record:
 
 ## 4. Advanced Usage
 
-### 4.1 Read Maze metrics
+### 4.1 Read Free Explore evidence
 
-Use Maze metrics as evidence, but do not treat numbers as automatic conclusions. Each metric should be interpreted with the task wording, participant behavior, and open feedback.
+This Free Explore study uses only the evidence visible in Maze Results:
 
-| Metric | Meaning | How to use it |
-|---|---|---|
-| Success rate | Percentage of users who completed the task | Identify tasks that block users |
-| Time on task | Time needed to complete a task | Detect steps that take too long |
-| Misclick rate | Clicks outside the expected path | Find confusing UI areas |
-| Drop-off point | Where users abandon the flow | Locate severe friction points |
-| User path | Sequence of user actions | Understand detours and repeated actions |
-| Open feedback | Participant comments | Explain why a metric may be high or low |
+- Save 1-2 heatmaps showing important or unexpected clicks.
+- Summarize the Q1-Q5 response distributions and 1-2 repeated themes from Q6.
+- Do not report automatic success, misclick, expected-path, or time-on-task metrics.
+
+Heatmaps show clicks only; they do not reliably show typing, hover, drag, or transient pop-ups.
 
 ### 4.2 Summarize task-level results
 
-Complete this table only after the Maze study is finished.
+Complete this short summary after the Maze study.
 
-| Task ID | Success rate | Avg/median time | Misclick or error pattern | Drop-off | Main observation |
-|---|---|---|---|---|---|
-| UT-01 | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` |
-| UT-02 | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` |
-| UT-03 | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` |
-| UT-04 | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` |
-| UT-05 | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` | `[Fill in]` |
+| Scenario | Heatmap / click observation | Question evidence | Main observation |
+|---|---|---|---|
+| UT-01 - End-to-end checkout Free Explore | `[Fill in from 1-2 heatmap screenshots]` | `[Fill in from Q1-Q6 responses]` | `[Fill in]` |
 
 ### 4.3 Convert evidence into usability findings
 
-Each finding should be based on real evidence. A good usability finding includes the problem, evidence, severity, user impact, and suggested improvement.
+Add at most two high-impact findings based on real evidence.
 
 | ID | Pain point | Evidence | Severity | User impact | Suggested improvement |
 |---|---|---|---|---|---|
-| UP-01 | `[Fill in]` | `[Maze metric / screenshot / feedback]` | `[Critical/Major/Minor/Cosmetic]` | `[Fill in]` | `[Fill in]` |
-| UP-02 | `[Fill in]` | `[Maze metric / screenshot / feedback]` | `[Critical/Major/Minor/Cosmetic]` | `[Fill in]` | `[Fill in]` |
-| UP-03 | `[Fill in]` | `[Maze metric / screenshot / feedback]` | `[Critical/Major/Minor/Cosmetic]` | `[Fill in]` | `[Fill in]` |
+| UP-01 | `[Fill in]` | `[Heatmap / question response / screenshot]` | `[Critical/Major/Minor/Cosmetic]` | `[Fill in]` | `[Fill in]` |
+| UP-02 | `[Fill in]` | `[Heatmap / question response / screenshot]` | `[Critical/Major/Minor/Cosmetic]` | `[Fill in]` | `[Fill in]` |
 
 Suggested severity scale:
 
@@ -300,31 +278,15 @@ Suggested severity scale:
 
 ### 4.4 Avoid invalid conclusions
 
-The following conclusions are not acceptable unless supported by actual data:
-
-- "All users found checkout easy" without participant responses.
-- "Maze proved the checkout is good" without task metrics and feedback.
-- "Users prefer this design" without a preference question or comparison test.
-- "The issue is fixed" without retesting.
-- "The result represents all customers" when the sample is only classmates.
-
-Use careful wording:
+Do not claim that all users found checkout easy, that a problem is fixed, or that a small class sample represents all customers. Use careful wording:
 
 ```text
-Based on the collected class-participant data, Task UT-02 showed more friction than other tasks because [evidence]. Since the participant sample is limited, this result should be treated as exploratory rather than fully representative of all EShop users.
+Based on the collected class-participant data, the checkout screen showed friction around [area] because [heatmap and question evidence]. Since the participant sample is limited and the study uses Free Explore, this result should be treated as exploratory rather than fully representative of all EShop users.
 ```
 
 ### 4.5 Prepare the seminar explanation
 
-For the live seminar, explain the usability testing process in this order:
-
-1. Why the checkout flow was selected.
-2. How the Maze study was designed.
-3. What tasks participants completed.
-4. What metrics were collected.
-5. What the strongest usability findings were.
-6. What should be improved in the EShop checkout.
-7. What the limitations of the study were.
+For the seminar, explain: checkout scenario, Free Explore setup, heatmap/question evidence, 1-2 findings, recommended improvement, and study limitations.
 
 ---
 
@@ -394,4 +356,3 @@ Before submitting this guide, the responsible student/team must confirm:
 ### 7.3 Prohibited use reminder
 
 Do not use AI to generate fake study results, fake participant comments, fake screenshots, fake attendance, or final conclusions that are not supported by actual Maze evidence.
-
