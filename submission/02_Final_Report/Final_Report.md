@@ -126,7 +126,7 @@ Maze was selected over the surveyed alternatives because it provides a guided wo
 
 ## 2.1 Prerequisites
 
-**Responsible:** 23127327 - Lưu Ngô Quốc Bảo
+**Responsible:** 23127327 - Lưu Ngô Quốc Bảo; 23127027 - Phạm Ngọc Gia Bảo
 
 Prepare:
 
@@ -145,7 +145,7 @@ Do not upload real customer information, real payment information, access keys, 
 
 ## 2.2 Obtain and start EShop
 
-**Responsible:** 23127327 - Lưu Ngô Quốc Bảo
+**Responsible:** 23127027 - Phạm Ngọc Gia Bảo
 
 Clone the SUT into a working directory:
 
@@ -193,7 +193,7 @@ If the terminal prints different ports, use the actual ports and record them in 
 
 ## 2.3 Verify the seeded checkout data
 
-**Responsible:** 23127327 - Lưu Ngô Quốc Bảo
+**Responsible:** 23127027 - Phạm Ngọc Gia Bảo
 
 The source documentation identifies the following test-only account:
 
@@ -289,20 +289,6 @@ Preflight the public URL in an incognito window and on a second device. Verify:
 - the environment can be reset between sessions;
 - the link will remain active until collection ends.
 
-## 2.7 Choose the Maze Website Test mode
-
-**Responsible:** 23127035 - Lee Kun Da; 23127027 - Phạm Ngọc Gia Bảo
-
-Use the mode that matches the access available to the team:
-
-| Mode | Setup | Evidence available | Use when |
-|---|---|---|---|
-| Snippet-based Website Test | Install and verify the Maze snippet on the owned test site | paths, heatmaps, and richer quantitative data, subject to current plan/features | the team is authorized to change the staging frontend |
-| Snippet-less Website Test | Paste a public URL without changing the site | recordings become the main behavioral source; heatmaps and path metrics are limited | the team cannot install the snippet |
-| Prototype Free Explore | Import an interactive prototype and provide an open task | paths/click evidence without predefined success metrics | a live site is unavailable but a usable prototype exists |
-
-Write down the selected mode before designing the analysis. Never report success rate, misclick rate, heatmaps, or recordings unless that evidence is actually available in the chosen configuration.
-
 ---
 
 # 3. First end-to-end test
@@ -315,8 +301,6 @@ Write down the selected mode before designing the analysis. Never report success
 
 ### 3.1.1 Launch the session
 
-**Responsible:** 23127327 - Lưu Ngô Quốc Bảo
-
 1. Confirm that backend and customer frontend are running locally.
 2. Confirm that BrowserStack Local is connected.
 3. Open BrowserStack Live.
@@ -325,8 +309,6 @@ Write down the selected mode before designing the analysis. Never report success
 6. Record the environment before interacting.
 
 ### 3.1.2 Execute the checkout inspection
-
-**Responsible:** 23127327 - Lưu Ngô Quốc Bảo
 
 Run one uninterrupted journey:
 
@@ -356,7 +338,6 @@ At each screen inspect:
 
 ### 3.1.3 Capture evidence
 
-**Responsible:** 23127327 - Lưu Ngô Quốc Bảo
 
 For each candidate issue, save:
 
@@ -431,7 +412,6 @@ The demo is successful only when the audience can see the difference between an 
 
 ### 3.5.1 Create the study
 
-**Responsible:** 23127035 - Lee Kun Da; 23127027 - Phạm Ngọc Gia Bảo
 
 1. Create a Maze project and a draft unmoderated study.
 2. Add a Website Test block.
@@ -445,7 +425,6 @@ The demo is successful only when the audience can see the difference between an 
 
 ### 3.5.2 Use neutral task wording
 
-**Responsible:** 23127027 - Phạm Ngọc Gia Bảo
 
 Use one end-to-end task:
 
@@ -464,8 +443,6 @@ Never enter real personal or payment information.
 
 ### 3.5.3 Add follow-up questions
 
-**Responsible:** 23127027 - Phạm Ngọc Gia Bảo
-
 1. How clear was the feedback after applying the coupon?  
    Opinion scale: 1 = Not clear at all; 5 = Very clear.
 2. Where did you see shipping-address information?  
@@ -483,8 +460,6 @@ Keep essential questions required. Make the final open question optional only if
 
 ### 3.5.4 Pilot before publishing
 
-**Responsible:** 23127035 - Lee Kun Da; 23127027 - Phạm Ngọc Gia Bảo
-
 Run the full study with at least 1-2 pilot participants. Confirm:
 
 - the link works from a non-author device;
@@ -498,8 +473,6 @@ Run the full study with at least 1-2 pilot participants. Confirm:
 Record every change made after the pilot.
 
 ### 3.5.5 Publish and collect
-
-**Responsible:** 23127035 - Lee Kun Da
 
 After the pilot passes:
 
@@ -523,24 +496,11 @@ Fill this record with real values:
 | Total responses | `TO_FILL_FROM_MAZE` |
 | Valid responses after filtering | `TO_FILL_FROM_MAZE` |
 
-## 3.6 Usability demo checkpoint
+## 3.6 Usability demo
 
 **Responsible:** 23127035 - Lee Kun Da
 
-The demo should show:
-
-```text
-study structure
--> participant task
--> preview or real participant experience
--> Results dashboard
--> one path/recording/heatmap supported by the chosen mode
--> one follow-up response summary
--> one evidence-based finding
--> one stated limitation
-```
-
-Do not present a draft study screen as participant-result evidence.
+YouTube link:
 
 ---
 
