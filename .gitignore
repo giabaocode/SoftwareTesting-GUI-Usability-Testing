@@ -27,3 +27,5 @@ assets/screenshots/raw/
 # Build / export
 *.png.bak
 *.svg.bak
+
+requirement/

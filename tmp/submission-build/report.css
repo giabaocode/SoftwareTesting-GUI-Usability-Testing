@@ -1,0 +1,164 @@
+@page {
+  size: A4;
+  margin: 16mm 17mm 17mm;
+}
+
+:root {
+  --ink: #172033;
+  --muted: #5b6475;
+  --blue: #2457d6;
+  --blue-dark: #173b91;
+  --blue-pale: #edf3ff;
+  --line: #d7deea;
+  --green: #177245;
+  --amber: #8a5a00;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  color: var(--ink);
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.42;
+}
+
+body {
+  max-width: 178mm;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: var(--blue-dark);
+  line-height: 1.18;
+  page-break-after: avoid;
+}
+
+h1 {
+  margin: 20pt 0 8pt;
+  padding-bottom: 5pt;
+  border-bottom: 1.5pt solid var(--blue);
+  font-size: 20pt;
+}
+
+h2 {
+  margin: 16pt 0 6pt;
+  font-size: 14.5pt;
+}
+
+h3 {
+  margin: 12pt 0 5pt;
+  font-size: 12pt;
+}
+
+p { margin: 0 0 7pt; }
+
+ul, ol {
+  margin: 4pt 0 9pt 19pt;
+  padding: 0;
+}
+
+li { margin: 2.5pt 0; }
+
+a { color: var(--blue); text-decoration: none; }
+
+blockquote {
+  margin: 9pt 0;
+  padding: 8pt 11pt;
+  border-left: 4pt solid var(--blue);
+  background: var(--blue-pale);
+  color: #24324f;
+}
+
+code {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.88em;
+  background: #f2f4f8;
+  padding: 1pt 3pt;
+  border-radius: 3pt;
+}
+
+pre {
+  margin: 8pt 0 11pt;
+  padding: 9pt 11pt;
+  border: 1px solid var(--line);
+  border-radius: 5pt;
+  background: #f7f9fc;
+  white-space: pre-wrap;
+  page-break-inside: avoid;
+}
+
+pre code { padding: 0; background: transparent; }
+
+table {
+  width: 100%;
+  margin: 8pt 0 12pt;
+  border-collapse: collapse;
+  table-layout: auto;
+  font-size: 8.7pt;
+  page-break-inside: auto;
+}
+
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; }
+
+th {
+  padding: 6pt 6pt;
+  border: 1px solid #b8c4d8;
+  background: #e7eefc;
+  color: #15346f;
+  text-align: left;
+  vertical-align: middle;
+}
+
+td {
+  padding: 5.5pt 6pt;
+  border: 1px solid #cdd5e2;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) td { background: #fafbfe; }
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 155mm;
+  margin: 8pt auto 5pt;
+  object-fit: contain;
+  page-break-inside: avoid;
+}
+
+em { color: var(--muted); }
+
+.cover {
+  min-height: 255mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  page-break-after: always;
+}
+
+.cover h1 {
+  margin: 0 0 10pt;
+  padding: 0;
+  border: 0;
+  color: #173b91;
+  font-size: 29pt;
+}
+
+.cover h2 {
+  margin: 0 0 24pt;
+  color: #3e5f9e;
+  font-size: 18pt;
+  font-weight: normal;
+}
+
+.cover table { margin-top: 18pt; }
+
+.page-break { page-break-before: always; }
+
+@media print {
+  a { color: inherit; }
+}
+
