@@ -10,7 +10,7 @@
 **Class:** 23KTPM4  
 **Group:** 03  
 **System under test:** EShop checkout  
-**Demo video (YouTube Unlisted):** `VIDEO_LINK_REQUIRED`
+**GUI Testing demo video (YouTube Unlisted):** [https://youtu.be/cOqglxehzA4](https://youtu.be/cOqglxehzA4)
 
 | Student ID | Full name |
 |---|---|
@@ -696,7 +696,7 @@ The repository currently supports:
 
 It does not currently support:
 
-- a real YouTube demo URL;
+- a real Usability Testing demo URL;
 - a final public Maze participant link;
 - a verified participant count or result distribution;
 - a confirmed cross-browser defect set;
@@ -765,7 +765,8 @@ Reject or downgrade a claim when:
 
 **Responsible:** 23127149 - Nguyễn Bình An; 23127035 - Lee Kun Da
 
-- Replace `VIDEO_LINK_REQUIRED` with the real YouTube Unlisted URL.
+- Verify that the GUI Testing demo URL remains accessible as a YouTube Unlisted video.
+- Add the Usability Testing demo URL when it becomes available.
 - Verify the EShop seed and test account.
 - Connect BrowserStack Local and pre-open the Live dashboard.
 - Verify the public Maze URL and participant study.
@@ -780,6 +781,8 @@ Reject or downgrade a claim when:
 
 **Responsible for UI-testing slides:** 23127327 - Lưu Ngô Quốc Bảo  
 **Responsible for UI-testing demo:** 23127149 - Nguyễn Bình An
+
+**GUI Testing demo video (YouTube Unlisted):** [https://youtu.be/cOqglxehzA4](https://youtu.be/cOqglxehzA4)
 
 Recommended sequence:
 

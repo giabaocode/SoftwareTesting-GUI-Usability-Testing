@@ -5,7 +5,7 @@
 **Group 03 - CSC13003 - 23KTPM4**  
 Nguyễn Bình An - Phạm Ngọc Gia Bảo - Lee Kun Da - Lưu Ngô Quốc Bảo
 
-**Demo video:** `VIDEO_LINK_REQUIRED`
+**GUI Testing demo video:** [https://youtu.be/cOqglxehzA4](https://youtu.be/cOqglxehzA4)
 
 <p class="owner">Responsible: All four members</p>
 
@@ -204,7 +204,6 @@ The worksheet and answer key work offline after distribution.
 **Verify every claim.**  
 **Report limitations honestly.**
 
-Demo video (YouTube Unlisted): `VIDEO_LINK_REQUIRED`
+GUI Testing demo video (YouTube Unlisted): [https://youtu.be/cOqglxehzA4](https://youtu.be/cOqglxehzA4)
 
 <p class="owner">Responsible: All four members</p>
-
