@@ -18,11 +18,3 @@ Evidence is included under `submission/assets/ai-evidence/bao_*`. The final-asse
 
 I confirm that AI-generated study structure is not participant evidence. I remain responsible for the accuracy of the Maze procedure, the truthfulness of any result added later, and my ability to explain the submitted work.
 
-## Signature
-
-**Status:** UNSIGNED - the named student must review and sign personally.
-
-Signature: __________________________________________
-
-Date: ______________________
-
