@@ -18,11 +18,3 @@ I disclose the following AI-assisted work recorded for my contribution:
 Evidence for the 2026-07-04 survey sessions is included in `submission/assets/ai-evidence/lee_gemini_*.png` and `lee_claude_*.png`. Evidence for the 2026-07-11 to 2026-07-12 guide-refinement session is `lee_ui guide summary.png` (Codex session `019f513b-f9d4-7350-982f-ec2025155db5`). The final-assembly session is disclosed in `AI_Usage_Log_Submission.md`.
 
 I confirm that summaries and guide edits produced by AI do not replace source verification. I remain responsible for the actual Maze configuration, integration snippet, public/staging workflow, participant states, guide corrections, references, environment details, and all submitted content attributed to me.
-
-## Signature
-
-**Status:** UNSIGNED - the named student must review and sign personally.
-
-Signature: __________________________________________
-
-Date: ______________________
