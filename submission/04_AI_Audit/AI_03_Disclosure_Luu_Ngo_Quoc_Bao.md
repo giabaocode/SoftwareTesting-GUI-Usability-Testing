@@ -18,12 +18,3 @@ I disclose the following AI-assisted work recorded for my contribution:
 Evidence is included under `submission/assets/ai-evidence/luu_*`. The final-assembly session is disclosed in `AI_Usage_Log_Submission.md`.
 
 I confirm that Claude Vision suggestions are hypotheses until manually reproduced. I remain responsible for the correctness of the UI-testing procedure, the SUT-specific details, and the final verdict and severity of any reported defect.
-
-## Signature
-
-**Status:** UNSIGNED - the named student must review and sign personally.
-
-Signature: __________________________________________
-
-Date: ______________________
-
