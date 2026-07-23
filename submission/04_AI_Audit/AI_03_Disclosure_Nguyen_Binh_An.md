@@ -16,12 +16,3 @@ I disclose the following AI-assisted work recorded for my contribution:
 Evidence for the Gemini session is included in `submission/assets/ai-evidence/an_ui_survey_1.png` through `an_ui_survey_3.png`. The final-assembly session is disclosed in `AI_Usage_Log_Submission.md`.
 
 I confirm that AI is not an official source. I remain responsible for understanding and explaining all submitted content attributed to me. I will not sign this form until I have reviewed the final Markdown and PDF files and corrected any inaccurate or incomplete statement.
-
-## Signature
-
-**Status:** UNSIGNED - the named student must review and sign personally.
-
-Signature: __________________________________________
-
-Date: ______________________
-
