@@ -68,3 +68,17 @@
   - ![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/Screenshot%202026-07-11%20201015.png)
   ![alt text](/ai-disclosure/screenshots/Luu%20Ngo%20Quoc%20Bao/Screenshot%202026-07-11%20201028.png)
 ---
+  ### 2026-07-11–12 · Lee Kun Da
+
+  - **AI tool:** Codex, GPT-5, OpenAI/Codex
+  - **Purpose:** Review and refine the Maze Usability Testing User Guide for the EShop checkout seminar.
+  - **Prompt summary:** Asked Codex to read the existing `User_Guide.md` on branch `Da/user_guide`, identify the remaining work, explain public/staging access for Maze, design a
+  complete Maze Free study, integrate the Maze tracking snippet, update Sections 3.2–3.4 according to the actual study, and shorten the guide. Follow-up prompts covered the seven
+  Maze blocks, participant starting states, alternative paths, address handling, and manual review of unfinished missions.
+  - **Response summary:** Codex reviewed the existing guide and EShop flow, configured the frontend for one public ngrok tunnel through a Vite API proxy, integrated the Maze
+  snippet, and redesigned the study as one end-to-end Free Explore task followed by six questions. It updated the guide to use only evidence supported by the actual Maze
+  configuration, added pilot and participant instructions, removed unsupported automatic metrics, and shortened the document.
+  - **Human work and verification:** Lee Kun Da created and configured the Maze study, supplied the tracking snippet, checked the study flow, requested corrections based on the
+  actual Maze Free interface, reviewed the shortened User Guide, and committed the result as `090be8f`.
+  - **Evidence:** 
+![alt text](<ui guide summary.png>)

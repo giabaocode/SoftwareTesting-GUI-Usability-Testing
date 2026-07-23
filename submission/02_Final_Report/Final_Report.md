@@ -691,7 +691,7 @@ The repository currently supports:
 - a documented EShop startup procedure;
 - local cart, coupon, and success-state screenshots;
 - a draft Maze study structure;
-- AI-use evidence;
+- AI-use evidence, including Lee Kun Da's preserved Codex session summary for the Maze Usability User Guide refinement;
 - UI and usability user-guide source material.
 
 It does not currently support:
