@@ -1,9 +1,12 @@
-# User Guide: Manual UI Testing with BrowserStack Live & Claude Vision
+# Manual UI Testing Report: EShop Cart Screen
+## BrowserStack Live + Claude Vision + Human Audit
 
-> **Seminar topic:** GUI & Usability Testing  
-> **Responsible part:** UI Testing  
-> **Main tools:** BrowserStack Live, BrowserStack Local, Claude Vision  
-> **System under test:** EShop Checkout
+> **Seminar topic:** GUI & Usability Testing
+> **Responsible part:** UI Testing
+> **Tools used:** BrowserStack Live, BrowserStack Local, Claude Vision
+> **System under test:** EShop — Cart screen (FR-07)
+> **Test device:** Samsung Galaxy S26 (Android, Chrome)
+> **Date:** 23/07/2026
 
 ---
 
@@ -11,30 +14,31 @@
 
 ## 1.1 Purpose
 
-This guide explains how to perform Manual UI Testing using BrowserStack Live together with AI-assisted UI review using Claude Vision.
+This report documents the Manual UI Testing performed on the EShop Cart screen, combining three layers:
 
-The objectives are to:
+1. **Manual testing** on a real device via BrowserStack Live, following a three-category GUI checklist.
+2. **AI-assisted review** using Claude Vision, with the FR-07 specification embedded in the prompt.
+3. **Human Audit** to verify every AI finding, adjust severity ratings, and consolidate duplicate reports.
 
-- Verify the UI across browsers and real devices.
-- Detect layout and visual issues.
-- Evaluate UI consistency.
-- Validate AI findings through manual inspection.
-- Produce reliable UI bug reports.
-
-Manual UI Testing focuses on aspects that are difficult for automated scripts to assess, such as aesthetic rendering, overall design feel, and natural interactive experiences.
+The goal is not only to find defects, but to establish where each tool is effective and where human judgement remains necessary.
 
 ---
 
 ## 1.2 Scope
 
-This guide covers:
+**In scope:**
 
-- BrowserStack Live
-- BrowserStack Local
-- Claude Vision
-- EShop Checkout (specifically the customer checkout flow: Cart, Coupon, Address, Payment, and Success screens of the Frontend Web portal, interacting with the Backend API).
+- EShop Cart screen (FR-07), tested on Samsung Galaxy S26 / Chrome via BrowserStack Live.
+- Three GUI checklist categories: Layout & Style, Interaction, Responsive & Accessibility.
+- Compliance check against SRS FR-07 (6 requirements).
 
-This guide does not include fabricated defects or testing results.
+**Out of scope (not tested in this round):**
+
+- Coupon, Address, Payment, and Success screens — the checkout flow beyond the Cart was not covered.
+- Cross-browser testing on desktop browsers (Firefox, Safari, Edge).
+- Nielsen Heuristic evaluation and desktop-vs-mobile comparison prompts.
+
+This report contains only observed results. No defects or measurements were fabricated.
 
 ---
 
@@ -42,562 +46,450 @@ This guide does not include fabricated defects or testing results.
 
 ### BrowserStack Live
 
-BrowserStack Live is a cloud testing platform that allows testers to manually test websites on real browsers and real mobile devices without maintaining physical hardware. It grants remote access to thousands of real browser, OS, and device combinations.
+A cloud platform providing remote access to real browsers and physical devices, removing the need to maintain a device lab.
 
-Main features include:
+Features used in this round:
 
-- **Cross-browser testing:** Access to Chrome, Firefox, Safari, Edge, etc.
-- **Cross-device testing:** Run tests on real iOS and Android devices (e.g., iPhone 15, Samsung Galaxy S23) as well as desktop OS versions (Windows, macOS).
-- **Responsive testing:** Inspect layout shifts and fluid designs dynamically.
-- **Screenshot capture:** High-quality, one-click screenshot tool.
-- **Bug annotation:** Direct visual marking and highlighting on the screen.
+- **Real device access** — Samsung Galaxy S26 running Chrome.
+- **BrowserStack Local** — secure tunnel allowing the remote device to reach the EShop instance running on `localhost`.
+- **Device rotation** — used to confirm that layout breakage was width-dependent rather than a data issue.
+- **Screenshot capture and annotation** — one-click capture with device metadata attached, plus on-image markup.
 
----
+DevTools is available in BrowserStack Live but was not used in this round; all verification was performed by visual inspection and interaction on the device.
 
 ### Claude Vision
 
-Claude Vision is a multimodal AI capable of reviewing screenshot images and suggesting potential UI/UX issues. By analyzing layouts, spacing, typography, and contrast, it functions as a "second pair of eyes" to catch errors humans might overlook.
+A multimodal AI model that analyses screenshot images and reports potential UI issues. It served as a "second pair of eyes" over the manual inspection.
 
-Typical review areas include:
+Reviewed areas: layout, spacing, typography, touch-target sizing, and compliance with a supplied specification.
 
-- **Layout:** Spacing, padding, grid columns, and responsiveness.
-- **Alignment:** Consistent grid alignment and element centering.
-- **Typography:** Correct font sizes, font family consistency, weights, line heights, and hierarchy.
-- **Color consistency:** Verification of color palette adherence.
-- **Contrast:** Measuring contrast ratios (e.g., checking compliance with WCAG 2.1 AA requirement of $\ge$ 4.5:1 for normal text and $\ge$ 3:1 for large text).
-- **Nielsen Heuristics:** Identifying usability violations.
+**Known limitations, confirmed during this round:**
+
+- Analyses static images only — cannot evaluate behaviour that requires interaction.
+- Cannot assess anything outside the captured viewport.
+- Assigns severity based on visual prominence rather than business impact.
 
 > [!IMPORTANT]
-> **Human Audit Required:** Claude findings **must always be verified manually** by the tester. AI results can contain false positives (hallucinations) and should not be reported as bugs without manual confirmation.
+> Every Claude finding was manually verified before being recorded. AI output was never logged directly as a defect.
 
 ---
 
-## 1.4 Workflow Overview
+## 1.4 Workflow
 
 ```text
-Run EShop
+Run EShop (local)
       │
       ▼
-BrowserStack Live
+BrowserStack Live + Local tunnel
       │
       ▼
-Manual UI Testing
+Manual UI Testing (3-category checklist)
       │
       ▼
-Capture Screenshots
+Capture screenshot + annotation
       │
       ▼
-Claude Vision Review
+Claude Vision review (UI + SRS compliance)
       │
       ▼
-Human Audit
+Human Audit (verify, re-rate, consolidate)
       │
       ▼
-Bug Report
-```
-
-This workflow ensures a comprehensive assessment. The tester runs the application, inspects it manually across devices via BrowserStack Live, uses Claude Vision to scan for additional visual and usability defects, audits Claude's output to filter out false positives, and documents only validated bugs.
-
-📷 **Suggested Screenshot**
-
-Workflow diagram or project overview.
-
----
-
-# 2. Install / Setup
-
-## 2.1 Create a BrowserStack Account
-
-1. Visit the BrowserStack website.
-2. Register an account (sign up for a free trial or active Live plan).
-3. Verify your email address.
-4. Sign in.
-5. Navigate to the BrowserStack Live Dashboard.
-
-📷 **Suggested Screenshot**
-
-BrowserStack Dashboard after login.
-
-```md
-![BrowserStack Dashboard](images/browserstack_dashboard.png)
+Bug report
 ```
 
 ---
 
-## 2.2 Install BrowserStack Local
+# 2. Setup
 
-1. Download the BrowserStack Local binary/app from the BrowserStack website.
-2. Start BrowserStack Local on your local machine to establish a secure tunnel.
-3. Ensure the tunnel status displays **Connected** in the GUI or terminal. This is required to access your locally-hosted EShop application on remote BrowserStack devices.
+## 2.1 BrowserStack Account and Local Tunnel
 
-📷 **Suggested Screenshot**
+1. Registered a BrowserStack account and signed in to the Live dashboard.
+2. Downloaded and ran the BrowserStack Local application, establishing a tunnel to the local machine.
+3. Verified tunnel status showed **Connected**, then confirmed reachability using the **Test your URL** function against `http://localhost:5173` (HTTP 200).
 
-BrowserStack Local connected successfully.
+![BrowserStack Live device selection](/browserstack_dashboard.png)
 
-```md
-![BrowserStack Local Connected](images/browserstack_local_connected.png)
-```
 
----
+![BrowserStack Local tunnel connected](/browserstack_local_connected.png)
 
-## 2.3 Run the EShop System
-
-Follow the steps below to start the local EShop backend, frontend web, and admin panel.
-
-### Backend
-
-Open a terminal and run:
-
-```bash
-cd eshop-sut/backend
-
-npm install
-
-# Initialize SQLite database and seed mock data (products, user accounts, coupons)
-node database.js
-
-# Start the API server
-node server.js
-```
 
 > [!NOTE]
-> Running `node database.js` is required to seed default data (like user accounts, coupons, and inventory items). You only need to run this command once, or whenever you want to reset the database.
+> **Issue encountered:** the tunnel initially returned `ECONNREFUSED 127.0.0.1:5173` despite showing Connected. Root cause: Vite was listening only on IPv6 (`::1`) while the tunnel probed IPv4. Fixed by adding `server.host: true` to `vite.config.js`. See Section 5.
 
-### Frontend Web (Customer Portal)
+---
 
-Open a second terminal and run:
+## 2.2 Running the EShop System
 
 ```bash
+# Terminal 1 — Backend
+cd eshop-sut/backend
+npm install
+node database.js     # seed database (run once)
+node server.js       # API server on port 3000
+
+# Terminal 2 — Frontend Web
 cd eshop-sut/frontend-web
-
 npm install
-
-npm run dev
+npm run dev          # storefront on port 5173
 ```
 
-### Web Admin Panel (Optional/Admin Portal)
+Services verified:
 
-Open a third terminal and run:
+| Component | URL | Status |
+|---|---|---|
+| Backend API | http://localhost:3000 | Running |
+| Frontend Web | http://localhost:5173 | Running |
 
-```bash
-cd eshop-sut/frontend-admin
-
-npm install
-
-npm run dev
-```
-
-Verify that the services are online:
-
-| Component | Port / URL | Description |
-|------------|-----|-------------|
-| Backend | http://localhost:3000 | API server running SQLite |
-| Frontend Web | http://localhost:5173 | Main storefront customer interface |
-| Web Admin | http://localhost:5174 | Management dashboard for administrators |
-
-📷 **Suggested Screenshot**
-
-EShop homepage running locally.
-
-```md
-![EShop Homepage](images/eshop_homepage.png)
-```
+Test account used: `test@eshop.com` / `Test1234!`
 
 ---
 
-## 2.4 Prepare Test Environment
+## 2.3 Test Matrix
 
-Ensure the following credentials, parameters, and services are active before starting the test:
-
-| Item | Value / Description |
-|------|------|
-| BrowserStack Local | Running |
-| Internet | Stable (low latency connection) |
-| Default Test User | `test@eshop.com` (password: `Test1234!`) |
-| Default Test Admin | `admin@eshop.com` (password: `Admin123!`) |
-| Frontend Web URL | http://localhost:5173 |
-| Web Admin URL | http://localhost:5174 |
-| Backend URL | http://localhost:3000 |
-
----
-
-## 2.5 Prepare Test Matrix
-
-We test across the following OS, browser, and device combinations:
+The following matrix was defined for the UI testing scope:
 
 | Browser | Desktop | Mobile |
-|----------|----------|---------|
-| Chrome | Windows (latest), macOS (latest) | Android (Samsung Galaxy S23) |
+|---|---|---|
+| Chrome | Windows (latest), macOS (latest) | Android — Samsung Galaxy S26 |
 | Firefox | Windows (latest) | — |
-| Safari | macOS (latest) | iPhone (iPhone 15) |
+| Safari | macOS (latest) | iOS — iPhone 15 |
 | Edge | Windows (latest) | — |
 
----
-
-## 2.6 Prepare UI Checklist
-
-Tester should inspect components according to these checklist categories:
-
-- **Layout:** Padding, margin, alignment, placement of elements, and grid alignment.
-- **Typography:** Font sizes, weights, styles, and font family consistency.
-- **Color:** Color palette conformity and WCAG 2.1 contrast ratios.
-- **Alignment:** Canned or broken text lines, alignment of inputs, and buttons.
-- **Responsive:** Layout wrapping and resizing across window sizes and orientations.
-- **Forms:** Focus indicators, labels, validation highlights, and error messages.
-- **Buttons:** Hover/active states, pointer styling, size, and disabled states.
-- **Accessibility:** Tab-navigation order, presence of image alt text, and label associations.
+> [!NOTE]
+> **Coverage achieved in this round:** only the **Samsung Galaxy S26 / Chrome** combination was executed. The remaining combinations are planned but not yet covered — findings in this report should be read as mobile-Chrome specific and are not confirmed on other rendering engines.
 
 ---
 
-## 2.7 Prepare Evidence Storage
+## 2.4 GUI Checklist
 
-Organize the testing workspace by creating the following directory structure:
+Inspection was organised into three categories:
 
-```text
-browserstack/
-claude-review/
-reports/
-screenshots/
-```
-
-- `browserstack/`: Annotated screenshots and logs from BrowserStack.
-- `claude-review/`: Prompt logs and Claude vision response exports.
-- `reports/`: Bug reports and completed UI checklists.
-- `screenshots/`: Clean screenshots captured for review and documentation.
+| # | Category | Items inspected |
+|---|---|---|
+| 01 | **Layout & Style** | Alignment, typography, colour and contrast, content overflow |
+| 02 | **Interaction** | Button states, form behaviour, destructive-action confirmation |
+| 03 | **Responsive & Accessibility** | Layout adaptation across viewport widths, touch-target sizing |
 
 ---
 
-# 3. First Test
+## 2.5 Severity Scale
 
-## 3.1 Open BrowserStack Live
+Severity is rated by **impact on the business flow**, not by how visually prominent the defect appears.
 
-1. Open BrowserStack Live from your dashboard.
-2. Select your desired target Operating System (Windows, macOS, iOS, or Android).
-3. Select the Browser (Chrome, Firefox, Safari, Edge).
-4. For mobile, select the exact Device model (e.g., iPhone 15 or Samsung Galaxy S23).
-5. Verify that **BrowserStack Local** is enabled and active in the live session menu to access local ports.
+| Level | Definition |
+|---|---|
+| **Critical** | Blocks the main flow entirely: the user cannot complete the task, or data / monetary values are incorrect. |
+| **Major** | The flow still works, but causes clear confusion or difficulty. |
+| **Minor** | Deviates from the design or specification, but does not obstruct usage. |
+| **Cosmetic** | Aesthetic only, no functional impact. |
 
-📷 **Suggested Screenshot**
+Verification status:
 
-Browser selection page.
-
-```md
-![Browser Selection](images/browser_selection.png)
-```
-
----
-
-## 3.2 Manual UI Testing
-
-Navigate to the locally running frontend URL (`http://localhost:5173`) within the BrowserStack remote session.
-
-Perform manual inspection on:
-
-| Step | Screen | Inspection Targets & Test Parameters |
-|------|---------|--------------------------------------|
-| 1 | Cart | Grid layout of product list, (+/−) quantity buttons, item removal (trash icon), total calculation, empty state. |
-| 2 | Coupon | Input valid/invalid coupons to check alignment, validation messages, and discount rendering. <br>**Use SUT Coupon Codes:**<br>- `SAVE10` (10% off, min order $\ge$ 300,000 ₫)<br>- `BIGBUY` (50,000 ₫ fixed, min order $\ge$ 500,000 ₫)<br>- `VIP100` (100,000 ₫ fixed, min order $\ge$ 300,000 ₫)<br>- `EXPIRED` (20% off, expired in 2020) |
-| 3 | Address | Address form required fields (highlighted with error borders), error text clarity, auto-fill rendering, mobile form wrap. |
-| 4 | Payment | Radio buttons for payment method selection, credit card input formatting/masking, submit order button, loading state. |
-| 5 | Success | Order success confirmation message, details breakdown, alignment of elements. |
-
-Verify:
-
-- Layout & alignment
-- Typography & fonts
-- Colors & contrast
-- Hover states (desktop browsers only)
-- Focus states and Tab order
-- Error messages (appearance and placement)
-- Responsive behavior (resizing and viewport compatibility)
-
-📷 **Suggested Screenshot**
-
-BrowserStack Live session showing EShop.
-
-```md
-![BrowserStack Live Session](images/browserstack_live.png)
-```
+| Status | Definition |
+|---|---|
+| **True Positive** | Defect confirmed to exist after manual verification. |
+| **False Positive** | AI reported a defect that does not exist — excluded from the report. |
+| **Needs further investigation** | Signs of a defect, but not yet reproduced reliably. |
 
 ---
 
-## 3.3 Capture Evidence
+## 2.6 Evidence Storage
 
-For every visual or functional defect encountered during manual testing:
+Evidence collected in this round consists of:
 
-1. Capture a screenshot using BrowserStack's built-in 1-click screenshot or your OS screenshot utility.
-2. Record metadata: OS version, Browser type, Browser version, and Device model.
-3. Save the image to the `screenshots/` directory with a descriptive name (e.g., `desktop_chrome_coupon_error_alignment.png`).
-4. Use BrowserStack's Annotation Tool to draw borders or arrows on the bug.
-
-📷 **Suggested Screenshot**
-
-BrowserStack Screenshot Tool.
-
-```md
-![BrowserStack Screenshot Tool](images/browserstack_screenshot.png)
-```
+- Setup and session screenshots.
+- Screenshots of the Cart screen captured through BrowserStack, with device metadata attached.
+- `Bug_Tracking_Simple.xlsx` — the defect log.
 
 ---
 
-## 3.4 Claude Vision Review
+# 3. Test Execution
 
-Upload the captured high-resolution screenshots to Claude.
+## 3.1 Manual Testing by Checklist
 
-Suggested prompts for the review:
+Testing was performed on the Cart screen at `http://localhost:5173` inside the BrowserStack Live session.
 
-- **General UI/UX Review:**
-  > *Review this screenshot of an e-commerce checkout page. Identify UI issues related to alignment, color contrast, typography consistency, and spacing. For each issue, describe: location on screen, what's wrong, and suggested fix.*
-- **Heuristic Review:**
-  > *Evaluate this UI screenshot against Nielsen's 10 Usability Heuristics. For each violation found, specify: heuristic number and name, severity rating (0–4), exact location on screen, description of the problem, and recommended fix.*
-- **Cross-device/Consistency Review:**
-  > *Compare these two screenshots of the same checkout flow on desktop vs. mobile. Identify any inconsistencies in layout, typography, color, or interactive elements between the two versions.*
+![EShop running on Samsung Galaxy S26](/browser_selection.png)
 
-📷 **Suggested Screenshot**
+### Category 01 — Layout & Style
 
-Claude with uploaded screenshot.
+| Observation | Result |
+|---|---|
+| The "Giỏ hàng" navigation label wraps and overlaps the EShop logo in the header | Fail |
+| Currency symbol "đ" wraps onto a separate line from the amount, in every price cell | Fail |
 
-```md
-![Claude Review](images/claude_review.png)
-```
+### Category 02 — Interaction
 
----
+The cart under test contained four product rows, including "Samsung Galaxy S24 Ultra" and two separate rows for "iPhone 15 Pro Max".
 
-## 3.5 Human Audit
+| Test performed | Expected (SRS FR-07) | Actual | Result |
+|---|---|---|---|
+| Tapped the Delete button on a cart row | A confirmation dialog appears before deletion | The item was removed immediately with no confirmation | Fail |
+| Added "iPhone 15 Pro Max" again while already in the cart | Quantity increases on the existing row | A new duplicate row was created | Fail |
 
-Every finding suggested by Claude Vision must be audited manually by the tester.
+### Category 03 — Responsive
 
-1. Review Claude's output list.
-2. Access the live system on BrowserStack to verify if the issue actually exists.
-3. Mark findings as **True Positive** (reproducible bug) or **False Positive** (AI hallucination/incorrect reporting).
-
-| Claude Finding | Manual Verification | Final Result |
-|----------------|---------------------|--------------|
-| Layout issue | Confirmed | True Positive |
-| Contrast issue | Not Found | False Positive |
-
-📷 **Suggested Screenshot**
-
-Comparison between Claude output and BrowserStack.
-
-```md
-![Human Audit](images/human_audit.png)
-```
+| Observation | Result |
+|---|---|
+| The five-column table does not collapse at ~380px width; all headers and cells wrap | Fail |
+| Rotating to landscape gave the table more width and improved rendering — confirming the issue is width-dependent, not a data problem | Confirmed diagnosis |
 
 ---
 
-## 3.6 Record Findings
+## 3.2 Evidence Capture
 
-Document all validated defects (True Positives) in the bug tracking sheet or final report.
-
-Each entry should contain:
-
-- **Defect ID** (e.g., UI-01, UI-02)
-- **Severity** (Critical, Major, Minor, Cosmetic)
-- **Category** (Layout, Typography, Color, Interaction, Responsive, Accessibility)
-- **Description** of the issue
-- **Environment** (Browser, OS, Device, Viewport size)
-- **Steps to reproduce**
-- **Recommended fix**
-- **Screenshot path**
-
-Example summary table:
-
-| ID | Severity | Category | Description | Environment | Recommendation |
-|----|----------|----------|-------------|-------------|----------------|
-| UI-01 | Minor | Layout | Cart item delete buttons are misaligned horizontally. | Windows Chrome v120 | Add a flex align-items property to the container. |
-| UI-02 | Major | Responsive | Coupon input overflows the screen container. | iPhone 15 Safari | Set max-width: 100% on the input field. |
+Screenshots were captured using BrowserStack's one-click screenshot tool, which attaches device, OS, and browser metadata automatically. The annotation tool was used to mark the defective header region before export.
 
 ---
 
-# 4. Advanced Usage
+## 3.3 Claude Vision Review
 
-## 4.1 Cross-browser Testing
+The cropped screenshot (phone viewport only) was uploaded to Claude Sonnet 5 together with a single prompt containing three blocks:
 
-Ensure the application compiles and renders correctly across multiple rendering engines:
+1. **Context** — Cart screen of an e-commerce web application, captured on Samsung Galaxy S26, mobile viewport, Vietnamese language.
+2. **Specification** — the full text of SRS FR-07 (6 requirements).
+3. **Tasks** — (a) review the UI for layout, overflow, typography, spacing, touch-target and responsive issues, each with location, description, severity and suggested fix, limited to the 7 most important; (b) compare the screenshot against each SRS requirement, returning one of *Pass* / *Violation* / *Cannot be verified from the image*, and propose manual test steps for anything unverifiable.
 
-- **Blink/Chromium:** Chrome and Edge (Windows).
-- **Gecko:** Firefox (Windows).
-- **WebKit:** Safari (macOS).
+The exact prompt text is in Appendix 7.1.
 
-Look for rendering disparities, CSS support differences, and font sizing discrepancies.
+![Claude Vision review session](/claude_review.png)
 
----
+### Result — Part 1: UI review
 
-## 4.2 Cross-device Testing
+Claude returned 7 issues:
 
-Run testing sessions on different physical viewports to ensure proper responsiveness:
+| # | Issue | Claude's severity |
+|---|---|---|
+| 1 | Quantity column misaligned, value pushed against the Price column | Critical |
+| 2 | No +/− controls in the Quantity column | Critical |
+| 3 | Long product names wrap across 2–3 lines, uneven row heights | Major |
+| 4 | Table header row heights inconsistent between columns | Minor |
+| 5 | Delete button touch target below the 44×44px minimum | Major |
+| 6 | "iPhone 15 Pro Max" appears in two separate rows | Critical |
+| 7 | Insufficient padding between the Price and Quantity columns | Cosmetic / Minor |
 
-- **Desktop (Large screen):** Windows and macOS.
-- **Tablet (Medium screen):** iPad models (inspect portrait/landscape modes).
-- **Mobile (Small screen):** Android and iOS (check viewport sizes, keyboard overlay handling, and touch-target sizing).
+![Claude Vision review session](/claude_review2.png)
 
-📷 **Suggested Screenshot**
+### Result — Part 2: SRS compliance
 
-BrowserStack device list.
+| Requirement | Claude's verdict |
+|---|---|
+| FR-07.1 — column labels and +/− controls | Violation |
+| FR-07.2 — duplicate products must merge | Violation |
+| FR-07.3 — delete confirmation dialog | Cannot be verified from the image |
+| FR-07.4 — "Tiếp tục mua sắm" button | Cannot be verified from the image |
+| FR-07.5 — total label must read "Tổng cộng" | Cannot be verified from the image |
+| FR-07.6 — empty cart state | Cannot be verified from the image |
 
-```md
-![Device List](images/device_list.png)
-```
+Claude marked **4 of 6 requirements as unverifiable** and proposed manual test steps for each. Three distinct reasons applied: the behaviour required interaction (FR-07.3), the elements lay outside the captured viewport (FR-07.4, FR-07.5), or the state did not exist in the current data (FR-07.6).
 
----
-
-## 4.3 Nielsen Heuristic Review
-
-Upload screenshots of each state of EShop checkout flow to Claude and run the heuristic prompt. Record findings systematically:
-
-- **Violated Heuristic:** (e.g., Heuristic #5: Error prevention)
-- **Severity:** (0 - 4 scale, where 4 is usability catastrophe)
-- **Description:** Context of the violation.
-- **Recommendation:** Actionable fix.
-
----
-
-## 4.4 Compare Desktop vs Mobile
-
-Compare the UI design on desktop vs mobile. Use Claude Vision by uploading both images side by side.
-
-Look for:
-
-- **Layout adaptation:** Does the grid system collapse into a single-column layout cleanly?
-- **Typography size:** Is the text readable on smaller screens?
-- **Touch Targets:** Are buttons and interactable links at least 48x48 dp to prevent user misclicks?
-- **Navigation adjustments:** Is navigation easily reachable on mobile?
-- **Overflow & Scrolling:** Ensure no horizontal scroll bars occur on mobile viewports.
-
-📷 **Suggested Screenshot**
-
-Desktop vs Mobile comparison.
-
-```md
-![Desktop vs Mobile](images/desktop_mobile_compare.png)
-```
+![Claude Vision review session](/claude_review3.png)
 
 ---
 
-## 4.5 Summarize Findings
+## 3.4 Human Audit
 
-Compile a matrix comparing BrowserStack Manual testing and Claude Vision analysis outcomes:
+Each AI finding was verified against the live application before being recorded.
 
-| Finding | BrowserStack | Claude | Final |
-|----------|-------------|---------|------|
-| Layout | ✓ | ✓ | Confirmed |
-| Typography | ✓ | ✓ | Confirmed |
-| Contrast | ✗ | ✓ | Verified |
-| Hover State | ✓ | ✗ | BrowserStack Only |
+### Audit of the 7 UI findings
 
----
+| Claude # | Verification method | Status | Claude severity | Final severity | Decision |
+|---|---|---|---|---|---|
+| 1 | Visual check on device | True Positive | Critical | **Major** | Downgraded — quantity value and line total are still correct and checkout is not blocked; the issue is legibility only |
+| 2 | Visual check on device | True Positive | Critical | **Critical** | Retained — no quantity control is reachable anywhere on the screen. Changing quantity requires deleting and re-adding the item, so the flow is genuinely blocked. Whether the control is missing from the markup or hidden by CSS was not determined |
+| 3 | Visual check on device | True Positive | Major | **Minor** | Merged with #4 into one entry; affects scannability, not operation |
+| 4 | Visual check on device | True Positive | Minor | — | Merged into the entry above |
+| 5 | Visual estimate only — not measured | **Needs further investigation** | Major | Major (provisional) | The button is a plain text link with no padding, so the target is visibly small, but no measurement was taken during the session. Recorded provisionally pending measurement |
+| 6 | Also reproduced manually during Category 02 testing | True Positive | Critical | **Major** | Same defect already logged from manual testing — not duplicated. Downgraded: the cart total is still calculated correctly, so no monetary error occurs |
+| 7 | Visual check on device | True Positive | Cosmetic/Minor | — | Not an independent defect: it is a consequence of the table compression already logged under Responsive |
 
-## 4.6 Best Practices
+### Audit of the 4 unverifiable SRS requirements
 
-- **Plan sessions:** Since free accounts/trials may have limited session limits (e.g., 30-minute sessions), plan the test matrix and checklist beforehand.
-- **Capture clean images:** Capture full-page, uncompressed, high-resolution screenshots ($\ge 1920\text{px}$ width) to prevent AI misanalysis.
-- **Inspect CSS:** Use Pre-installed Developer Tools in the remote browser to inspect styles and confirm layout numbers.
-- **Always Audit AI:** Never log a bug directly from AI output without validating it on the live environment first.
-- **Log Prompts:** Log all AI queries and responses in your team's AI disclosure log.
+| Requirement | Manual test performed | Result |
+|---|---|---|
+| FR-07.3 | Tapped Delete on a cart row | Violation — no confirmation dialog |
+| FR-07.6 | Removed all items to create the empty state | Violation — the message "Giỏ hàng của bạn đang trống" is present, but the illustration required by the spec is missing |
+| FR-07.4 | Scrolled to the bottom, inspected and clicked the button | Violation on label — reads "Mua tiếp" instead of "Tiếp tục mua sắm". Navigation to the home page works correctly |
+| FR-07.5 | Scrolled to the bottom, read the total label | Violation — reads "Tổng tạm tính", the exact wording the spec prohibits |
 
----
-
-# 5. Troubleshooting
-
-## BrowserStack
-
-| Problem | Cause | Solution |
-|----------|-------|----------|
-| BrowserStack Local disconnected | The local tunnel process has stopped or crashed. | Restart BrowserStack Local or verify command line parameters. |
-| Localhost inaccessible | Firewall/antivirus blocks outgoing port connections, or port conflict. | Check firewall settings. Ensure backend (3000) and frontend (5173) services are active and accessible. |
-| High latency / slow response | Network congestion or distance to remote server. | Check internet connection stability. Select the nearest data center location in BrowserStack settings (e.g., Singapore for Vietnam). |
-| Trial time limit exceeded | Session limit of 30 minutes reached. | Prepare the test checklist before starting, prioritising critical test paths. |
+**All 6 SRS requirements were found to be in violation.** Claude could conclude only 2 of them from the screenshot; the remaining 4 required interaction, state creation, or scrolling beyond the captured viewport.
 
 ---
 
-## Claude Vision
+# 4. Results
 
-| Problem | Cause | Solution |
-|----------|-------|----------|
-| False positives (hallucinations) | AI misinterprets visual details or makes assumptions. | Perform human audit verification for every single finding. |
-| Incorrect analysis / misses | Poor screenshot quality, resolution, or compression. | Capture high-resolution, uncompressed screenshots (width $\ge 1920\text{px}$). |
-| Missing interaction issues | Claude can only analyze static screenshot files, not animations. | Test animations, hover, scroll, and transitions manually in BrowserStack. |
-| Redundant suggestions | Multiple screens show the same persistent issue (e.g., header/footer). | Deduplicate similar findings into a single global defect report. |
+## 4.1 Defect Log
+
+12 entries were recorded in `Bug_Tracking_Simple.xlsx`:
+
+| # | Category | Location | Description | Severity | Status |
+|---|---|---|---|---|---|
+| 1 | Layout & Style | Header | "Giỏ hàng" label overlaps the logo | Major | True Positive |
+| 2 | Layout & Style | Price column | Currency symbol wraps onto its own line | Major | True Positive |
+| 3 | Interaction | Delete button | No confirmation dialog before deletion | Major | True Positive |
+| 4 | Interaction | Product list | Duplicate product creates a new row instead of merging quantity | Major | True Positive |
+| 5 | Responsive & Accessibility | Whole cart | Five-column table does not collapse on mobile | Critical | True Positive |
+| 6 | Layout & Style | Product table | Product names wrap 2–3 lines, uneven row heights | Minor | True Positive |
+| 7 | Layout & Style | Quantity column | Quantity misaligned, pushed against Price | Major | True Positive |
+| 8 | Interaction | Quantity column | +/− controls missing | Critical | True Positive |
+| 9 | Interaction | Delete button | Touch target appears undersized | Major | Needs further investigation |
+| 10 | Layout & Style | Empty cart page | Text-only empty state; illustration required by SRS is missing | Minor | True Positive |
+| 11 | Layout & Style | Back button | Label reads "Mua tiếp" instead of "Tiếp tục mua sắm"; navigation works | Minor | True Positive |
+| 12 | Layout & Style | Total line | Label reads "Tổng tạm tính" instead of "Tổng cộng" | Minor | True Positive |
+
+**Breakdown by severity:** 2 Critical, 6 Major, 4 Minor.
+**Breakdown by category:** Layout & Style 7, Interaction 4, Responsive & Accessibility 1.
+**Verification status:** 11 True Positive, 1 needs further investigation, 0 False Positive.
 
 ---
 
-# 6. References
+## 4.2 Tool Contribution
 
-- [BrowserStack Live Documentation](https://www.browserstack.com/docs/)
-- [Claude AI System Documentation](https://docs.anthropic.com/claude/)
-- [Nielsen Norman Group: 10 Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)
-- [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/)
-- [Seminar Guide - GUI & Usability Testing Workflow](file:///d:/Documents/Đại%20học/Năm%203-HCMUS/Kì%203/Kiểm%20thử%20phần%20mềm/Seminar/SoftwareTesting-GUI-Usability-Testing/Seminar_Guide.docx.pdf)
-- [AI Usage Guidelines and Disclosure Policy](file:///d:/Documents/Đại%20học/Năm%203-HCMUS/Kì%203/Kiểm%20thử%20phần%20mềm/Seminar/SoftwareTesting-GUI-Usability-Testing/AI%20Usage%20Guidelines.pdf)
+| Defect source | Count | Log entries | Notes |
+|---|---|---|---|
+| Found by manual testing only | 5 | 1, 2, 10, 11, 12 | Header overlap and currency wrapping were not reported by Claude at all. The remaining three required interaction, state creation, or scrolling beyond the captured viewport |
+| Found by Claude only | 4 | 6, 7, 8, 9 | Name wrapping (merged with header row height), quantity misalignment, missing +/− controls, and the suspected undersized touch target (entry 9, not yet measured) |
+| Found by both | 3 | 3, 4, 5 | Delete confirmation, duplicate rows, table not collapsing |
+
+Total: 5 + 4 + 3 = 12 logged defects.
+
+Of the 7 issues Claude reported, 4 produced new log entries; 1 (duplicate rows) had also been found manually, and 2 were consolidated into existing entries as consequences of the same root cause.
+
+Notably, two purely visual defects — the header label overlapping the logo, and the currency symbol wrapping onto its own line — were found by manual inspection but **not** reported by Claude, despite both being visible in the submitted screenshot. AI review is fast and broad, but not exhaustive.
+
+Two severity ratings were adjusted during the audit — one downgraded, one retained after verification, despite both having been rated Critical by the AI.
+
+No false positives occurred in this round. This is not evidence that they do not occur; the audit step remains mandatory.
+
+---
+
+## 4.3 Observations
+
+**AI is fast but biased toward surface issues, and not exhaustive.** Claude produced 7 findings in roughly 30 seconds, all concerning what is visible in the image: alignment, spacing, label text, and element sizing. This is genuine value — several of these are easy for a human to overlook after prolonged inspection. However, it also missed two visible defects that manual inspection caught: the header label overlapping the logo, and the currency symbol wrapping onto a separate line. Speed does not imply completeness.
+
+**Humans catch context-dependent issues.** Four of the six specification requirements could not be assessed from a screenshot at all. The confirmation dialog required tapping; the empty-cart state had to be created by deleting every item; two labels lay below the captured viewport. None of these are inferable from a static image.
+
+**Severity must be human-final.** Findings #1 and #2 were both rated Critical by the AI. After verification, #1 was downgraded to Major — the values displayed remain correct and checkout is unaffected — while #2 was retained as Critical, since the absence of quantity controls forces the user to delete and re-add an item to change quantity. The AI rated by visual prominence; the human rated by business impact.
+
+**Verification depth was limited to visual inspection.** No measurements or DOM inspection were performed in this round, so entry 9 (touch-target size) remains unresolved, and for entry 8 it was not established whether the quantity control is absent from the markup or merely hidden. Both conclusions rest on what is observable on screen, which is sufficient to confirm the defect from a user's perspective but not to diagnose its cause.
+
+**AI reports symptoms, humans identify root causes.** Claude listed the narrow column padding (#7) as a standalone defect. It is in fact a consequence of the table failing to collapse on mobile, already logged under Responsive. Recording it separately would have produced two tickets for one underlying fix.
+
+---
+
+# 5. Issues Encountered
+
+| Problem | Cause | Resolution |
+|---|---|---|
+| Live session displayed "Download Local App" despite the tunnel showing Connected | The Local tunnel and the Live dashboard were signed in under different BrowserStack accounts | Signed both into the same account; confirmed the Access Key matched on both sides |
+| `ECONNREFUSED 127.0.0.1:5173` from Test your URL while `localhost:5173` opened fine in a local browser | Vite was listening on IPv6 (`::1`) only; the tunnel probed IPv4 | Added `server.host: true` to `vite.config.js` and restarted the dev server |
+| "Blocked request. This host (bs-local.com) is not allowed" when testing from an iOS device | Vite's `allowedHosts` protection | Added `allowedHosts: ['bs-local.com']` to `vite.config.js` |
+| Two `BrowserStackLocal` processes running simultaneously caused `onlyAutomate` mode, invisible to Live | The GUI application and the CLI binary were launched at the same time | Terminated all processes and started only one instance |
+| Free-trial session minutes exhausted mid-testing | Trial account limits | Prepared the checklist before opening a session so that session time is spent testing rather than planning |
+
+---
+
+# 6. Conclusion and Next Steps
+
+Twelve defects were recorded on the Cart screen, including two Critical issues: the table failing to collapse on mobile, and the absence of quantity controls required by the specification. All six FR-07 requirements were found to be in violation.
+
+The two tools proved complementary rather than interchangeable. Claude Vision was substantially faster at surfacing visible layout and sizing problems, while manual testing on a real device was the only way to establish behavioural and state-dependent defects — which accounted for four of the six specification violations. The Human Audit step was necessary in both directions: to adjust severity ratings that the AI had assigned by visual prominence, and to consolidate findings that shared a single root cause.
+
+**Not yet covered, recommended for the next round:**
+
+- The remaining checkout screens: Coupon, Address, Payment, Success.
+- The remaining test-matrix combinations, particularly desktop browsers and WebKit (Safari / iPhone), to confirm whether these defects are engine-specific.
+- Measurement of defect #9 (Delete button touch target) against the 44×44px minimum, to resolve its provisional status.
+- DOM-level inspection of defect #8 to establish whether the quantity control is missing from the markup or hidden by CSS, which determines the nature of the fix.
+- Nielsen Heuristic evaluation and a desktop-versus-mobile comparison, both of which were prepared but not executed in this round.
 
 ---
 
 # 7. Appendix
 
-## 7.1 Prompt Library
+## 7.1 Prompt Used
 
-### General UI Review
+```
+Đây là ảnh chụp màn hình trang Giỏ hàng của một ứng dụng web thương mại
+điện tử (EShop), chụp trên điện thoại Samsung Galaxy S26 (màn hình
+mobile, trình duyệt Chrome). Ngôn ngữ của ứng dụng là tiếng Việt.
 
-> Review this screenshot of an e-commerce checkout page. Identify UI issues related to alignment, color contrast, typography consistency, and spacing. For each issue, describe: location on screen, what's wrong, and suggested fix.
+Dưới đây là đặc tả yêu cầu (SRS) cho chức năng này:
+
+--- SRS FR-07: Giỏ hàng ---
+1. Hiển thị danh sách sản phẩm với các cột: "Sản phẩm", "Đơn giá",
+   "Số lượng" (có nút +/- để chỉnh), "Thành tiền", "Thao tác".
+2. Thêm cùng một sản phẩm vào giỏ sẽ tăng số lượng, không tạo dòng mới.
+3. Nút Xóa sản phẩm phải có dialog xác nhận trước khi thực hiện.
+4. Có nút "Tiếp tục mua sắm" để quay về trang chủ.
+5. Tổng tiền hiển thị nhãn chính xác: "Tổng cộng" (không phải
+   "Tổng tạm tính").
+6. Giỏ hàng trống phải có hình minh họa và thông báo rõ ràng.
+--- Hết SRS ---
+
+Hãy thực hiện 2 phần đánh giá sau:
+
+PHẦN 1 — REVIEW GIAO DIỆN TỔNG QUÁT:
+Tìm các lỗi thuộc các nhóm: bố cục & căn chỉnh, tràn nội dung & xuống
+dòng sai, nhất quán typography, khoảng cách, kích thước vùng chạm, và
+lỗi responsive trên màn hình nhỏ. Với mỗi lỗi: vị trí chính xác, mô tả,
+vì sao là vấn đề trên mobile, mức độ (Critical/Major/Minor/Cosmetic),
+đề xuất sửa. Giới hạn 7 lỗi quan trọng nhất.
+
+PHẦN 2 — ĐỐI CHIẾU VỚI SRS:
+So sánh ảnh với TỪNG yêu cầu trong SRS, trả về bảng:
+Số yêu cầu | Trạng thái | Bằng chứng trong ảnh | Ghi chú.
+Trạng thái chỉ dùng: "Đạt" / "Vi phạm" / "Không kiểm chứng được từ ảnh".
+
+Cuối cùng, liệt kê các yêu cầu cần kiểm thử thủ công bổ sung và nêu
+thao tác kiểm thử cụ thể cho từng yêu cầu.
+```
 
 ---
 
-### Nielsen Heuristics
+## 7.2 GUI Checklist — Completion Status
 
-> Evaluate this UI screenshot against Nielsen's 10 Usability Heuristics. For each violation found, specify: heuristic number and name, severity rating (0–4), exact location on screen, description of the problem, and recommended fix.
-
----
-
-### Compare Desktop vs Mobile
-
-> Compare these two screenshots of the same checkout flow on desktop vs. mobile. Identify any inconsistencies in layout, typography, color, or interactive elements between the two versions.
-
----
-
-## 7.2 UI Checklist
-
-| Category | Status |
-|-----------|--------|
-| Layout | [ ] |
-| Typography | [ ] |
-| Color | [ ] |
-| Buttons | [ ] |
-| Forms | [ ] |
-| Accessibility | [ ] |
-| Responsive | [ ] |
+| Category | Status | Notes |
+|---|---|---|
+| Layout & Style | Completed | 7 defects recorded |
+| Interaction | Completed | 4 defects recorded |
+| Responsive & Accessibility | Partially completed | Width-based responsive behaviour tested; tab order and alt-text not assessed |
 
 ---
 
 ## 7.3 AI Usage Declaration
 
-Record:
-
-- **AI Tool:** Claude 3.5 Sonnet / Claude Vision
-- **Version / Endpoint:** Web UI / API
-- **Prompts Used:** (Refer to Appendix 7.1 for exact text)
-- **AI Output Summary:** List of suggestions generated by Claude
-- **Human Verification Result:** Number of suggestions verified (True Positives vs False Positives)
-
----
-
-## 7.4 Human Validation Checklist
-
-| Check | Status |
-|---------|--------|
-| Browser tested | [ ] |
-| Devices tested | [ ] |
-| Screenshots collected | [ ] |
-| Claude review completed | [ ] |
-| Human audit completed | [ ] |
-| Bug report completed | [ ] |
+| Item | Detail |
+|---|---|
+| AI tool | Claude Sonnet 5 (Vision), web interface |
+| Number of prompts | 1 combined prompt (UI review + SRS compliance) |
+| Prompt text | See Appendix 7.1 |
+| Output | 7 UI findings, 6-row SRS compliance table, manual test suggestions for 4 unverifiable requirements |
+| Human verification | All 7 findings audited. Result: 6 True Positive, 1 needs further investigation, 0 False Positive. Of these, 4 produced new log entries, 1 duplicated an entry already logged during manual testing, and 2 were consolidated as symptoms of an already-logged root cause. 2 severity ratings were adjusted |
 
 ---
 
-## 7.5 Evidence Checklist
+## 7.4 Evidence
 
-- [ ] BrowserStack screenshots (saved in `browserstack/`)
-- [ ] Claude responses (saved in `claude-review/`)
-- [ ] Human audit records (saved in `reports/`)
-- [ ] Final bug reports (saved in `reports/`)
-- [ ] UI checklist (completed and signed off)
+| Evidence | File | Referenced in |
+|---|---|---|
+| BrowserStack device selection | `browserstack_dashboard.png` | §2.1 |
+| Local tunnel connected | `browserstack_local_connected.png` | §2.1 |
+| EShop on Galaxy S26 via tunnel | `browser_selection.png` | §3.1 |
+| Claude Vision prompt submission | `claude_review.png` | §3.3 |
+| Claude Vision UI findings table | `claude_review2.png` | §3.3 |
+| Claude Vision SRS compliance table | `claude_review3.png` | §3.3 |
+| Defect log (12 entries) | `Bug_Tracking_Simple.xlsx` | §4.1 |
+
+> [!NOTE]
+> Annotated defect screenshots captured during manual testing were not exported from the BrowserStack session and are therefore not attached to this report. Section 4.1 remains the authoritative defect record.
+
+---
+
+# 8. References
+
+- [BrowserStack Live Documentation](https://www.browserstack.com/docs/)
+- [Claude Documentation](https://docs.claude.com/)
+- [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/)
+- EShop SRS — FR-07: Shopping Cart
