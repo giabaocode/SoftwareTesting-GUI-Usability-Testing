@@ -49,6 +49,17 @@ This log consolidates the repository's recorded AI uses. Screenshot evidence is 
 - **Human responsibility:** Validate every command and UI claim, add real screenshots, and audit all Claude Vision suggestions manually.
 - **Evidence:** `luu_ui_guide_1.png`, `luu_ui_guide_2.png`, `luu_ui_guide_3.png`.
 
+## 2026-07-11 to 2026-07-12 - Lee Kun Da
+
+- **Tool:** Codex (GPT-5, OpenAI/Codex).
+- **Purpose:** Review and refine the Maze Usability User Guide so a new team member can reproduce the study without rediscovering the workflow.
+- **Prompt summary:** Read `User_Guide.md` on branch `Da/user_guide`; verify the public/staging setup, Maze Free study structure, EShop integration snippet, and Sections 3.2-3.4; then shorten and clarify the guide. Follow-up prompts asked Codex to correct the seven-block flow, participant states, alternative paths, address-step wording, and unfinished-mission handling.
+- **AI-generated content:** A revised guide describing one public EShop endpoint through a Vite proxy, the required integration snippet, one Free Explore mission with six follow-up questions, pilot and participant states, and limitations on unsupported metrics.
+- **Human responsibility:** Lee Kun Da created the Maze study, supplied the actual snippet and workflow context, checked the revised steps, requested corrections, and committed the reviewed result as `090be8f`.
+- **Evidence:** `lee_ui guide summary.png`; Codex session `019f513b-f9d4-7350-982f-ec2025155db5`.
+
+![Lee Kun Da - Codex Maze User Guide session summary](<../assets/ai-evidence/lee_ui guide summary.png>)
+
 ## 2026-07-23 - Final submission assembly
 
 - **Tool:** Codex (GPT-5, OpenAI/Codex).
@@ -58,4 +69,3 @@ This log consolidates the repository's recorded AI uses. Screenshot evidence is 
 - **Human validation performed during generation:** Cross-checked course requirements, Q&A clarification, topic brief, Seminar Guide, current Markdown files, repository history, the official Project Contribution workbook, branch evidence, and screenshot contents. No participant metrics, audience feedback, video URL, personal signature, work hours, or agreed contribution percentages were invented.
 - **Required student/team work:** Read and revise all content; confirm ownership labels; insert the real YouTube Unlisted URL; add any newer real study results; enter actual contribution hours and agreed percentages; sign each AI-03 form; regenerate affected PDFs; rebuild the ZIP.
 - **Evidence:** This submission package and the source conversation/session history.
-

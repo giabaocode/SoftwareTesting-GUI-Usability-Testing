@@ -39,7 +39,7 @@ The structure matched the seminar brief and helped make unlike options comparabl
 
 The summaries helped organize the team's research but do not prove that every product claim was cross-checked. The original proposal also makes free-plan claims that can change.
 
-**Human/student fix:** Treat the output as research notes, preserve only claims needed for the decision, and verify current plan behavior in the actual account or official help center. Evidence: four screenshots under `submission/assets/ai-evidence/lee_*.png`.
+**Human/student fix:** Treat the output as research notes, preserve only claims needed for the decision, and verify current plan behavior in the actual account or official help center. Evidence: `submission/assets/ai-evidence/lee_gemini_*.png` and `lee_claude_*.png`.
 
 ### A-03 - UI deep study
 
@@ -74,7 +74,21 @@ The guide improved reproducibility and clearly warned against fake data. It stil
 
 **Human/student fix:** The submission removes the temporary URL, keeps the reproducible method, labels the study screenshot as draft evidence, and lists exactly which participant claims are unsupported.
 
-### A-06 - Manual UI User Guide
+### A-06 - Maze User Guide refinement
+
+**Owner:** 23127035 - Lee Kun Da
+
+**Prompt and tool:** Codex (GPT-5), 2026-07-11 to 2026-07-12; review `User_Guide.md` on branch `Da/user_guide`, verify its setup and study flow, and shorten it into a reproducible handoff guide. Follow-up prompts requested corrections to the seven-block flow, participant states, alternative paths, address-step wording, and unfinished-mission handling.
+
+**Output examined:** Revised public/staging setup through a Vite proxy, EShop integration snippet, one Maze Free Explore mission with six follow-up questions, pilot/participant workflow, and evidence limitations.
+
+**Verdict:** **Accepted with edits.**
+
+The session improved the guide as a practical onboarding artifact and removed unsupported metric claims. Codex still depended on Lee's real Maze configuration, supplied snippet, and corrections; its wording was not itself evidence that the study had been run or that every path worked.
+
+**Human/student fix:** Lee Kun Da created the Maze study, supplied the real workflow context and snippet, checked the revised steps, requested corrections, and committed the reviewed guide as `090be8f`. Evidence: `submission/assets/ai-evidence/lee_ui guide summary.png`; Codex session `019f513b-f9d4-7350-982f-ec2025155db5`.
+
+### A-07 - Manual UI User Guide
 
 **Owner:** 23127327 - Lưu Ngô Quốc Bảo  
 **Prompt and tool:** Gemini in Antigravity; combine deep-study notes with SUT configuration.  
@@ -85,7 +99,7 @@ The structure covers the required sections and emphasizes human verification. Ho
 
 **Human/student fix:** The final report deletes example defects as outcomes, uses only four real repository screenshots, and separates procedure, example schema, actual evidence, and evidence limitations.
 
-### A-07 - Final submission assembly
+### A-08 - Final submission assembly
 
 **Owner:** Group 03  
 **Prompt and tool:** Codex (GPT-5), 2026-07-23; read requirements and related repository materials, consolidate required Markdown/PDF documents, and avoid inventing missing academic evidence.  
@@ -98,9 +112,9 @@ AI can consolidate and format, but the named students remain responsible for cor
 
 ## Section 3 - Summary of AI output accuracy
 
-The audit contains seven representative entries:
+The audit contains eight representative entries:
 
-- Four were **accepted with edits** because the structure or reasoning was useful but volatile facts, scope, or wording required human correction.
+- Five were **accepted with edits** because the structure or reasoning was useful but volatile facts, scope, or wording required human correction.
 - Two were **partially accepted** because generic AI assumptions introduced content that exceeded the observed EShop interface or could be mistaken for evidence.
 - One **requires team review** because it assembled the final submission but cannot supply personal signatures, truthful work hours, a real video link, or experimental results.
 
@@ -136,4 +150,4 @@ AI was **not** accepted as the final authority for:
 - Audience feedback or attendance.
 - Personal signatures, contribution hours, or contribution percentages.
 
-The submitted AI-03 forms require each named member to verify and sign their own declaration. The `AI_Usage_Log_Submission.md` file consolidates known historical entries and adds the 2026-07-23 submission-assembly session. Any omitted AI interaction discovered during team review must be added before submission.
+The submitted AI-03 forms require each named member to verify and sign their own declaration. The `AI_Usage_Log_Submission.md` file consolidates known historical entries, including Lee Kun Da's 2026-07-11 to 2026-07-12 Maze User Guide refinement session, and adds the 2026-07-23 submission-assembly session. Any omitted AI interaction discovered during team review must be added before submission.

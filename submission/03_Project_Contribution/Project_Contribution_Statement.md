@@ -73,7 +73,7 @@ Task share and Git share are reference indicators only. The official template ex
 | 17 | Complete and rename the usability tool-survey deliverable | TBC | Commit `cacbacd` |
 | 18 | Add Gemini/Claude AI-use evidence for the tool survey | TBC | `ai-disclosure/screenshots/Lee Kun Da/`; commits `4e3f6e2`, `cacbacd` |
 | 19 | Maintain Week 4 and Week 5 progress reports | TBC | Commits `e06dd35`, `6c7b1fb`, `ce1ec63` |
-| 20 | Edit the Maze usability User Guide on the dedicated branch | TBC | Branch `origin/Da/user_guide`; commit `090be8f` |
+| 20 | Edit the Maze usability User Guide on the dedicated branch | TBC | Branch `origin/Da/user_guide`; commit `090be8f`; AI-session evidence `submission/assets/ai-evidence/lee_ui guide summary.png` |
 
 ## 3.4 Lưu Ngô Quốc Bảo - 23127327
 
@@ -105,4 +105,3 @@ Before signing off:
 | Phạm Ngọc Gia Bảo | ______________________________ | __________ |
 | Lee Kun Da | ______________________________ | __________ |
 | Lưu Ngô Quốc Bảo | ______________________________ | __________ |
-
